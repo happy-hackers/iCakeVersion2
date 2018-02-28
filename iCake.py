@@ -65,30 +65,30 @@ def cal_dis(orders,end_loc):
         newLocationIds = [start_locationId]
         print "directions_result!!"
         print directions_result
-        if directions_result:
-		    lists = directions_result[0]['legs']
-		# Not loop to the last one
-            for index in range(len(lists)-1):
-                #get rid off unit so use -3 to kms, -4 to mins
-                print lists[index]['distance']['text'][:-3]
-                print lists[index]['duration']['text'][:-4]
-                if lists[index]['distance']['text'][:-3]:
-                    totalDistance += float(lists[index]['distance']['text'][:-3])
-                if lists[index]['duration']['text'][:-4]:
-                    totalDuration += float(lists[index]['duration']['text'][:-4])
-
-                locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
-                        location = lists[index]['end_address'])[0]['description'])[0]['place_id']
-                print "cal_dis:"
-                print locationId
-                print lists[index]['end_address']
-                print "lists[index]!!!!!!!"
-                print lists[index]
-
-                newLocationIds.append(locationId)
-        else:
+        if not directions_result:
             warning_window(master,"Some addresses can not be found!")
-        
+            return
+            
+        lists = directions_result[0]['legs']
+# Not loop to the last one
+        for index in range(len(lists)-1):
+            #get rid off unit so use -3 to kms, -4 to mins
+            print lists[index]['distance']['text'][:-3]
+            print lists[index]['duration']['text'][:-4]
+            if lists[index]['distance']['text'][:-3]:
+                totalDistance += float(lists[index]['distance']['text'][:-3])
+            if lists[index]['duration']['text'][:-4]:
+                totalDuration += float(lists[index]['duration']['text'][:-4])
+
+            locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
+                    location = lists[index]['end_address'])[0]['description'])[0]['place_id']
+            print "cal_dis:"
+            print locationId
+            print lists[index]['end_address']
+            print "lists[index]!!!!!!!"
+            print lists[index]
+
+            newLocationIds.append(locationId)
 
 # add last location manunally
         if end_loc != hint1:
