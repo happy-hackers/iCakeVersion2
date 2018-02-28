@@ -21,8 +21,8 @@ import googlemaps
 from PIL import Image, ImageTk
 
 
-#gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
-gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
+gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
+# gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
 
 prefix = "https://www.google.com/maps/dir/?api=1"
 origin = "&origin="
@@ -105,11 +105,62 @@ def cal_dis(orders,end_loc):
         openWebsite(finalLocations)
     else:
         return
+        
 # find order by id helper
 def find_order_by_id2(orders,id):
     for order in orders:
         if order.order_number == id:
             return order
+
+# setup doc
+def setup_doc(document,order,order_num):  
+    document.add_heading("{} : {}\n".format(order_num,order.address, level = 1))
+    document.add_paragraph("Order number : {}".format(order.order_number))
+    document.add_paragraph("Client Name : {}".format(order.name))
+    document.add_paragraph("Phone : {}".format(order.phone))
+    document.add_paragraph("Order Ps : {}".format(order.ps_info))
+    document.add_paragraph("Cake info : ")
+    setup_table(document,order)
+    
+    
+    
+# setup doc table
+def setup_table(document,order):
+    cake_num = 1
+    row_num = 0
+    table = document.add_table(rows = (len(order.cake_type)+1), cols = 5)
+    table.style = 'Table Grid'
+
+    # setup header for the table
+    row = table.rows[row_num]
+    row.cells[0].text = "Cake No"
+    row.cells[1].text = "Cake Type"
+    row.cells[2].text = "Cake Size"
+    row.cells[3].text = "Cake Quantity"
+    row.cells[4].text = "Ps Info"
+
+    row_num += 1
+    for cake in order.cake_type:
+        row = table.rows[row_num]
+        row.cells[0].text = str(cake_num)
+
+        # bold cell
+        cell_type = row.cells[1]
+        cell_type.text = cake[index_cake_type]
+        run = cell_type.paragraphs[0].runs[0]
+        run.font.bold = True
+        # bold cell
+        cell_size = row.cells[2]
+        cell_size.text = cake[index_cake_size]
+        run = cell_size.paragraphs[0].runs[0]
+        run.font.bold = True
+
+        row.cells[3].text = cake[index_cake_quan]
+        row.cells[4].text = cake[index_cake_ps]
+        
+        row_num += 1
+        cake_num += 1
+               
 ###############################################################################
 def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
         orders,end_loc):
@@ -151,7 +202,6 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     for order in orders:
         id = gmaps.geocode(order.address)[0]['place_id']
         dic_id[id] = order.order_number
-
         print "id is :"
         print id
         print order.address
@@ -165,27 +215,19 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
         fomattedAddress = gmaps.reverse_geocode(item)[0]['formatted_address']
         finalLocations.append(fomattedAddress)
         print item
-
-        order_numberr = dic_id[item]
-        order = find_order_by_id2(orders,order_numberr)
-        print order
-        print order_numberr
-        if order:
-	        order_num += 1
-	        document.add_heading("{} : {}\n".format(order_num,order.address, level = 1))
-	        document.add_paragraph("Order number : {}".format(order.order_number))
-	        document.add_paragraph("Client Name : {}".format(order.name))
-	        document.add_paragraph("Cake info : ")
-	        cake_num = 1
-	        for cake in order.cake_type:
-	            document.add_paragraph("  Cake No.{}: {},{},{},{}".format(cake_num,cake[index_cake_type],cake[index_cake_size],cake[index_cake_quan],cake[index_cake_ps]))
-	            cake_num += 1
-	        document.add_paragraph("Ps : {}".format(order.ps_info))
-
-
-
-
-
+        try:
+            order_numberr = dic_id[item]
+            order = find_order_by_id2(orders,order_numberr)
+            print order
+            print order_numberr
+            if order:
+                order_num += 1
+                setup_doc(document,order,order_num)
+        except KeyError:
+            warning_window(master,"{}\nError with this address.".format(fomattedAddress))
+        
+       
+            
     document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
     document.add_paragraph("Total duration is %.1f mins." % totalDuration)
     document.add_paragraph("Total number of orders are %d.\n" % order_num)
@@ -271,8 +313,14 @@ def get_item_by_num(num,orders):
             return i
 
 def get_item_by_num2(num,orders):
+    print "get_item_by_num2"
+    if not orders:
+        print "orders is null"
     for i in orders:
-        if str(i.order_number) == str(num[0]):
+        print i
+        print "i.order_number = {}".format(i.order_number)
+        print "num[0] = {}".format(num)
+        if int(i.order_number) == int(num):
             return i
 ###############################################################################
 # sperate orders to orders in city and orders in other areas
@@ -397,8 +445,10 @@ def add_cake(size,typee,quan,cake_ps,window,list_box_cakes,cakes):
         cakes.append(new_cake)
         list_box_cakes.update(cakes)
         window.destroy()
+        return True
     else:
-        warning_window("input text can only be combinations of numbers,letters and comma")
+        return False
+        warning_window(master,"input text can only be combinations of \nnumbers,letters and comma")
         
     
 # add cake window
@@ -479,8 +529,9 @@ def edit_cake_window(master,list_box_cakes,cakes):
 
 # edit cake info
 def edit_cake_info(edit_cake,var,var2,var3,cake_ps,window,list_box_cakes,cakes):
-    delete_cake2(edit_cake,list_box_cakes,cakes)
-    add_cake(var,var2,var3,cake_ps,window,list_box_cakes,cakes)
+    result = add_cake(var,var2,var3,cake_ps,window,list_box_cakes,cakes)
+    if result:
+        delete_cake2(edit_cake,list_box_cakes,cakes)
     refresh_all()
 
 # window for deleting selected cake
@@ -649,44 +700,76 @@ def run_order():
     elif not (proc_entry_num.get() or proc_entry_num_city.get()) :
         warning_window(master,warning_message5)
         return
-
+    print "db.orders_rightbox"
     print db.orders_rightbox
+    tmp = db.orders_rightbox
+    print "tmp"
+    print tmp 
+    order_numbers = [">Choose an order"]
     orders_areas = in_city(db.orders_rightbox,db.postcode[index_city])
-    if proc_entry_num_city.get():
-            random_order("Melbourne City",int(proc_entry_num_city.get()),orders_areas[index_city])
-    if proc_entry_num.get():
-            # cluster_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other])
-            random_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other])
+    # if proc_entry_num_city.get():
+#         if not proc_entry_num.get() or int (proc_entry_num.get()) == 0:
+#             random_order("Melbourne City",int(proc_entry_num_city.get()),tmp,order_numbers)
+#         else:
+#             random_order("Melbourne City",int(proc_entry_num_city.get()),orders_areas[index_city],order_numbers)
+#     if proc_entry_num.get():
+#             # cluster_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other])
+#         if not proc_entry_num_city.get() or int (proc_entry_num_city.get()) == 0:
+#             random_order("South-east area",int(proc_entry_num.get()),tmp,order_numbers)
+#         else:
+#             random_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other],order_numbers)
+    if proc_entry_num_city.get() and proc_entry_num.get():
+        random_order("Melbourne City",int(proc_entry_num_city.get()),orders_areas[index_city],order_numbers)
+        random_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other],order_numbers)
+    elif proc_entry_num_city.get() and (not proc_entry_num.get() or int(proc_entry_num.get()) == 0):
+        random_order("Melbourne City",int(proc_entry_num_city.get()),tmp,order_numbers)
+    elif proc_entry_num.get() and (not proc_entry_num_city.get() or int(proc_entry_num_city.get()) == 0):
+        random_order("South-east area",int(proc_entry_num.get()),tmp,order_numbers)
 
 #assign order randomly
-def random_order(title,num_dis,orders_area):
+def random_order(title,num_dis,orders_area,order_numbers):
     if orders_area:
+        if not db.orders_rightbox:
+            print "db.orders_rightbox null (random_order)"
+        else:
+            print "not null(random_order)"
+        tmp = []
+        for order in orders_area:
+            tmp.append(order)
         random.seed(datetime.now())
         orders = []
         for i in range(num_dis):
             orders.append([])
-
+        if not db.orders_rightbox:
+            print "db.orders_rightbox null (random_order)"
+        else:
+            print "not null(random_order)"
         i = 0
-        while orders_area:
+        while tmp:
             if i >= num_dis:
                 i = 0
-            order = random.choice(orders_area)
+            order = random.choice(tmp)
             orders[i].append(order)
-            orders_area.remove(order)
+            tmp.remove(order)
             i += 1
-        manual_order(title,num_dis,orders_area,orders)
+        if not db.orders_rightbox:
+            print "db.orders_rightbox null (random_order)"
+        else:
+            print "not null(random_order)"
+        manual_order(title,num_dis,tmp,orders,order_numbers)
     else:
         warning_window(master,warning_message7 + title)
 
 # allow user to manually assign orders
-def manual_order(title,num_dis,orders_area,orders):
+def manual_order(title,num_dis,orders_area,orders,order_numbers):
     manual_window = Toplevel(master)
     manual_window.title(title)
 
+    if not db.orders_rightbox:
+        print "db.orders_rightbox null (manual_order)"
     listboxes = []
     dispatchers = to_na_ad(db.dispatchers)
     dispatchers.insert(0,hint1)
-    order_numbers = [">Choose an order"]
     menu_var = []
     for i in range(num_dis):
         if i < 6:
@@ -711,7 +794,8 @@ def manual_order(title,num_dis,orders_area,orders):
                             ['No'],
                             stripped_rows = ("white","#f2f2f2"),
                             cell_anchor="center",
-                            height=5)
+                            height=5,
+                            select_mode = EXTENDED)
         listbox.update(to_order2(orders[i]))
         listbox.interior.grid(row = (row_num+2),column =col_num)
         listboxes.append(listbox)
@@ -732,11 +816,18 @@ def manual_order(title,num_dis,orders_area,orders):
  # delete order in corresspoding listbox in the manul window
 def manual_delete(i,orders,listboxes,order_numbers):
     if listboxes[i].selected_rows:
-        selected = listboxes[i].selected_rows[0]
-        order = get_item_by_num2(selected,db.orders_rightbox)
-        orders[i].remove(order)
-        order_numbers.append([order.order_number,order.address])
-        listboxes[i].update(to_order2(orders[i]))
+        selecteds = listboxes[i].selected_rows
+        for selected in selecteds:
+            print "i = {}".format(i)
+            print selected
+            if not db.orders_rightbox:
+                print ",db.orders_rightbox is null"
+            order = get_item_by_num2(selected[0],db.orders_rightbox)
+            orders[i].remove(order)
+            order_numbers.append([order.order_number,order.address])
+            print "manual_delete(order_numbers.append)"
+            print order_numbers
+            listboxes[i].update(to_order2(orders[i]))  
     else:
         return
 
@@ -761,7 +852,9 @@ def manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,m):
     if var.get() != "Choose Order":
         order = get_item_by_num(var.get(),db.orders_rightbox)
         orders[i].append(order)
-        print order
+        print "orders[i]"
+        for k in orders[i]: 
+            print k
         print order_numbers
         order_numbers.remove([order.order_number,order.address])
 
@@ -779,8 +872,11 @@ def manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,m):
 
 # get list item according to address and order num
 def get_item(list,item):
+    print "get_item"
     for item1 in list:
-        if str(item1.address) == str(item[index_address]):
+        print item1
+        print item
+        if str(item1.order_number) == str(item[index_no]):
             print "get_item:"
             print item1
             return item1
@@ -840,6 +936,7 @@ def add_order(order,location,name,phone,var2,ps_info,window,dispatcher,current_c
     if (order.get() == '' or phone.get() == ''\
         or location.get() == '' or current_cakes == []):
         warning_window(window,warning_message1)
+        return False
     else:
         location_g = location.get()
 
@@ -870,6 +967,8 @@ def add_order(order,location,name,phone,var2,ps_info,window,dispatcher,current_c
         # clear this global list of cakes infro after adding/editing
         # action done
         window_open = False
+        return True
+        
 # calendar window
 def pop_calendar(window,pickup_date):
     cal_window = Toplevel(window)
@@ -1081,15 +1180,17 @@ def edit_info(master):
 def edit_order(order,location,name,phone,\
                var2,ps_info,pre_order,window,cakes,
                mode,pickup_date,pickup_time,entry_dis):
-    delete_order2(pre_order)
     if entry_dis:
-        add_order(order,location,name,phone,\
+        result = add_order(order,location,name,phone,\
                     var2,ps_info,window,entry_dis,cakes\
                     ,mode,pickup_date,pickup_time)
     else:
-       add_order(order,location,name,phone,\
+        result = add_order(order,location,name,phone,\
                    var2,ps_info,window,None,cakes\
                    ,mode,pickup_date,pickup_time)
+    if result:
+        delete_order2(pre_order)
+        
     refresh_all()
 
 # window used for user to confirm deletion of an order
@@ -1110,7 +1211,35 @@ def delete_window(master):
             window.destroy).pack()
     else:
         return
+        
+# multiple delete
+def delete_selected(listbox):
+    print "delete_selected"
+    if listbox.indices_of_selected_rows:
+        list_orders = []
+        list_order_nums =[]
+        selected_indices = listbox.indices_of_selected_rows
+        for index in selected_indices:
+            print listbox.row_data(index)
+            order = get_item(db.orders_all,listbox.row_data(index))
+            print order
+            list_orders.append(order)
+            list_order_nums.append(order.order_number)
+        
+        # notify user to make sure he/she confirm the deletion
+        window = Toplevel(master)
+        window.title("Delete order")
+        window.config(width = 400,height = 80)
+        center(window)
+        Label(window, text="Do you really want to delete order number " + \
+              ",".join(list_order_nums)).pack()
+        Button(window, text='Confirm', command= lambda:delete_order3(list_orders,window)).pack()
 
+        Button(window, text='Cancel', command= \
+            window.destroy).pack() 
+        
+    else:
+        return
 
 # delete an order
 def delete_order(order,window):
@@ -1121,6 +1250,13 @@ def delete_order(order,window):
 def delete_order2(order):
     db.delete(order)
     refresh_all()
+
+# delete an order
+def delete_order3(orders,window):
+    for order in orders:
+        db.delete(order)
+    refresh_all()
+    window.destroy()
 
 # search order inside today list box
 def search_listbox_today(input):
@@ -1621,7 +1757,9 @@ if __name__ == "__main__":
                                   refresh_all)
     today_list_box_all = Multicolumn_Listbox(tab_today, header_today, \
                             stripped_rows = ("white","#f2f2f2"), \
-                            cell_anchor="center",height=14)
+                            cell_anchor="center",height=14,select_mode = EXTENDED)
+    today_button_multiple_delete = Button(tab_today, text = 'delete',command =\
+                                  lambda:delete_selected(today_list_box_all))
     today_list_box_all.configure_column(3,width = 150)
     today_list_box_all.configure_column(4,width = 250)
     today_list_box_processing = Multicolumn_Listbox(\
@@ -1640,6 +1778,7 @@ if __name__ == "__main__":
     today_search.grid(row=0,column=1, sticky = E)
     today_button_search.grid(row = 0,column =2, sticky = W,padx =4)
     today_button_refresh.grid(row = 0,column = 4, sticky = E)
+    today_button_multiple_delete.grid(row=0,column=1, sticky = W)
     today_add_order.grid(row=0,column=3, sticky = E)
     today_text_processing.grid(row=2,sticky = W,padx = 4)
     today_list_box_all.interior.grid(row=1,pady=4,columnspan =5)
@@ -1655,7 +1794,7 @@ if __name__ == "__main__":
     # history_listbox = Listbox(tab_history, width = 70,height = 20)
     history_listbox = Multicolumn_Listbox(tab_history,header_full, \
                             stripped_rows = ("white","#f2f2f2"), cell_anchor="center"\
-                                          ,height=22)
+                                          ,height=22,select_mode = EXTENDED)
     history_button_refresh = Button(tab_history, text = 'refresh',command =\
                                   refresh_all)
 
@@ -1679,7 +1818,7 @@ if __name__ == "__main__":
     proc_ps = Label(tab_proc, text = "*Only waiting orders can be\n assigned to dispatcher")
     proc_left_box = Multicolumn_Listbox(tab_proc, header_small, \
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
-                                        height=20)
+                                        height=20,select_mode = EXTENDED)
     proc_right_box = Multicolumn_Listbox(tab_proc, header_small, \
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
                                         height=20)
