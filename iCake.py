@@ -21,8 +21,10 @@ import googlemaps
 from PIL import Image, ImageTk
 
 
-gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
+#gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
 # gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
+gmaps = googlemaps.Client(key="AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s")
+
 
 prefix = "https://www.google.com/maps/dir/?api=1"
 origin = "&origin="
@@ -97,14 +99,14 @@ def cal_dis(orders,end_loc):
                         
 
             # add last location manunally
-                    if end_loc != hint1 and ','.join(get_address(end_loc)):
-                        print "end location!!!!!!!!!!!!"
-                        print locations[-1]
-
-                        locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
-                                location = locations[-1])[0]['description'])[0]['place_id']
-                        print locationId
-                        newLocationIds.append(locationId)
+                    # if end_loc != hint1 and ','.join(get_address(end_loc)):
+#                         print "end location!!!!!!!!!!!!"
+#                         print locations[-1]
+#
+#                         locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
+#                                 location = locations[-1])[0]['description'])[0]['place_id']
+#                         print locationId
+#                         newLocationIds.append(locationId)
 
                     print "new locations!!!"
                     print newLocationIds
@@ -114,7 +116,7 @@ def cal_dis(orders,end_loc):
                                              totalDuration, (len(locations)-1), orders,end_loc)
                     openWebsite(finalLocations)
         except:
-            warning_window(master,"Server not available right now, try again later") 
+            warning_window(master,"Server not available right now or one dispatcher can not have more than 21 orders, try again later") 
     else:
         return
         
@@ -341,18 +343,18 @@ def get_item_by_num2(num,orders):
             return i
 ###############################################################################
 # sperate orders to orders in city and orders in other areas
-def in_city(orders,postcode_city):
+def in_city(orders,postcode_city,postcode_full_city):
     return_list = [[],[]]
     if orders:
         print "in_city"
 
     for order in orders:
-        print ""
+        print "#############"
         print order.address
-        print  get_pos(order.address)
-        postcode = get_pos(order.address)
+        #print get_pos2(order.address)
+        postcode = order.address.split(',')[-1]
         if postcode:
-            if postcode in postcode_city:
+            if in_pos(postcode,postcode_city,postcode_full_city):
                 print "city:"
                 print order
                 return_list[index_city].append(order)
@@ -367,6 +369,34 @@ def in_city(orders,postcode_city):
 
     return return_list
 
+# check postcode of various forms in list or not    
+def in_pos(postcode,list1,list_full):
+    num_form = []
+    for i in postcode:
+        if i.isdigit():
+            num_form.append(i)
+    pos_num = "".join(num_form)
+    print "num_form:"
+    print num_form
+    
+    # user enter number of postcode
+    if num_form:
+        if "".join(num_form) in list1:
+            return True
+        else:
+            return False
+    else:
+        new_pos = rip_num(postcode)
+        for pos_full in list_full:
+            new_pos_full = rip_num_full(pos_full)
+            print "new_pos_full:"
+            print new_pos_full.lower()
+            print new_pos.lower()
+            if new_pos_full.lower() == new_pos.lower():
+                print "$$$"
+                return True
+        return False
+        
 # get postcode from an address
 def get_pos(address):
     try:
@@ -388,12 +418,13 @@ def get_pos(address):
         for i in fomattedAddress.split(',')[-2]:
             if i.isdigit():
                 postcode.append(i)
-
+        print "get_pos"
+        print postcode
+        
         return "".join(postcode)
     except:
         print "Error Time Out"
         return
-    
 
 # get postcode from an address
 def get_pos2(address):
@@ -403,6 +434,15 @@ def get_pos2(address):
             postcode.append(i)
     return "".join(postcode)
 
+# compare postcode using name:
+def get_pos_full(address):
+    address = "VIC " + address +",Australia"
+    print address
+    new_location = gmaps.places_autocomplete(input_text = address, \
+                                             location = address)[0]['description']
+    print new_location
+    return new_location
+    
 # once confirmed cakes are being processed,change the state of the order
 # and update dispatcher info
 def update_state2(num,orders,menu_var,window):
@@ -676,19 +716,20 @@ def run_order():
     print "tmp"
     print tmp 
     order_numbers = [">Choose an order"]
-    orders_areas = in_city(db.orders_rightbox,db.postcode[index_city])
     
-    if orders_areas:
-        if proc_entry_num_city.get() and proc_entry_num.get():
+    if proc_entry_num_city.get() and proc_entry_num.get():
+        orders_areas = in_city(db.orders_rightbox,db.postcode[index_city],db.postcode_full[index_city])
+        if orders_areas:
             random_order("Melbourne City",int(proc_entry_num_city.get()),orders_areas[index_city],order_numbers)
             random_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other],order_numbers)
-        elif proc_entry_num_city.get() and (not proc_entry_num.get() or int(proc_entry_num.get()) == 0):
-            random_order("Melbourne City",int(proc_entry_num_city.get()),tmp,order_numbers)
-        elif proc_entry_num.get() and (not proc_entry_num_city.get() or int(proc_entry_num_city.get()) == 0):
-            random_order("South-east area",int(proc_entry_num.get()),tmp,order_numbers)
-    else:
-        warning_window(master,"Usage is up to today's limit")
-    
+        else:
+            warning_window(master,"Usage is up to today's limit")
+            
+    elif proc_entry_num_city.get() and (not proc_entry_num.get() or int(proc_entry_num.get()) == 0):
+        random_order("Melbourne City",int(proc_entry_num_city.get()),tmp,order_numbers)
+    elif proc_entry_num.get() and (not proc_entry_num_city.get() or int(proc_entry_num_city.get()) == 0):
+        random_order("South-east area",int(proc_entry_num.get()),tmp,order_numbers)
+  
 #assign order randomly
 def random_order(title,num_dis,orders_area,order_numbers):
     if orders_area:
@@ -1626,6 +1667,12 @@ def open_web():
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 if __name__ == "__main__":
+    f2 = open(file_postcode_full, "rb")
+    reader = csv.reader(f2,delimiter=',')
+    for line in reader:
+        print line
+    f2.close()
+    
     # main window setup
     master = Tk()
     master.title("iCake")

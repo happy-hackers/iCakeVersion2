@@ -22,6 +22,7 @@ textColor = "WHITE"
 file_name = 'file/ordersdata.csv'
 file_name2 = 'file/routedata.csv'
 file_postcode = 'file/postcode.csv'
+file_postcode_full = 'file/postcode_full.csv'
 file_order = 'file/orderandcakedata.csv'
 file_order_copy = 'file/orderandcakedata_copy.csv'
 file_dis = 'file/dispatchers.csv'
@@ -160,12 +161,14 @@ class Orders_database(object):
     orders_rightbox = []
     orders_pickup = []
     postcode = []
+    postcode_full = []
     dispatchers = []
     cake_size = []
     cake_types = []
     def __init__(self,fp = file_name):
         tmp = []
         postcodee = []
+        postcodee_full = []
         dispatcherss = []
         f = open(fp,'rb')
         reader = csv.reader(f, delimiter=',')
@@ -183,6 +186,12 @@ class Orders_database(object):
         reader = csv.reader(f,delimiter=',')
         for i in reader:
             postcodee.append(i)
+        f.close
+        
+        f = open(file_postcode_full, "rb")
+        reader = csv.reader(f,delimiter=',')
+        for i in reader:
+            postcodee_full.append(i)
         f.close
 
         f = open(file_dis,'rb')
@@ -208,6 +217,7 @@ class Orders_database(object):
         f.close()
 
         self.postcode = postcodee
+        self.postcode_full = postcodee_full
         self.orders_all = tmp
         self.update()
 
@@ -616,7 +626,25 @@ def isvalid(stringg):
         if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ')):
             return False
     return True
+
+# get rid of number
+def rip_num(str):
+    new_str = []
+    for i in str:
+        if  not i.isdigit():
+            new_str.append(i)
+    return_str = []
+    for i in "".join(new_str).split(' '):
+        if i.lower() != 'vic':
+            return_str.append(i)
+            
+    return "".join(return_str)
     
+# get rid of unnessary info
+def rip_num_full(str):
+    new_str = rip_num(str)
+    return new_str.split(',')[0]
+                
 # center a window
 # @sources: https://stackoverflow.com/questions/3352918/how-to-center-a-window-on-the-screen-in-tkinter
 def center(toplevel):
@@ -672,6 +700,7 @@ class VerticalScrolledFrame(Frame):
                 # update the inner frame's width to fill the canvas
                 canvas.itemconfigure(interior_id, width=canvas.winfo_width())
         canvas.bind('<Configure>', _configure_canvas)
+
 
 if __name__ == "__main__":
     # for item in c_orders:
