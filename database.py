@@ -613,7 +613,7 @@ def write_2_log(message):
 # check ps info doesnt contain special characters other than comma
 def isvalid(stringg):
     for i in stringg:
-        if not (i.isdigit() or i.isalpha() or (i == ',')):
+        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ')):
             return False
     return True
     

@@ -38,75 +38,83 @@ popup_cake = None                    # right click menu for cakes windows
 # calculate distance between two points using google map
 def cal_dis(orders,end_loc):
     if orders:
-        locations = to_loc(orders)
-        new_location = gmaps.places_autocomplete(input_text = proc_start_loc.get(), \
-                                                 location = proc_start_loc.get())[0]['description']
-        start_locationId = gmaps.geocode(new_location)[0]['place_id']
-        locations.insert(0,proc_start_loc.get())
+        try:
+                    locations = to_loc(orders)
+                    print "proc_start_loc.get()"
+                    print proc_start_loc.get()
+                    new_location = gmaps.places_autocomplete(input_text = proc_start_loc.get(), \
+                                                             location = proc_start_loc.get())[0]['description']
+                    start_locationId = gmaps.geocode(new_location)[0]['place_id']
+                    locations.insert(0,proc_start_loc.get())
 
-        # if there is specified end location append it to the end of locations
-        print "end location:"
-        print end_loc
-        if end_loc != hint1:
-           print get_address(end_loc)
-           locations.append(','.join(get_address(end_loc)))
+                    # if there is specified end location append it to the end of locations
+                    print "end location:"
+                    print end_loc
+                    print ','.join(get_address(end_loc))
+                    if end_loc != hint1 and ','.join(get_address(end_loc)):
+                       print "$"
+                       locations.append(','.join(get_address(end_loc)))
 
-        print "locations"
-        print locations
-        directions_result = gmaps.directions(locations[0],
-                                             locations[-1],
-                                             waypoints=locations[1:-1],
-                                             mode="driving", avoid="tolls",
-                                             departure_time=datetime.now(),
-                                             optimize_waypoints = True)
+                    print "locations"
+                    print locations
+                    directions_result = gmaps.directions(locations[0],
+                                                         locations[-1],
+                                                         waypoints=locations[1:-1],
+                                                         mode="driving", avoid="tolls",
+                                                         departure_time=datetime.now(),
+                                                         optimize_waypoints = True)
 
-        totalDistance = 0
-        totalDuration = 0
-        newLocationIds = [start_locationId]
-        print "directions_result!!"
-        print directions_result
-        if not directions_result:
-            warning_window(master,"Some addresses can not be found!")
-            return
+                    totalDistance = 0
+                    totalDuration = 0
+                    newLocationIds = [start_locationId]
+                    print "directions_result!!"
+                    print directions_result
+                    if not directions_result:
+                        warning_window(master,"Some addresses can not be found!")
+                        return
             
-        lists = directions_result[0]['legs']
-# Not loop to the last one
-        for index in range(len(lists)-1):
-            #get rid off unit so use -3 to kms, -4 to mins
-            print lists[index]['distance']['text'][:-3]
-            print lists[index]['duration']['text'][:-4]
-            if lists[index]['distance']['text'][:-3]:
-                totalDistance += float(lists[index]['distance']['text'][:-3])
-            if lists[index]['duration']['text'][:-4]:
-                totalDuration += float(lists[index]['duration']['text'][:-4])
+                    lists = directions_result[0]['legs']
+            # Not loop to the last one
+                    for index in range(len(lists)):
+                        try:
+                            #get rid off unit so use -3 to kms, -4 to mins
+                            print lists[index]['distance']['text'][:-3]
+                            print lists[index]['duration']['text'][:-4]
+                            if lists[index]['distance']['text'][:-3]:
+                                totalDistance += float(lists[index]['distance']['text'][:-3])
+                            if lists[index]['duration']['text'][:-4]:
+                                totalDuration += float(lists[index]['duration']['text'][:-4])
 
-            locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
-                    location = lists[index]['end_address'])[0]['description'])[0]['place_id']
-            print "cal_dis:"
-            print locationId
-            print lists[index]['end_address']
-            print "lists[index]!!!!!!!"
-            print lists[index]
+                            locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
+                                    location = lists[index]['end_address'])[0]['description'])[0]['place_id']
+                            print "cal_dis:"
+                            print locationId
+                            print lists[index]['end_address']
+                            newLocationIds.append(locationId)
+                        except IndexError:
+                            warning_window(master,"Index Error in cal_dis(line 95)")
+                            return
+                        
 
-            newLocationIds.append(locationId)
+            # add last location manunally
+                    if end_loc != hint1 and ','.join(get_address(end_loc)):
+                        print "end location!!!!!!!!!!!!"
+                        print locations[-1]
 
-# add last location manunally
-        if end_loc != hint1:
-            print "end location!!!!!!!!!!!!"
-            print locations[-1]
+                        locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
+                                location = locations[-1])[0]['description'])[0]['place_id']
+                        print locationId
+                        newLocationIds.append(locationId)
 
-            locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
-                    location = locations[-1])[0]['description'])[0]['place_id']
-            print locationId
-            newLocationIds.append(locationId)
+                    print "new locations!!!"
+                    print newLocationIds
+                    print gmaps.reverse_geocode(newLocationIds[-1])[0]['formatted_address']
 
-        print "new locations!!!"
-        print newLocationIds
-        print gmaps.reverse_geocode(newLocationIds[-1])[0]['formatted_address']
-
-        finalLocations = outputFile(newLocationIds, totalDistance, \
-                                 totalDuration, (len(locations)-1), orders,end_loc)
-        openWebsite(finalLocations)
+                    finalLocations = outputFile(newLocationIds, totalDistance, \
+                                             totalDuration, (len(locations)-1), orders,end_loc)
+                    openWebsite(finalLocations)
+        except:
+            warning_window(master,"Server not available right now, try again later") 
     else:
         return
         
@@ -186,17 +194,22 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     dic_id = {}
     # input order info
     if end_loc != hint1:
-        print "#####"
-        print "end_loc is"
-        print end_loc
-        end_loc_without_name = (','.join(get_address(end_loc)))
-        print end_loc_without_name
-        document.add_heading("Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
-        end_loc_id = gmaps.geocode(gmaps.places_autocomplete(\
-                input_text = end_loc_without_name, \
-                    location = end_loc_without_name)[0]['description'])[0]['place_id']
+        if ','.join(get_address(end_loc)):
+            print "#####"
+            print "end_loc is"
+            print end_loc
+            end_loc_without_name = (','.join(get_address(end_loc)))
+            print end_loc_without_name
+            document.add_heading("Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
+            end_loc_id = gmaps.geocode(gmaps.places_autocomplete(\
+                    input_text = end_loc_without_name, \
+                        location = end_loc_without_name)[0]['description'])[0]['place_id']
 
-        dic_id[end_loc_id] = "end location"
+            dic_id[end_loc_id] = "end location"
+        else:
+            document.add_heading("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))
+            
+        
     else:
         document.add_heading("Driver Not Determined".format(font=("Calibri",title_size)))
 
@@ -232,8 +245,8 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
         
        
             
-    document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
-    document.add_paragraph("Total duration is %.1f mins." % totalDuration)
+    #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
+    #document.add_paragraph("Total duration is %.1f mins." % totalDuration)
     document.add_paragraph("Total number of orders are %d.\n" % order_num)
 
     now = datetime.now()
@@ -424,10 +437,10 @@ def update_state2(num,orders,menu_var,window):
 def warning_window(master,message):
     window = Toplevel(master)
     window.title("Warning")
-    window.config(width = 400,height = 50)
-    center(window)
     Label(window,text = message).pack()
     Button(window, text = "ok", command = window.destroy).pack()
+    center(window)
+    
 
 # reset all listbox and lists in the processing tab
 def refresh():
@@ -462,8 +475,8 @@ def add_cake(size,typee,quan,cake_ps,window,list_box_cakes,cakes):
         window.destroy()
         return True
     else:
+        warning_window(master,"input text can only be combinations of \nnumbers,letters, space and comma")
         return False
-        warning_window(master,"input text can only be combinations of \nnumbers,letters and comma")
         
     
 # add cake window
@@ -475,6 +488,11 @@ def window_add_cake(root,list_box_cakes,cakes):
 
     # set labels and entries(option menu)
     var,var2,var3,cake_ps,row_num = pack_cake_entry(window)
+    
+    print var.get()
+    print var2.get()
+    print var3.get()
+    print cake_ps.get()
 
     Button(window,text = "add",command = lambda:add_cake(var,var2,\
             var3,cake_ps,window,list_box_cakes,cakes))\
@@ -643,69 +661,6 @@ def get_address(na_ad):
     tmp.remove(na_ad.split(',')[0])
     #print tmp
     return tmp
-#show results info
-def pop_result_window(orders,end_loc):
-    window = Toplevel(master)
-    window.title("Result")
-    row_num = 0
-    order_num = 1
-    col_num = 0
-    for order in orders:
-        if order_num < 4:
-            col_num = order_num - 1
-            row_num = 1
-        elif 4<= order_num < 8:
-            col_num = order_num- 4
-            row_num = 11
-        elif 8<= order_num < 12:
-            col_num = order_num - 8
-            row_num = 21
-
-        Label(window,text = "{}.Order number : {}".format(order_num,order.order_number),font=("Calibri",title_size)).grid(row = row_num,column = col_num,pady = 4,padx =4, sticky = W)
-        row_num += 1
-        Label(window,text = "Client Name : {}".format(order.name)).grid(row = row_num,column = col_num,padx =4, sticky = W)
-        row_num += 1
-        Label(window,text = "Address : {}".format(order.address)).grid(row = row_num,column = col_num,padx =4, sticky = W)
-        row_num += 1
-        Label(window,text = "Cake info : ").grid(row = row_num,column = col_num,pady = 4,padx =4, sticky = W)
-        cake_num = 1
-        for cake in order.cake_type:
-            row_num += 1
-            Label(window,text = "No {}:{},{},{},{}".format(cake_num,cake[index_cake_type],cake[index_cake_size],cake[index_cake_quan],cake[index_cake_ps])).grid(row = row_num,column = col_num,padx =4, sticky = W)
-            cake_num += 1
-        row_num += 1
-        Label(window,text = "Ps : {}".format(order.ps_info)).grid(row = row_num,column = col_num,padx =4, sticky = W)
-        row_num += 1
-        order_num +=1
-
-    if end_loc != hint1:
-        Label(window,text = "Driver:{}".format(end_loc),font=("Calibri",title_size)).grid(row = 0,columnspan =2,pady = 4,padx =4, sticky = W)
-    else:
-        Label(window,text = "Driver:{}".format("Not determined"),font=("Calibri",title_size)).grid(row = 0,columnspan =2,pady = 4,padx =4, sticky = W)
-
-    # row_num += 1
-#     Button(window,text ="ok",command = window.destroy).grid(row = row_num,column =(col_num/2), pady = 4,padx =4)
-    center(window)
-
-# using k-means clustering to assign orders
-# def cluster_order(title,num_dis,orders_area):
-#     if orders_area:
-#         result_window = Toplevel(master)
-#         result_window.title(title + " Result")
-#         try:
-#             clustered_result = k_means_clustering(num_dis,orders_area)
-#             col_num = 0
-#             orders = []
-#             for i in clustered_result:
-#                clustered_orders = clustered_result[i]
-#                orders.append(clustered_orders)
-#             manual_order(title,num_dis,orders_area,orders)
-#         except GeocoderTimedOut:
-#             warning_window(result_window,warning_message5)
-#         center(result_window)
-#
-#     else:
-#         warning_window(master,warning_message7 + title)
 
 # calculate the route and provide basic info
 def run_order():
@@ -815,8 +770,6 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
                       : manual_delete(i,orders,listboxes,order_numbers)).grid(row=(row_num+3),column=col_num,sticky = E,padx=5)
         Button(manual_window,text ="print file and view route",command =
                       lambda i=i:cal_dis(orders[i],menu_var[i].get())).grid(row=(row_num+4),column=col_num,sticky = W)
-        # Button(manual_window,text ="show file",command =
-#                       lambda i=i:pop_result_window(orders[i],menu_var[i].get())).grid(row=(row_num+4),column=col_num,sticky = E)
     Button(manual_window,text ="Confirm all routes",width = 12,
                  command = lambda i=num_dis: update_state2(i,orders,menu_var,manual_window)).grid(row=row_num+5,columnspan = (col_num+1))
     center(manual_window)
@@ -1786,7 +1739,7 @@ if __name__ == "__main__":
     today_search.grid(row=0,column=1, sticky = E)
     today_button_search.grid(row = 0,column =2, sticky = W,padx =4)
     today_button_refresh.grid(row = 0,column = 4, sticky = E)
-    today_button_multiple_delete.grid(row=0,column=1, sticky = W)
+    #today_button_multiple_delete.grid(row=0,column=0, sticky = E)
     today_add_order.grid(row=0,column=3, sticky = E)
     today_text_processing.grid(row=2,sticky = W,padx = 4)
     today_list_box_all.interior.grid(row=1,pady=4,columnspan =5)
