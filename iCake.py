@@ -23,7 +23,8 @@ from PIL import Image, ImageTk
 
 #gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
 # gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
-gmaps = googlemaps.Client(key="AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s")
+# gmaps = googlemaps.Client(key="AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s")
+gmaps = googlemaps.Client(key="AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY")
 
 
 prefix = "https://www.google.com/maps/dir/?api=1"
@@ -822,14 +823,14 @@ def manual_delete(i,orders,listboxes,order_numbers):
         for selected in selecteds:
             print "i = {}".format(i)
             print selected
-            if not db.orders_rightbox:
-                print ",db.orders_rightbox is null"
             order = get_item_by_num2(selected[0],db.orders_rightbox)
             orders[i].remove(order)
             order_numbers.append([order.order_number,order.address])
             print "manual_delete(order_numbers.append)"
             print order_numbers
-            listboxes[i].update(to_order2(orders[i]))  
+            print listboxes[i].indices_of_selected_rows
+            listboxes[i].delete_row(listboxes[i].indices_of_selected_rows[0])
+            #listboxes[i].update(to_order2(orders[i]))
     else:
         return
 
@@ -868,7 +869,15 @@ def manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,m):
             # Add menu items.
             menu.add_command(label=num, command=lambda: var.set(num))
         print "###########"
-        listboxes[i].update(to_order2(orders[i]))
+        print listboxes[i].table_data
+        for j in orders[i]:
+            print j.order_number
+            
+        listboxes[i].insert_row(to_order2([order])[0])
+        last = len(listboxes[i].table_data)-1
+        tmp =  listboxes[i].table_data[last]
+        listboxes[i].delete_row(last)
+        listboxes[i].insert_row(tmp)
         manual_add_window.destroy()
 
 
