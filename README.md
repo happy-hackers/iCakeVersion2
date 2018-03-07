@@ -1,6 +1,7 @@
 # icakeApplication
 
 This is a PC application used to help iCake to arrange its orders.
+中文输入法问题解决:https://www.jianshu.com/p/f9e30bdc5806
 
 
 # Run nstructions

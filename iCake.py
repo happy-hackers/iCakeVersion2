@@ -1,3 +1,8 @@
+# -*- coding: UTF-8 -*-  
+import sys     
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 try:
     from tkinter import *
 except ImportError:
@@ -343,6 +348,22 @@ def get_item_by_num2(num,orders):
         if int(i.order_number) == int(num):
             return i
 ###############################################################################
+# check whether its valid address or not
+def isvalid_ad(address):
+    count = 0
+    for i in address:
+        if i == ',':
+            count += 1
+    if count != 1:
+        return -1
+    # postcode is not in the database
+    else:        
+        f = in_pos(address.split(",")[1],db.postcode[index_city],db.postcode_full[index_city])
+        s = in_pos(address.split(",")[1],db.postcode[index_other],db.postcode_full[index_other])
+        if (not f) and (not s):
+            return 1      
+    return 0
+    
 # sperate orders to orders in city and orders in other areas
 def in_city(orders,postcode_city,postcode_full_city):
     return_list = [[],[]]
@@ -494,17 +515,10 @@ def refresh():
 #########################################################################################
 #########################     cake   ####################################################
 #########################################################################################
-# pack all text labels for cake
-def pack_cake_label(window):
-    Label(window, text="Size:").grid(row=0,sticky=W)
-    Label(window, text="CakeType:").grid(row=1,sticky=W)
-    Label(window, text="Quantity:").grid(row=2,sticky=W)
-    Label(window, text="Ps:").grid(row=3,sticky=W)
-
 # add cake to the database
-def add_cake(size,typee,quan,cake_ps,window,list_box_cakes,cakes):
+def add_cake(size,shape,inner,typee,cake_ps,window,list_box_cakes,cakes):
     if isvalid(cake_ps.get()):
-        new_cake = [size.get(),typee.get(),quan.get(),cake_ps.get()]
+        new_cake = [size.get(),shape.get(),inner.get(),typee.get(),cake_ps.get()]
 
         print "new_cake:"
         print new_cake
@@ -512,70 +526,83 @@ def add_cake(size,typee,quan,cake_ps,window,list_box_cakes,cakes):
         print cakes
         # gobal list storing cakes info to be added or edited
         cakes.append(new_cake)
-        list_box_cakes.update(cakes)
+        
+        list_box_cakes.insert_row(new_cake)
+        last = len(list_box_cakes.table_data)-1
+        tmp =  list_box_cakes.table_data[last]
+        list_box_cakes.delete_row(last)
+        list_box_cakes.insert_row(tmp)
+        
         window.destroy()
         return True
     else:
-        warning_window(master,"input text can only be combinations of \nnumbers,letters, space and comma")
+        warning_window(master,"备注一栏不能含有除字母、汉字、数字、空格及逗号以外的字符！")
         return False
         
     
 # add cake window
 def window_add_cake(root,list_box_cakes,cakes):
     window = Toplevel(root)
-    window.title("Add a cake")
-    window.config(width = 300,height = 180) # 200
-    center(window)
+    window.title("添加蛋糕")
 
     # set labels and entries(option menu)
-    var,var2,var3,cake_ps,row_num = pack_cake_entry(window)
+    var_size,var_shape,var_inner,var_type,cake_ps,row_num = pack_cake_entry(window)
     
-    print var.get()
-    print var2.get()
-    print var3.get()
+    print var_size.get()
+    print var_shape.get()
+    print var_inner.get()
+    print var_type.get()
     print cake_ps.get()
 
-    Button(window,text = "add",command = lambda:add_cake(var,var2,\
-            var3,cake_ps,window,list_box_cakes,cakes))\
-            .grid(row=row_num,column = 0, sticky=W,pady = 4)
-    Button(window,text= "cancel",command = window.destroy).\
-    grid(row=row_num,column = 1, sticky=W,pady = 4)
+    Button(window,text = "添加",command = lambda:add_cake(var_size,var_shape,\
+            var_inner,var_type,cake_ps,window,list_box_cakes,cakes))\
+            .grid(row=row_num,column = 0,pady = 4)
+    Button(window,text= "取消",command = window.destroy).\
+    grid(row=row_num,column = 1,pady = 4)
+    center(window)
+    
 
 # pack text labels for text
 def pack_cake_label(window):
-    Label(window, text="Size:").grid(row=0,sticky=W,pady = 4)
-    Label(window, text="Cake Type:").grid(row=1,sticky=W,pady = 4)
-    Label(window, text="Quantity:").grid(row=2,sticky=W,pady = 4)
-    Label(window, text="Ps:").grid(row=3,sticky=W,pady = 4)
+    Label(window, text="尺寸:").grid(row=0,sticky=W,pady = 4)
+    Label(window, text="形状:").grid(row=1,sticky=W,pady = 4)
+    Label(window, text="内芯:").grid(row=2,sticky=W,pady = 4)
+    Label(window, text="款式:").grid(row=3,sticky=W,pady = 4)
+    Label(window, text="备注:").grid(row=4,sticky=W,pady = 4)
 
 # set entries and labels for cake manipulation
 def pack_cake_entry(window):
     pack_cake_label(window)
-    var = StringVar()
-    var.set(size[0])
+    
     #read size and type from file
     cake_size = read_cake_size()
+    cake_shapes = ["shape1","shape2"]
     cake_types = read_cake_types()
+    cake_inners = ["inner1","inner2"]
 
-    cake_size = OptionMenu(window,var, *cake_size)        # option menu for cake size
+    var_size = StringVar()
+    var_size.set(cake_size[0])
+    cake_size = OptionMenu(window,var_size, *cake_size)       # option menu for cake size
     cake_size.grid(row=0,column = 1, sticky=W,pady = 4)
-    #Button(window,text = "edit size",command= lambda:edit_cake_size(window)).grid(row=0,column = 2, sticky=W,pady = 4)
+    
+    var_shape = StringVar()
+    var_shape.set(cake_shapes[0])
+    cake_shape = OptionMenu(window,var_shape,*cake_shapes)       # option menu for cake shape
+    cake_shape.grid(row=1,column = 1, sticky=W,pady = 4)
+    
+    var_inner = StringVar()
+    var_inner.set(cake_inners[0])
+    cake_inner =OptionMenu(window,var_inner, *cake_inners)      # option menu for cake inners
+    cake_inner.grid(row=2,column = 1, sticky=W,pady = 4)
 
-    var2 = StringVar()
-    var2.set(cake_types[0])
-    cake_type =OptionMenu(window,var2, *cake_types)   # option menu for cake types
-    cake_type.grid(row=1,column = 1, sticky=W,pady = 4)
-    #Button(window,text = "edit caketype").grid(row=1,column = 2, sticky=W,pady = 4)
-
-
-    var3 = StringVar()
-    var3.set(quantities[0])
-    cake_quan = OptionMenu(window,var3, *quantities)  # option menu for cake quantity
-    cake_quan.grid(row=2,column = 1, sticky=W,pady = 4)
-
+    var_type = StringVar()
+    var_type.set(cake_types[0])
+    cake_type =OptionMenu(window,var_type, *cake_types)      # option menu for cake types
+    cake_type.grid(row=3,column = 1, sticky=W,pady = 4)
+    
     cake_ps = Entry(window)
-    cake_ps.grid(row=3,column = 1, sticky=W,pady = 4)
-    return var,var2,var3,cake_ps,4
+    cake_ps.grid(row=4,column = 1, sticky=W,pady = 4)
+    return var_size,var_shape,var_inner,var_type,cake_ps,5
 
 # edit cake info
 def edit_cake_window(master,list_box_cakes,cakes):
@@ -586,15 +613,16 @@ def edit_cake_window(master,list_box_cakes,cakes):
         center(window)
 
         edit_cake = list_box_cakes.selected_rows[0]
-        var,var2,var3,cake_ps,row_num = pack_cake_entry(window)
+        var_size,var_shape,var_inner,var_type,cake_ps,row_num = pack_cake_entry(window)
 
-        var.set(edit_cake[index_cake_size])
-        var2.set(edit_cake[index_cake_type])
-        var3.set(edit_cake[index_cake_quan])
+        var_size.set(edit_cake[index_cake_size])
+        var_shape.set(edit_cake[index_cake_shape])
+        var_inner.set(edit_cake[index_cake_inner])
+        var_type.set(edit_cake[index_cake_type])
         cake_ps.insert(0,edit_cake[index_cake_ps])
 
         Button(window,text = "confirm",command = lambda:edit_cake_info(\
-            edit_cake,var,var2,var3,cake_ps,window,list_box_cakes,cakes))\
+            edit_cake,var_size,var_shape,var_inner,var_type,cake_ps,window,list_box_cakes,cakes))\
             .grid(row=row_num,column = 0, sticky=W,pady = 4)
         Button(window,text= "cancel",command = window.destroy).\
             grid(row=row_num,column = 1, sticky=W,pady = 4)
@@ -602,8 +630,10 @@ def edit_cake_window(master,list_box_cakes,cakes):
         return
 
 # edit cake info
-def edit_cake_info(edit_cake,var,var2,var3,cake_ps,window,list_box_cakes,cakes):
-    result = add_cake(var,var2,var3,cake_ps,window,list_box_cakes,cakes)
+def edit_cake_info(edit_cake,var_size,var_shape,var_inner,var_type,
+                              cake_ps,window,list_box_cakes,cakes):
+    result = add_cake(var_size,var_shape,var_inner,var_type,cake_ps,window,list_box_cakes,cakes)
+
     if result:
         delete_cake2(edit_cake,list_box_cakes,cakes)
     refresh_all()
@@ -681,8 +711,9 @@ def build_list_box_cake(window,row_num):
     list_box_cakes = Multicolumn_Listbox(window, header_cake, \
                 stripped_rows = ("white","#f2f2f2"), cell_anchor="center",height = 5)
     list_box_cakes.configure_column(0,width = 50)
-    list_box_cakes.configure_column(1,width = 80)
+    list_box_cakes.configure_column(1,width = 50)
     list_box_cakes.configure_column(2,width = 50)
+    list_box_cakes.configure_column(3,width = 70)
     list_box_cakes.interior.grid(row=row_num, column=0,columnspan =2,rowspan = 3)
     list_box_cakes.interior.bind("<Button-2>", do_popup_cake)
     return list_box_cakes,(row_num+3)
@@ -763,7 +794,7 @@ def random_order(title,num_dis,orders_area,order_numbers):
             print "not null(random_order)"
         manual_order(title,num_dis,tmp,orders,order_numbers)
     else:
-        warning_window(master,warning_message7 + title)
+        warning_window(master,title + warning_message7)
 
 # allow user to manually assign orders
 def manual_order(title,num_dis,orders_area,orders,order_numbers):
@@ -944,9 +975,16 @@ def add_all():
 def add_order(order,location,name,phone,var2,ps_info,window,dispatcher,current_cakes,
               mode,pickup_date,pickup_time):
     global window_open
+
     if (order.get() == '' or phone.get() == ''\
         or location.get() == '' or current_cakes == []):
         warning_window(window,warning_message1)
+        return False
+    elif isvalid_ad(location.get()) > 0:
+        warning_window(window,warning_message8)
+        return False
+    elif isvalid_ad(location.get()) < 0:
+        warning_window(window,warning_message9)
         return False
     else:
         location_g = location.get()
@@ -998,13 +1036,14 @@ def confirm_date(window,ttkcal,pickup_date):
 # main use is to avoid duplicate codes
 def pack_order_entry(window,cakes,item):
     order = Entry(window)                  # text entry for order
+    agent = Entry(window)                  # agent entry for order
     location = Entry(window)               # location entry for order
     name = Entry(window)                   # name entry for order
     phone = Entry(window)                  # phone number
-    ps_info = Entry(window)                # plus info about the order
-    pickup_date = Entry(window)
-    pickup_time = Entry(window)
-
+    candle = Entry(window)                 # candle info
+    tableware = Entry(window)              # tableware info
+    writing = Entry(window)                # writing info
+    price = Entry(window)                  # price of order
     var2 = StringVar()                     # option menu for order state
     var2.set(states[0])
     state =OptionMenu(window,var2,*states)
@@ -1012,7 +1051,11 @@ def pack_order_entry(window,cakes,item):
     var_mode = StringVar()                 # option menu for mode
     var_mode.set(modes[0])
     mode =OptionMenu(window,var_mode,*modes)
-
+    
+    pickup_date = Entry(window)
+    pickup_time = Entry(window)
+    ps_info = Entry(window)                # plus info about the order
+    
     if item:
         # put placeholders for the convenience of user to edit details of an order
         order.insert(0,item.order_number)
@@ -1030,44 +1073,52 @@ def pack_order_entry(window,cakes,item):
             pickup_date.insert(0,item.pickup_date)
         if item.pickup_time:
             pickup_time.insert(0,item.pickup_time)
-
+    
     order.grid(row=0, column=1,sticky=W)
-    location.grid(row=1, column=1,sticky=W)
-    name.grid(row=2, column=1,sticky=W)
-    phone.grid(row=3, column=1,sticky=W)
+    agent.grid(row=1, column=1,sticky=W)
+    location.grid(row=2, column=1,sticky=W)
+    name.grid(row=3, column=1,sticky=W)
+    phone.grid(row=4, column=1,sticky=W)
+    candle.grid(row=5, column=1,sticky=W)
+    tableware.grid(row=6, column=1,sticky=W)
+    writing.grid(row=7, column=1,sticky=W)
+    price.grid(row=8, column=1,sticky=W)
+    state.grid(row=9, column=1,sticky=W)
+    mode.grid(row=10,column = 1,sticky=W)
+    pickup_date.grid(row=11,column = 1,sticky=W)
+    pickup_time.grid(row=12,sticky=W,column = 1)
+    ps_info.grid(row=13,column = 1,sticky=W)
     list_box_cakes,row_num = pack_order_label(window)
 
-    state.grid(row=4, column=1,sticky=W)
-    mode.grid(row=5,column = 1,sticky=W)
-    pickup_date.grid(row=6,column = 1,sticky=W)
-    pickup_time.grid(row=7,sticky=W,column = 1)
-    ps_info.grid(row=8,column = 1,sticky=W)
-
-    Button(window, text='Add Cake', command= \
+    Button(window, text='添加蛋糕', command= \
             lambda:window_add_cake(window,\
-            list_box_cakes,cakes)).grid(row=9, column=1,sticky=W)
+            list_box_cakes,cakes)).grid(row=14, column=1,sticky=W)
 
-    Button(window,text= "settings",command = \
+    Button(window,text= "设置",command = \
             lambda: cake_setting_window(window)).\
-            grid(row=9,column = 1, sticky=E)
-
+            grid(row=14,column = 1, sticky=E)
 
     row_num = (row_num)
     return order,location,name,phone,var2,ps_info,row_num,list_box_cakes,var_mode,pickup_date,pickup_time
 
 # pack all text labels
 def pack_order_label(window):
-    Label(window, text="Order Number*:").grid(row=0,sticky=W)
-    Label(window, text="Location(St+postcode)*:").grid(row=1,sticky=W)
-    Label(window, text="Name:").grid(row=2,sticky=W)
-    Label(window, text="Phone*:").grid(row=3,sticky=W)
-    Label(window, text="State*:").grid(row=4,sticky=W)
-    Label(window, text="Mode:").grid(row=5,sticky=W)
-    Label(window, text="Pickup Date:").grid(row=6,sticky=W)
-    Label(window, text="Pickup Time:").grid(row=7,sticky=W)
-    Label(window, text="Ps:").grid(row=8,sticky=W)
-    Label(window, text="Cakes*:").grid(row=9,sticky=W)
-    list_box_cakes,row_num = build_list_box_cake(window,10)
+    Label(window, text="订单号*:").grid(row=0,sticky=W)
+    Label(window, text="客服号:").grid(row=1,sticky=W)  
+    Label(window, text="地址(格式:St,postcode)*:").grid(row=2,sticky=W)
+    Label(window, text="姓名:").grid(row=3,sticky=W)
+    Label(window, text="电话*:").grid(row=4,sticky=W)
+    Label(window, text="蜡烛:").grid(row=5,sticky=W)
+    Label(window, text="餐具:").grid(row=6,sticky=W)
+    Label(window, text="写字").grid(row=7,sticky=W)    
+    Label(window, text="价格定金:").grid(row=8,sticky=W)   
+    Label(window, text="订单状态*:").grid(row=9,sticky=W)
+    Label(window, text="订单派送方式:").grid(row=10,sticky=W)
+    Label(window, text="（如自取）自取日期:").grid(row=11,sticky=W)
+    Label(window, text="（如自取）自取时间:").grid(row=12,sticky=W)
+    Label(window, text="备注:").grid(row=13,sticky=W)
+    Label(window, text="蛋糕信息*:").grid(row=14,sticky=W)
+    list_box_cakes,row_num = build_list_box_cake(window,15)
     return list_box_cakes,(row_num+2)
 
 # add order window
@@ -1076,7 +1127,7 @@ def window_add_order():
     if not window_open:
         #window_open = True
         window = Toplevel(master)
-        window.title("Add an order")
+        window.title("添加订单")
 
         cakes = []
         # user inputs
@@ -1576,33 +1627,47 @@ def cake_setting_window(root):
 
     # listbox of size
     size_listbox = Multicolumn_Listbox(window,
-                        ['Size'],
+                        ['尺寸'],
                         stripped_rows = ("white","#f2f2f2"),
                         cell_anchor="center",
                         height=5)
 
     size_listbox.update(to_listbox(tmp_size))
     size_listbox.interior.grid(row = 0,column =0)
-    Button(window,text ="add",command = lambda: cake_setting_add_window(\
-                        window,"size",size_listbox,tmp_size)).grid(row = 1,column =0,sticky=W)
-    Button(window,text ="delele",command = lambda: cake_setting_delete(\
+    Button(window,text ="添加",command = lambda: cake_setting_add_window(\
+                        window,"尺寸",size_listbox,tmp_size)).grid(row = 1,column =0,sticky=W)
+    Button(window,text ="删除",command = lambda: cake_setting_delete(\
                         size_listbox,tmp_size)).\
                         grid(row = 1,column =0,sticky=E)
 
     # listbox of cake type
     type_listbox = Multicolumn_Listbox(window,
-                        ['Cake Type'],
+                        ['款式'],
+                        stripped_rows = ("white","#f2f2f2"),
+                        cell_anchor="center",
+                        height=5)
+    type_listbox.update(to_listbox(tmp_type))
+    type_listbox.interior.grid(row = 0,column =1)
+    Button(window,text ="添加",command = lambda: cake_setting_add_window(\
+                        window,"款式",type_listbox,tmp_type)).grid(row = 1,column =1,sticky=W)
+    Button(window,text ="删除",command = lambda: cake_setting_delete(\
+                        type_listbox,tmp_type)).grid(row = 1,column =1,sticky=E)
+    Button(window,text ="确认",command = \
+                        lambda: cake_setting_confirm(window,tmp_size,tmp_type)).grid(row = 2,columnspan =3,pady =4)
+                        
+    # listbox of cake inner
+    type_listbox = Multicolumn_Listbox(window,
+                        ['内芯'],
                         stripped_rows = ("white","#f2f2f2"),
                         cell_anchor="center",
                         height=5)
     type_listbox.update(to_listbox(tmp_type))
     type_listbox.interior.grid(row = 0,column =1)
     Button(window,text ="add",command = lambda: cake_setting_add_window(\
-                        window,"type",type_listbox,tmp_type)).grid(row = 1,column =1,sticky=W)
+                        window,"内芯",type_listbox,tmp_type)).grid(row = 1,column =2,sticky=W)
     Button(window,text ="delele",command = lambda: cake_setting_delete(\
-                        type_listbox,tmp_type)).grid(row = 1,column =1,sticky=E)
-    Button(window,text ="confirm",command = \
-                        lambda: cake_setting_confirm(window,tmp_size,tmp_type)).grid(row = 2,columnspan =2,pady =4)
+                        type_listbox,tmp_type)).grid(row = 1,column =2,sticky=E)
+    
     center(window)
 
 # confirm all the changes
@@ -1623,12 +1688,12 @@ def cake_setting_confirm(window,size,types):
 # add size/type
 def cake_setting_add_window(window,indicator,listbox,list1):
     cake_setting_add_window = Toplevel(window)
-    cake_setting_add_window.title("Add")
-    Label(cake_setting_add_window,text = "new {}:".format(indicator)).\
+    cake_setting_add_window.title("添加")
+    Label(cake_setting_add_window,text = "新{}:".format(indicator)).\
                      grid(sticky =W,row=0,column =0,pady = 4)
     entry = Entry(cake_setting_add_window)
     entry.grid(sticky =W,row=0,column =1,pady = 4)
-    Button(cake_setting_add_window,text = "confirm",command = \
+    Button(cake_setting_add_window,text = "确认",command = \
                      lambda :cake_setting_add(indicator,listbox,entry,cake_setting_add_window,list1)).\
                      grid(row=1,columnspan =2,pady = 4)
     center(cake_setting_add_window)
@@ -1636,8 +1701,15 @@ def cake_setting_add_window(window,indicator,listbox,list1):
 # add it to the database
 def cake_setting_add(indicator,listbox,entry,window,list1):
     new_size = entry.get()
+    print "cake_setting_add"
+    print new_size
     list1.append(new_size)
-    listbox.update(to_listbox(list1))
+
+    listbox.insert_row([new_size])
+    last = len(listbox.table_data)-1
+    tmp =  listbox.table_data[last]
+    listbox.delete_row(last)
+    listbox.insert_row(tmp) 
     window.destroy()
 
 # delete size/type

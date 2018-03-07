@@ -1,6 +1,9 @@
+# -*- coding: UTF-8 -*-  
+import sys     
+reload(sys)
+sys.setdefaultencoding('utf-8')
 """ This is a file for the database of orders
     created by Rondo 26/01/2018"""
-
 
 try:
     from Tkinter import *
@@ -32,6 +35,7 @@ file_log = 'file/log.txt'
 
 file_size = 'file/cake_size.csv'
 file_type = 'file/cake_type.csv'
+file_inner = 'file/cake_inner.csv'
 logo = 'file/1.jpg'
 title_size = 20
 cake_attr_num = 4
@@ -52,9 +56,10 @@ index_date = 9
 index_time = 10
 # index for cake
 index_cake_size = 0
-index_cake_type =1
-index_cake_quan = 2
-index_cake_ps = 3
+index_cake_shape =1
+index_cake_inner = 2
+index_cake_type =3
+index_cake_ps = 4
 # index for dispatcher
 index_dis_name = 0
 index_dis_home = 1
@@ -65,20 +70,21 @@ index_dis_ps = 3
 index_city = 0
 index_other = 1
 
-dis = 'dispatch'
-pickup = 'pick up'
+dis = '派送'
+pickup = '自取'
 processing = 'Processing'
 waiting = 'Waiting'
 arrived = 'Arrived'
 making = 'Making'
 start_location = ''
-warning_message1 = ' fields with (*) cant be empty'
-warning_message2 = ' need at least one address to dispatch'
-warning_message3 = ' no generated route yet'
-warning_message4 = ' Error: check address! strictly in the form of \n(street address,postcode)'
-warning_message5 = ' choose at least one dispatcher please'
+warning_message1 = '      (*)栏不得为空     '
+warning_message2 = ' 至少需要一个订单来进行派送'
+warning_message5 = ' 请至少选择一个派送员'
 warning_message5 = ' service not available right now, please try agin later or \nmanually assign orders to dispatchers'
-warning_message7 = ' no orders in '
+warning_message7 = '  地区没有订单      '
+warning_message8 = ' 输入地址的区号有错误，或无法在数据库查找到'
+warning_message9 = ' 输入地址的格式有误，应是（street,postcode）'
+
 
 
 # option menu items
@@ -94,7 +100,7 @@ header_full = ['No', 'Address','Name','Phone','Cakes','State']
 header_today = ['No', 'Address','Name','Mode','Cakes','State']
 header_proc = ['No', 'Address','Name','Phone','Dispatcher','State']
 header_small = ['No', 'Address']
-header_cake = ['Size','CakeType','Quan','Ps']
+header_cake = ['尺寸','形状','内芯','款式','备注']
 header_dispatcher = ['Name','Home Address']
 header_dispatcher_full = ['Name','Home Adderss','Phone','Ps']
 
@@ -362,49 +368,6 @@ class Order(object):
         self.dispatcher = dispatcher
 
 
-""" This is a class for cake with basic functions including
-    print its info and comparison"""
-class Cake(object):
-    """__init__() functions as the class constructor"""
-    def __init__(self,
-                order_number = None,
-                size = None,
-                caketype = None,
-                quan = None,
-                ps_info = 'Empty'):
-        self.order_number = order_number
-        self.size = size
-        self.type = caketype
-        self.quan = quan
-        self.ps_info = ps_info
-
-    def __str__(self):
-            return str(self.__dict__)
-
-    def __eq__(self, other):
-            return self.__dict__ == other.__dict__
-
-# convert a cake class to a list containing nessary info
-def cake_to_list(cake):
-    list = [cake.size,cake.type,cake.quan,cake.ps_info]
-    return list
-
-# convert a list containing nessary info to  a cake class
-def list_to_cake(list_cake):
-    try:
-        newcake = Cake(list_cake[index_cake_size],list_cake[index_cake_type],\
-        list_cake[index_cake_quan],list_cake[index_cake_ps])
-    except IndexError:
-        newcake = Cake(list_cake[index_cake_size],list_cake[index_cake_type],\
-        list_cake[index_cake_quan],'empty')
-
-# convert list of cake objects to a list cake lists
-def cakes_to_lists(cakes):
-    return_list = []
-    for cake in cakes:
-        return_list.append(cake_to_list(cake))
-    return return_list
-
 # convert a list of lists to a list of order classes
 def list_to_class(list_lists):
     new_list = []
@@ -572,6 +535,18 @@ def to_listbox(list1):
         tmp = [string]
         new_list.append(tmp)
     return new_list
+    
+# read cake inner from file
+def read_cake_inner():
+    cake_inner = []
+    f = open(file_inner,'rb')
+    reader = csv.reader(f,delimiter = ',')
+    for row in reader:
+        cake_inner = row
+        break
+    f.close()
+    return cake_inner
+    
 # read cake size from file
 def read_cake_size():
     cake_size = []
