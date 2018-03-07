@@ -354,6 +354,8 @@ def isvalid_ad(address):
     for i in address:
         if i == ',':
             count += 1
+        if i == '，':
+            return 2
     if count != 1:
         return -1
     # postcode is not in the database
@@ -976,13 +978,21 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
         or location.get() == '' or current_cakes == []):
         warning_window(window,warning_message1)
         return False
-    elif isvalid_ad(location.get()) > 0:
+    elif isvalid_ad(location.get()) == 1:
         warning_window(window,warning_message8)
         return False
     elif isvalid_ad(location.get()) < 0:
         warning_window(window,warning_message9)
         return False
+    elif isvalid_ad(location.get()) == 2:
+        warning_window(window,"     地址中不允许含有中文逗号     ")
+        return False
     else:
+        for order1 in db.orders_all:
+            if order1.order_number == order.get():
+                warning_window(master,"     订单号已存在，请重新输入     ")
+                return False
+        
         location_g = location.get()
         new_order = Order(order.get(),agent.get(),location.get(),name.get(),phone.get(),\
                            candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
@@ -1074,9 +1084,9 @@ def pack_order_entry(window,cakes,item):
 
     Button(window, text='添加蛋糕', command= \
             lambda:window_add_cake(window,\
-            list_box_cakes,cakes)).grid(row=14, column=1,sticky=W)
+            list_box_cakes,cakes),width = 8).grid(row=14, column=1,sticky=W)
 
-    Button(window,text= "设置",command = \
+    Button(window,text= "设置",width = 8,command = \
             lambda: cake_setting_window(window)).\
             grid(row=14,column = 1, sticky=E)
 
@@ -1127,7 +1137,7 @@ def window_add_order():
 
         Label(window, text = " （*）不得为空").\
             grid(row=row_num,columnspan = 2,pady = 4)
-        Button(window, text="确认", command= \
+        Button(window, text="确认",width = 8,command= \
                lambda:add_order(order,agent,location,name,phone,\
                                 candle,tableware,writing,price,\
                                 var2,ps_info,window,None,cakes,\
