@@ -500,7 +500,7 @@ def warning_window(master,message):
     window = Toplevel(master)
     window.title("Warning")
     Label(window,text = message).pack()
-    Button(window, text = "ok", command = window.destroy).pack()
+    Button(window, text = "OK", command = window.destroy).pack()
     center(window)
     
 
@@ -522,10 +522,10 @@ def add_cake(size,shape,inner,typee,cake_ps,window,list_box_cakes,cakes):
 
         print "new_cake:"
         print new_cake
-        print "current_cakes(add_cake)"
-        print cakes
         # gobal list storing cakes info to be added or edited
         cakes.append(new_cake)
+        print "current_cakes(add_cake)"
+        print cakes
         
         list_box_cakes.insert_row(new_cake)
         last = len(list_box_cakes.table_data)-1
@@ -576,9 +576,9 @@ def pack_cake_entry(window):
     
     #read size and type from file
     cake_size = read_cake_size()
-    cake_shapes = ["shape1","shape2"]
+    cake_shapes = read_cake_shapes()
     cake_types = read_cake_types()
-    cake_inners = ["inner1","inner2"]
+    cake_inners = read_cake_inner()
 
     var_size = StringVar()
     var_size.set(cake_size[0])
@@ -608,7 +608,7 @@ def pack_cake_entry(window):
 def edit_cake_window(master,list_box_cakes,cakes):
     if list_box_cakes.selected_rows:
         window = Toplevel(master)
-        window.title("Edit a cake")
+        window.title("更改蛋糕信息")
         window.config(width = 300,height = 200)
         center(window)
 
@@ -621,11 +621,11 @@ def edit_cake_window(master,list_box_cakes,cakes):
         var_type.set(edit_cake[index_cake_type])
         cake_ps.insert(0,edit_cake[index_cake_ps])
 
-        Button(window,text = "confirm",command = lambda:edit_cake_info(\
+        Button(window,text = "确认",command = lambda:edit_cake_info(\
             edit_cake,var_size,var_shape,var_inner,var_type,cake_ps,window,list_box_cakes,cakes))\
-            .grid(row=row_num,column = 0, sticky=W,pady = 4)
-        Button(window,text= "cancel",command = window.destroy).\
-            grid(row=row_num,column = 1, sticky=W,pady = 4)
+            .grid(row=row_num,column = 0,pady = 4)
+        Button(window,text= "取消",command = window.destroy).\
+            grid(row=row_num,column = 1,pady = 4)
     else:
         return
 
@@ -714,6 +714,7 @@ def build_list_box_cake(window,row_num):
     list_box_cakes.configure_column(1,width = 50)
     list_box_cakes.configure_column(2,width = 50)
     list_box_cakes.configure_column(3,width = 70)
+    list_box_cakes.configure_column(4,width = 120)
     list_box_cakes.interior.grid(row=row_num, column=0,columnspan =2,rowspan = 3)
     list_box_cakes.interior.bind("<Button-2>", do_popup_cake)
     return list_box_cakes,(row_num+3)
@@ -721,12 +722,6 @@ def build_list_box_cake(window,row_num):
 #########################################################################################
 #########################     order   ###################################################
 #########################################################################################
-# delete order from all lists by emptying all lists
-def delete_order():
-    list_orders.delete(0, END)
-    raw_locations[:] = []
-    locations[:] = []
-
 # get address
 def get_address(na_ad):
     tmp = na_ad.split(',')
@@ -838,7 +833,7 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
         Button(manual_window,text ="add",command =
                       lambda i=i,orders=orders,listboxes=listboxes,order_numbers=order_numbers
                       : manual_add_window(i,orders,listboxes,order_numbers,manual_window)).grid(row=(row_num+3),column=col_num,sticky = W)
-        Button(manual_window,text ="delete",command =
+        Button(manual_window,text ="删除",command =
                       lambda i=i,orders=orders,listboxes=listboxes,order_numbers=order_numbers
                       : manual_delete(i,orders,listboxes,order_numbers)).grid(row=(row_num+3),column=col_num,sticky = E,padx=5)
         Button(manual_window,text ="print file and view route",command =
@@ -972,7 +967,8 @@ def add_all():
     refresh_all()
 
 # add order to the raw list
-def add_order(order,location,name,phone,var2,ps_info,window,dispatcher,current_cakes,
+def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
+              var2,ps_info,window,dispatcher,current_cakes,
               mode,pickup_date,pickup_time):
     global window_open
 
@@ -988,30 +984,16 @@ def add_order(order,location,name,phone,var2,ps_info,window,dispatcher,current_c
         return False
     else:
         location_g = location.get()
-
-        #add location text to a list in prepare for the later usage
-        raw_locations.append(location_g)
-
-        new_order =  Order(order.get(),location.get(),name.get(),phone.get(),\
-                           current_cakes,var2.get(),ps_info.get())
-        if dispatcher:
-             new_order.set_dispatcher(dispatcher)
-
-        if mode.get() != dis:
-            new_order.mode = mode.get()
-
-        if pickup_date:
-            new_order.pickup_date = pickup_date.get()
-
-        if pickup_time:
-            new_order.pickup_time = pickup_time.get()
-
+        new_order = Order(order.get(),agent.get(),location.get(),name.get(),phone.get(),\
+                           candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
+                           mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),current_cakes,\
+                           dispatcher)
+        print new_order
         db.add(new_order)
 
         #update listbox after adding new order
         refresh_all()
-        print("Order number: %s\nLocation: %s" % (new_order.order_number,
-                                                  new_order.address))
+
         window.destroy()
         # clear this global list of cakes infro after adding/editing
         # action done
@@ -1099,7 +1081,7 @@ def pack_order_entry(window,cakes,item):
             grid(row=14,column = 1, sticky=E)
 
     row_num = (row_num)
-    return order,location,name,phone,var2,ps_info,row_num,list_box_cakes,var_mode,pickup_date,pickup_time
+    return order,agent,location,name,phone,candle,tableware,writing,price,var2,ps_info,var_mode,pickup_date,pickup_time,row_num,list_box_cakes
 
 # pack all text labels
 def pack_order_label(window):
@@ -1110,7 +1092,7 @@ def pack_order_label(window):
     Label(window, text="电话*:").grid(row=4,sticky=W)
     Label(window, text="蜡烛:").grid(row=5,sticky=W)
     Label(window, text="餐具:").grid(row=6,sticky=W)
-    Label(window, text="写字").grid(row=7,sticky=W)    
+    Label(window, text="写字:").grid(row=7,sticky=W)    
     Label(window, text="价格定金:").grid(row=8,sticky=W)   
     Label(window, text="订单状态*:").grid(row=9,sticky=W)
     Label(window, text="订单派送方式:").grid(row=10,sticky=W)
@@ -1131,22 +1113,23 @@ def window_add_order():
 
         cakes = []
         # user inputs
-        order,location,name,phone,var2,ps_info,row_num,list_box_cakes,\
-            mode,pickup_date,pickup_time =\
-            pack_order_entry(window,cakes,None)
+        order,agent,location,name,phone,candle,tableware,\
+        writing,price,var2,ps_info,mode,pickup_date,\
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,cakes,None)
 
         # popup Menu for cake
         popup_cake = Menu(window,tearoff = 0)
-        popup_cake.add_command(label="Display Info(Edit)",command = \
+        popup_cake.add_command(label="显示信息",command = \
             lambda:edit_cake_window(window,list_box_cakes,cakes))
-        popup_cake.add_command(label="Delete",command = \
+        popup_cake.add_command(label="删除",command = \
             lambda:delete_cake_window(window,list_box_cakes,cakes))
         popup_cake.add_separator()
 
-        Label(window, text = " fields with (*) cant be empty").\
+        Label(window, text = " （*）不得为空").\
             grid(row=row_num,columnspan = 2,pady = 4)
-        Button(window, text='Add', command= \
-               lambda:add_order(order,location,name,phone,\
+        Button(window, text="确认", command= \
+               lambda:add_order(order,agent,location,name,phone,\
+                                candle,tableware,writing,price,\
                                 var2,ps_info,window,None,cakes,\
                                 mode,pickup_date,pickup_time)).\
                grid(row=(row_num+1), column=0,columnspan = 2, pady=4)
@@ -1171,19 +1154,19 @@ def edit_info_his(master):
 
         # popup Menu for cake
         popup_cake = Menu(window,tearoff = 0)
-        popup_cake.add_command(label="Display Info(Edit)",command = \
+        popup_cake.add_command(label="显示信息",command = \
             lambda:edit_cake_window(window,list_box_cakes,current_cakes))
-        popup_cake.add_command(label="Delete",command = \
+        popup_cake.add_command(label="删除",command = \
             lambda:delete_cake_window(window,list_box_cakes,current_cakes))
         popup_cake.add_separator()
 
         # user inputs
-        order,location,name,phone,var2,ps_info,row_num,list_box_cakes,\
-             mode,pickup_date,pickup_time = \
-             pack_order_entry(window,current_cakes,item)
+        order,agent,location,name,phone,candle,tableware,\
+        writing,price,var2,ps_info,mode,pickup_date,\
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item)
 
         list_box_cakes.update(current_cakes)
-        Label(window,text="Dispatcher:").grid(row=row_num,column=0,sticky=W, pady=4)
+        Label(window,text="配送员:").grid(row=row_num,column=0,sticky=W, pady=4)
         entry_dis = Entry(window)
         entry_dis.grid(row=row_num,column=1,sticky=W, pady=4)
         row_num += 1
@@ -1191,11 +1174,12 @@ def edit_info_his(master):
         print item.dispatcher
         if item.dispatcher:
             entry_dis.insert(0,item.dispatcher)
-        Button(window, text='Confirm', command= \
-               lambda: edit_order(order,location,name,phone,\
-                                   var2,ps_info,item,window,current_cakes\
-                                   ,mode,pickup_date,pickup_time,entry_dis.get())).\
-           grid(row=row_num,sticky=W, pady=4)
+        Button(window, text='确认', command= \
+               lambda:  edit_order(order,agent,location,name,phone,\
+                                   candle,tableware,writing,price,
+                                   var2,ps_info,item,window,current_cakes,\
+                                   mode,pickup_date,pickup_time,entry_dis.get())).\
+           grid(row=row_num, columnspan =2,pady=4)
         center(window)
     else:
         return
@@ -1216,63 +1200,46 @@ def edit_info(master):
 
         # popup Menu for cake
         popup_cake = Menu(window,tearoff = 0)
-        popup_cake.add_command(label="Display Info(Edit)",command = \
+        popup_cake.add_command(label="显示信息",command = \
             lambda:edit_cake_window(window,list_box_cakes,current_cakes))
-        popup_cake.add_command(label="Delete",command = \
+        popup_cake.add_command(label="删除",command = \
             lambda:delete_cake_window(window,list_box_cakes,current_cakes))
         popup_cake.add_separator()
 
         # user inputs
-        order,location,name,phone,var2,ps_info,row_num,list_box_cakes,\
-             mode,pickup_date,pickup_time = \
-             pack_order_entry(window,current_cakes,item)
+        order,agent,location,name,phone,candle,tableware,\
+        writing,price,var2,ps_info,mode,pickup_date,\
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item)
 
         list_box_cakes.update(current_cakes)
 
-        Button(window, text='Confirm', command= \
-               lambda: edit_order(order,location,name,phone,\
-                                   var2,ps_info,item,window,current_cakes\
-                                   ,mode,pickup_date,pickup_time,item.dispatcher)).\
-           grid(row=row_num, columnspan=2, pady=4)
+        Button(window, text='确认', command= \
+               lambda: edit_order(order,agent,location,name,phone,\
+                                   candle,tableware,writing,price,
+                                   var2,ps_info,item,window,current_cakes,\
+                                   mode,pickup_date,pickup_time,item.dispatcher)).\
+                                   grid(row=row_num, columnspan=2, pady=4)
         center(window)
     else:
         return
 
 # edit order info
-def edit_order(order,location,name,phone,\
-               var2,ps_info,pre_order,window,cakes,
-               mode,pickup_date,pickup_time,entry_dis):
-    if entry_dis:
-        result = add_order(order,location,name,phone,\
-                    var2,ps_info,window,entry_dis,cakes\
-                    ,mode,pickup_date,pickup_time)
+def edit_order(order,agent,location,name,phone,
+                candle,tableware,writing,price,
+                var2,ps_info,item,window,current_cakes,
+                mode,pickup_date,pickup_time,dis):
+    if dis:
+        result = add_order(order,agent,location,name,phone,candle,\
+                           tableware,writing,price,var2,ps_info,window,\
+                           dis,current_cakes,mode,pickup_date,pickup_time)
     else:
-        result = add_order(order,location,name,phone,\
-                   var2,ps_info,window,None,cakes\
-                   ,mode,pickup_date,pickup_time)
+        result = add_order(order,agent,location,name,phone,candle,\
+                           tableware,writing,price,var2,ps_info,window,\
+                           None,current_cakes,mode,pickup_date,pickup_time)
     if result:
-        delete_order2(pre_order)
+        delete_order2(item)
         
     refresh_all()
-
-# window used for user to confirm deletion of an order
-def delete_window(master):
-    item = get_selected_order()
-    print item
-    if item:
-        check_select_state()
-        window = Toplevel(master)
-        window.title("Delete order")
-        window.config(width = 400,height = 80)
-        center(window)
-        Label(window, text="Do you really want to delete order number " + \
-              item.order_number).pack()
-        Button(window, text='Confirm', command= lambda:delete_order(item,window)).pack()
-
-        Button(window, text='Cancel', command= \
-            window.destroy).pack()
-    else:
-        return
         
 # multiple delete
 def delete_selected(listbox):
@@ -1290,15 +1257,15 @@ def delete_selected(listbox):
         
         # notify user to make sure he/she confirm the deletion
         window = Toplevel(master)
-        window.title("Delete order")
-        window.config(width = 400,height = 80)
-        center(window)
-        Label(window, text="Do you really want to delete order number " + \
-              ",".join(list_order_nums)).pack()
-        Button(window, text='Confirm', command= lambda:delete_order3(list_orders,window)).pack()
+        window.title("删除订单")
+        Label(window, text="         删除订单号:" + \
+              ",".join(list_order_nums)+"         ").pack()
+        Button(window, text='确定', command= lambda:delete_order3(list_orders,window)).pack()
 
-        Button(window, text='Cancel', command= \
+        Button(window, text='取消', command= \
             window.destroy).pack() 
+        center(window)
+        
         
     else:
         return
@@ -1319,7 +1286,56 @@ def delete_order3(orders,window):
         db.delete(order)
     refresh_all()
     window.destroy()
+    
+# search window
+def search_window():
+    window = Toplevel(master)
+    window.title("查找订单")
+    
+    entry = Entry(window)
+    entry.grid(row=0,column = 0)
+    Button(window,text ="查找",width = 12,command = lambda:search2(entry)).grid(row=0,column = 1,padx = 5)
+    Button(window,text ="关闭",width = 8,command = window.destroy).grid(row=1,columnspan=2,pady=3)
+    
 
+# search an order by any attribute
+def search2(entry):
+    listbox = None
+    deselect_all()
+    inputt = entry.get()
+    tabtitle = tabControl.tab(tabControl.select(), "text")
+    print tabtitle
+    print inputt
+    if tabtitle == "处理订单":
+        listbox = today_list_box_all
+        orders = db.orders_today
+    elif tabtitle == "历史订单":
+        listbox = history_listbox
+        orders = db.orders_history
+    elif tabtitle == "配送订单":
+        listbox = proc_left_box
+        orders = db.orders_leftbox
+    if inputt:
+        for item in orders:
+            print item
+            for sub_item in class_to_order(item):
+                print "sub_item"
+                print sub_item
+                try:
+                    if sub_item and (inputt.lower() == sub_item.lower()):
+                        print "found " + inputt
+                        index = get_index(listbox.row_data,item)
+                        listbox.select_row(index)
+                # in this case, it should be list of cakes
+                except AttributeError:
+                    for cake in sub_item:
+                        for el in cake:
+                            if inputt.lower() == el.lower():
+                                print "found " + inputt
+                                index = get_index(listbox.row_data,item)
+                                listbox.select_row(index)        
+    
+    
 # search order inside today list box
 def search_listbox_today(input):
     search(input,today_list_box_all,db.orders_today)
@@ -1334,24 +1350,26 @@ def search(input,listbox,orders):
     print "input"
     print input
     listbox.deselect_all()
-    for item in orders:
-        print item
-        for sub_item in class_to_order(item):
-            print "sub_item"
-            print sub_item
-            try:
-                if sub_item and (input.lower() == sub_item.lower()):
-                    print "found " + input
-                    index = get_index(listbox.row_data,item)
-                    listbox.select_row(index)
-            # in this case, it should be list of cakes
-            except AttributeError:
-                for cake in sub_item:
-                    for el in cake:
-                        if input.lower() == el.lower():
-                            print "found " + input
-                            index = get_index(listbox.row_data,item)
-                            listbox.select_row(index)
+    if input:
+        for item in orders:
+            print item
+            for sub_item in class_to_order(item):
+                print "sub_item"
+                print sub_item
+                try:
+                    if sub_item and (input.lower() == sub_item.lower()):
+                        print "found " + input
+                        index = get_index(listbox.row_data,item)
+                        listbox.select_row(index)
+                # in this case, it should be list of cakes
+                except AttributeError:
+                    for cake in sub_item:
+                        for el in cake:
+                            if input.lower() == el.lower():
+                                print "found " + input
+                                index = get_index(listbox.row_data,item)
+                                listbox.select_row(index)
+   
 
 
 # deselect all selected items in processing tab
@@ -1408,12 +1426,23 @@ def get_selected_order():
 
 #refresh all listboxes
 def refresh_all():
+    deselect_all()
     update_dis_listbox()
     today_list_box_processing.update(class_to_list_without_info2(db.orders_proc))
     today_list_box_all.update(o2lists_mode(db.orders_today))
     proc_left_box.update(ctl_num_address(db.orders_leftbox))
     proc_right_box.update(ctl_num_address(db.orders_rightbox))
     history_listbox.update(class_to_list_without_info(db.orders_history))
+
+# deselect all selected items in all listboxes    
+def deselect_all():
+    proc_left_box_dis.deselect_all()
+    today_list_box_processing.deselect_all()
+    today_list_box_all.deselect_all()
+    proc_left_box.deselect_all()
+    proc_right_box.deselect_all()
+    history_listbox.deselect_all()
+    
 
 #########################################################################################
 #########################     menu   ####################################################
@@ -1427,7 +1456,7 @@ def do_popup_his(event):
         # make sure to release the grab (Tk 8.0a1 only)
         popup_his.grab_release()
 
-# bind popup menu to today/proc_left listbox
+# bind popup menu to today listbox
 def do_popup(event):
     # display the popup menu
     try:
@@ -1435,7 +1464,16 @@ def do_popup(event):
     finally:
         # make sure to release the grab (Tk 8.0a1 only)
         popup.grab_release()
-
+        
+# bind popup menu to proc_left listbox
+def do_popup_left(event):
+    # display the popup menu
+    try:
+        popup_left.tk_popup(event.x_root, event.y_root)
+    finally:
+        # make sure to release the grab (Tk 8.0a1 only)
+        popup_left.grab_release()
+    
 # bind popup menu to cake listbox
 def do_popup_cake(event):
     # display the popup menu
@@ -1457,15 +1495,16 @@ def do_popup_dis(event):
 # make sure only items of exact one listbox can be selected at one time
 def check_select_state():
     tabtitle = tabControl.tab(tabControl.select(), "text")
-    if tabtitle == "Today":
+    if tabtitle == "处理订单":
         deselect_proc()
         deselect_his()
-    elif tabtitle == "History":
+    elif tabtitle == "历史订单":
         deselect_proc()
         deselect_today()
-    elif tabtitle == "Processing":
+    elif tabtitle == "配送订单":
         deselect_his()
         deselect_today()
+  
 
 def do_deselect(event):
     print("Mouse position: (%s %s)" % (event.x, event.y))
@@ -1475,10 +1514,10 @@ def do_deselect(event):
 #########################################################################################
 # pack all text labels for dispatcher window
 def pack_dis_label(window):
-    Label(window, text="Name*:").grid(row=0,sticky=W,pady = 4)
-    Label(window, text="Home(St+postcode)*:").grid(row=1,sticky=W,pady = 4)
-    Label(window, text="Phone*::").grid(row=2,sticky=W,pady = 4)
-    Label(window, text="Ps:").grid(row=3,sticky=W,pady = 4)
+    Label(window, text="姓名*:").grid(row=0,sticky=W,pady = 4)
+    Label(window, text="地址(St+postcode)*:").grid(row=1,sticky=W,pady = 4)
+    Label(window, text="电话*::").grid(row=2,sticky=W,pady = 4)
+    Label(window, text="备注:").grid(row=3,sticky=W,pady = 4)
 
 # arrange all entries including text lables for windows
 # main use is to avoid duplicate codes
@@ -1499,16 +1538,16 @@ def pack_dis_entry(window):
 # add dispatchers window
 def add_dispatchers_window(master):
     window = Toplevel(master)
-    window.title("add dispatchers")
+    window.title("添加配送员")
     window.config(width = 350,height = 185)
     center(window)
 
     name,home,phone,ps_info,row_num = pack_dis_entry(window)
 
-    Button(window,text = "confirm",command = lambda:add_dispatcher(\
+    Button(window,text = "确认",width = 8,command = lambda:add_dispatcher(\
         name,home,phone,ps_info,window))\
         .grid(row=row_num,column = 0, sticky=W,pady = 4)
-    Button(window,text= "cancel",command = window.destroy).\
+    Button(window,text= "取消",width = 8,command = window.destroy).\
         grid(row=row_num,column = 1, sticky=W,pady = 4)
 
 # add dispatcher to the database
@@ -1531,7 +1570,7 @@ def edit_info_dis(master):
         print dis
         print dis[0]
         window = Toplevel(master)
-        window.title("edit")
+        window.title("修改派送员信息")
         window.config(width = 350,height = 185)
         center(window)
 
@@ -1541,10 +1580,10 @@ def edit_info_dis(master):
         phone.insert(0,dis[index_dis_phone])
         ps_info.insert(0,dis[index_dis_ps])
 
-        Button(window,text = "confirm",command = lambda:edit_dispatcher(\
+        Button(window,text = "确认",width = 8,command = lambda:edit_dispatcher(\
             name,home,phone,ps_info,window,dis))\
             .grid(row=row_num,column = 0, sticky=W,pady = 4)
-        Button(window,text= "cancel",command = window.destroy).\
+        Button(window,text= "取消",width = 8,command = window.destroy).\
             grid(row=row_num,column = 1, sticky=W,pady = 4)
     else:
         return
@@ -1621,9 +1660,11 @@ def build_scrollbar(container):
 #  setting window to modify the option of cake size, cake type etc.
 def cake_setting_window(root):
     window = Toplevel(root)
-    window.title("Setting")
+    window.title("设置")
     tmp_size = read_cake_size()
     tmp_type = read_cake_types()
+    tmp_inner = read_cake_inner()
+    tmp_shapes = read_cake_shapes()
 
     # listbox of size
     size_listbox = Multicolumn_Listbox(window,
@@ -1634,9 +1675,9 @@ def cake_setting_window(root):
 
     size_listbox.update(to_listbox(tmp_size))
     size_listbox.interior.grid(row = 0,column =0)
-    Button(window,text ="添加",command = lambda: cake_setting_add_window(\
+    Button(window,text ="添加",width = 8,command = lambda: cake_setting_add_window(\
                         window,"尺寸",size_listbox,tmp_size)).grid(row = 1,column =0,sticky=W)
-    Button(window,text ="删除",command = lambda: cake_setting_delete(\
+    Button(window,text ="删除",width = 8,command = lambda: cake_setting_delete(\
                         size_listbox,tmp_size)).\
                         grid(row = 1,column =0,sticky=E)
 
@@ -1648,30 +1689,43 @@ def cake_setting_window(root):
                         height=5)
     type_listbox.update(to_listbox(tmp_type))
     type_listbox.interior.grid(row = 0,column =1)
-    Button(window,text ="添加",command = lambda: cake_setting_add_window(\
+    Button(window,text ="添加",width = 8,command = lambda: cake_setting_add_window(\
                         window,"款式",type_listbox,tmp_type)).grid(row = 1,column =1,sticky=W)
-    Button(window,text ="删除",command = lambda: cake_setting_delete(\
+    Button(window,text ="删除",width = 8,command = lambda: cake_setting_delete(\
                         type_listbox,tmp_type)).grid(row = 1,column =1,sticky=E)
-    Button(window,text ="确认",command = \
-                        lambda: cake_setting_confirm(window,tmp_size,tmp_type)).grid(row = 2,columnspan =3,pady =4)
                         
     # listbox of cake inner
-    type_listbox = Multicolumn_Listbox(window,
+    inner_listbox = Multicolumn_Listbox(window,
                         ['内芯'],
                         stripped_rows = ("white","#f2f2f2"),
                         cell_anchor="center",
                         height=5)
-    type_listbox.update(to_listbox(tmp_type))
-    type_listbox.interior.grid(row = 0,column =1)
-    Button(window,text ="add",command = lambda: cake_setting_add_window(\
-                        window,"内芯",type_listbox,tmp_type)).grid(row = 1,column =2,sticky=W)
-    Button(window,text ="delele",command = lambda: cake_setting_delete(\
-                        type_listbox,tmp_type)).grid(row = 1,column =2,sticky=E)
+    inner_listbox.update(to_listbox(tmp_inner))
+    inner_listbox.interior.grid(row = 0,column =2)
+    Button(window,text ="添加",width = 8,command = lambda: cake_setting_add_window(\
+                        window,"内芯",inner_listbox,tmp_inner)).grid(row = 1,column =2,sticky=W)
+    Button(window,text ="删除",width = 8,command = lambda: cake_setting_delete(\
+                        inner_listbox,tmp_inner)).grid(row = 1,column =2,sticky=E)
+                        
+    # listbox of cake inner
+    shapes_listbox = Multicolumn_Listbox(window,
+                        ['形状'],
+                        stripped_rows = ("white","#f2f2f2"),
+                        cell_anchor="center",
+                        height=5)
+    shapes_listbox.update(to_listbox(tmp_shapes))
+    shapes_listbox.interior.grid(row = 0,column =3)
+    Button(window,text ="添加",width = 8,command = lambda: cake_setting_add_window(\
+                        window,"内芯",shapes_listbox,tmp_shapes)).grid(row = 1,column =3,sticky=W)
+    Button(window,text ="删除",width = 8,command = lambda: cake_setting_delete(\
+                        shapes_listbox,tmp_shapes)).grid(row = 1,column =3,sticky=E)
+    Button(window,text ="确认",width = 8,command = \
+                        lambda: cake_setting_confirm(window,tmp_size,tmp_type,tmp_inner,tmp_shapes)).grid(row = 2,columnspan =4,pady =4)
     
     center(window)
 
 # confirm all the changes
-def cake_setting_confirm(window,size,types):
+def cake_setting_confirm(window,size,types,inner,shapes):
      f = open(file_size,'wb')
      f.truncate()
      writer = csv.writer(f,delimiter = ',')
@@ -1684,6 +1738,18 @@ def cake_setting_confirm(window,size,types):
      writer.writerow(types)
      f.close()
 
+     f = open(file_inner,'wb')
+     f.truncate()
+     writer = csv.writer(f,delimiter = ',')
+     writer.writerow(inner)
+     f.close()
+     
+     f = open(file_shapes,'wb')
+     f.truncate()
+     writer = csv.writer(f,delimiter = ',')
+     writer.writerow(shapes)
+     f.close()
+     
      window.destroy()
 # add size/type
 def cake_setting_add_window(window,indicator,listbox,list1):
@@ -1715,14 +1781,15 @@ def cake_setting_add(indicator,listbox,entry,window,list1):
 # delete size/type
 def cake_setting_delete(listbox,list1):
     if listbox.selected_rows:
-        selected = listbox.selected_rows[0]
-        print selected[0]
+        print listbox.selected_rows
         print list1
-        try:
-            list1.remove(str(selected[0]))
-        except UnicodeEncodeError:
-            list1.remove(selected[0])
-
+        for selected in listbox.selected_rows:
+            try:
+                list1.remove(str(selected[0]))
+            except UnicodeEncodeError:
+                list1.remove(selected[0])
+        print list1
+        
         listbox.update(to_listbox(list1))
     else:
         return
@@ -1730,7 +1797,7 @@ def cake_setting_delete(listbox,list1):
 # about window
 def about():
     window = Toplevel(master)
-    window.title("About")
+    window.title("关于")
     image = Image.open(logo)
     image = image.resize((200, 200), Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
@@ -1743,6 +1810,17 @@ def about():
 def open_web():
     webbrowser.open("http://happyhackers.com.au")
 
+# move all selected items to required state
+def move2state(listbox,state):
+    if listbox.selected_rows:
+        for line in listbox.selected_rows:
+            for order in db.orders_all:
+                print int(line[0])
+                print int(order.order_number)
+                if int(line[0]) == int(order.order_number):
+                    order.state = state
+    db.update()
+    refresh_all() 
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
@@ -1762,7 +1840,6 @@ if __name__ == "__main__":
 #     scrollbar.pack(side=BOTTOM, fill=X)
 
     db = []                              # orders database
-    raw_locations = []                   # list of locations from user input
     locations = []                       # list of locations from googlemaps api
     orders = {}                          # dictionary of ({id:info})
     infos = []                           # info of an order(ps_info)
@@ -1778,19 +1855,19 @@ if __name__ == "__main__":
     #tab for 'Today','History','Processing'
     tab_today_container =Frame(tabControl,relief=GROOVE,width=50,height=100,bd=0)
     tab_today_container.place(x=10,y=10)
-    tabControl.add(tab_today_container, text='Today')
+    tabControl.add(tab_today_container, text='处理订单')
 
     tab_history_container =Frame(tabControl,relief=GROOVE,width=50,height=100,bd=0)
     tab_history_container.place(x=10,y=10)
-    tabControl.add(tab_history_container, text='History')
+    tabControl.add(tab_history_container, text='历史订单')
 
     tab_proc_container =Frame(tabControl,relief=GROOVE,width=50,height=100,bd=0)
     tab_proc_container.place(x=10,y=10)
-    tabControl.add(tab_proc_container, text='Processing')
+    tabControl.add(tab_proc_container, text='派送订单')
 
     tab_dis_container =Frame(tabControl,relief=GROOVE,width=50,height=100,bd=0)
     tab_dis_container.place(x=10,y=10)
-    tabControl.add(tab_dis_container, text ='Dispatcher')
+    tabControl.add(tab_dis_container, text ='配送员')
 
     # build x scrollbar and y scrollbar for each tab
     # if statement to speed up the loading when switching tabs
@@ -1809,53 +1886,79 @@ if __name__ == "__main__":
 
     # popup Menu
     popup = Menu(master,tearoff = 0)
-    popup.add_command(label="Display Info(Edit)",command = lambda:edit_info(master))
-    popup.add_command(label="Delete",command = lambda:delete_window(master))
+    popup.add_command(label="显示信息",command = lambda:edit_info(master))
+    popup.add_command(label="删除",command = lambda:delete_selected(today_list_box_all))
+    popup.add_command(label="移到历史",command = lambda:move2state(today_list_box_all,arrived))
+    popup.add_command(label="改成（正在制作中）",command = lambda:move2state(today_list_box_all,making))
+    popup.add_command(label="改成（等待被派送）",command = lambda:move2state(today_list_box_all,waiting))
+    popup.add_command(label="改成（正在派送）",command = lambda:move2state(today_list_box_all,processing))
+    popup.add_command(label="刷新",command = lambda:refresh_all())
+    
     popup.add_separator()
+    
+    # popup Menu for left listbox of processing tab
+    popup_left = Menu(master,tearoff = 0)
+    popup_left.add_command(label="显示信息",command = lambda:edit_info(master))
+    popup_left.add_command(label="删除",command = lambda:delete_selected(proc_left_box))
+    popup_left.add_command(label="移到历史",command = lambda:move2state(proc_left_box,arrived))
+    popup_left.add_command(label="改成（正在制作中）",command = lambda:move2state(proc_left_box,making))
+    popup_left.add_command(label="改成（等待被派送）",command = lambda:move2state(proc_left_box,waiting))
+    popup_left.add_command(label="改成（正在派送）",command = lambda:move2state(proc_left_box,processing))
+    popup_left.add_command(label="刷新",command = lambda:refresh_all())
+    popup_left.add_separator()
 
     # popup Menu for dispatcher
     popup_dis = Menu(tab_proc,tearoff = 0)
-    popup_dis.add_command(label="Display Info(Edit)",command = lambda:edit_info_dis(master))
-    popup_dis.add_command(label="Delete",command = lambda:delete_window_dis())
+    popup_dis.add_command(label="显示信息",command = lambda:edit_info_dis(master))
+    popup_dis.add_command(label="删除",command = lambda:delete_window_dis())
+    popup_dis.add_command(label="刷新",command = lambda:refresh_all())
     popup_dis.add_separator()
 
     popup_his = Menu(master,tearoff = 0)
-    popup_his.add_command(label="Display Info(Edit)",command = lambda:edit_info_his(master))
-    popup_his.add_command(label="Delete",command = lambda:delete_window(master))
+    popup_his.add_command(label="显示信息",command = lambda:edit_info_his(master))
+    popup_his.add_command(label="删除",command = lambda:delete_selected(history_listbox))
+    popup_his.add_command(label="改成（正在制作中）",command = lambda:move2state(history_listbox,making))
+    popup_his.add_command(label="改成（等待被派送）",command = lambda:move2state(history_listbox,waiting))
+    popup_his.add_command(label="改成（正在派送）",command = lambda:move2state(history_listbox,processing))
+    popup_his.add_command(label="刷新",command = lambda:refresh_all())
     popup_his.add_separator()
 
     # menu for app about
     menubar = Menu(master)
     # create a pulldown menu, and add it to the menu bar
     filemenu = Menu(menubar, tearoff=0)
-    filemenu.add_command(label="About",command=about)
-    filemenu.add_command(label= "View website",command=open_web)
+    filemenu.add_command(label="关于",command=about)
+    filemenu.add_command(label= "我们的官网",command=open_web)
     filemenu.add_separator()
-    filemenu.add_command(label="Exit", command=master.quit)
+    filemenu.add_command(label="退出", command=master.quit)
     menubar.add_cascade(label="App", menu=filemenu)
+    
+    searchmenu = Menu(menubar, tearoff=0)
+    searchmenu.add_command(label="查找",command=search_window)
+    menubar.add_cascade(label="Search", menu=searchmenu)
+    
+
 
     master.config(menu=menubar)
 #########################################TAB1############################################
     # set up ui for 'Today'
     today_search = Entry(tab_today)
-    today_add_order = Button(tab_today, text = 'add order',command =window_add_order)
-    today_button_search = Button(tab_today, text = 'search',command =\
+    today_add_order = Button(tab_today, text = '添加订单',command =window_add_order,width = 15)
+    today_button_search = Button(tab_today, text = '查找',command =\
                                  lambda:search_listbox_today(today_search.\
-                                                             get()))
-    today_button_refresh = Button(tab_today, text = 'refresh',command =\
-                                  refresh_all)
+                                                             get()),width = 15)
+    today_button_refresh = Button(tab_today, text = '刷新',command =\
+                                  refresh_all,width = 15)
     today_list_box_all = Multicolumn_Listbox(tab_today, header_today, \
                             stripped_rows = ("white","#f2f2f2"), \
                             cell_anchor="center",height=14,select_mode = EXTENDED)
-    today_button_multiple_delete = Button(tab_today, text = 'delete',command =\
-                                  lambda:delete_selected(today_list_box_all))
     today_list_box_all.configure_column(3,width = 150)
     today_list_box_all.configure_column(4,width = 250)
     today_list_box_processing = Multicolumn_Listbox(\
                             tab_today, header_proc, stripped_rows = \
                             ("white","#f2f2f2"), cell_anchor="center",height=7)
-    today_text_orders_all = Label(tab_today, text="Orders",font=("Calibri",title_size))
-    today_text_processing = Label(tab_today, text="Dispatching Orders (display only, modification not allowed)",font=("Calibri",title_size))
+    today_text_orders_all = Label(tab_today, text="正在处理:",font=("Calibri",title_size))
+    today_text_processing = Label(tab_today, text="正在派送:",font=("Calibri",title_size))
 
 
     # bind listbox to popup menu
@@ -1864,61 +1967,54 @@ if __name__ == "__main__":
 
 
     today_text_orders_all.grid(row=0,column=0,sticky = W,padx =4)
-    today_search.grid(row=0,column=1, sticky = E)
-    today_button_search.grid(row = 0,column =2, sticky = W,padx =4)
-    today_button_refresh.grid(row = 0,column = 4, sticky = E)
+    #today_search.grid(row=0,column=4, sticky = E)
+    #today_button_search.grid(row = 0,column =5, sticky = W)
     #today_button_multiple_delete.grid(row=0,column=0, sticky = E)
-    today_add_order.grid(row=0,column=3, sticky = E)
+    today_add_order.grid(row=0,column=9,sticky = E)
     today_text_processing.grid(row=2,sticky = W,padx = 4)
-    today_list_box_all.interior.grid(row=1,pady=4,columnspan =5)
-    today_list_box_processing.interior.grid(row=3,pady=4,columnspan =5)
+    today_list_box_all.interior.grid(row=1,pady=4,column = 0,columnspan = 10)
+    today_list_box_processing.interior.grid(row=3,pady=4,column = 0,columnspan = 10)
 
 ########################################TAB2#############################################
     # set up ui for 'History'
     # history_date = Entry(tab_history)
     history_search = Entry(tab_history)
 
-    history_button_search = Button(tab_history, text = 'search',command =\
+    history_button_search = Button(tab_history, text = '查找',width = 15,command =\
                                  lambda:search_listbox_history(history_search.get()))
     # history_listbox = Listbox(tab_history, width = 70,height = 20)
     history_listbox = Multicolumn_Listbox(tab_history,header_full, \
                             stripped_rows = ("white","#f2f2f2"), cell_anchor="center"\
                                           ,height=22,select_mode = EXTENDED)
-    history_button_refresh = Button(tab_history, text = 'refresh',command =\
-                                  refresh_all)
 
     history_listbox.interior.bind("<Button-2>", do_popup_his)
     #history_date.grid(row = 0,column = 0,sticky = W)
-    Label(tab_history,text = 'History of all arrived orders',font=("Calibri",title_size)).\
+    Label(tab_history,text = '历史订单',font=("Calibri",title_size)).\
                       grid(row=0,column = 0,sticky = W,padx=4)
-    history_search.grid(row=0,column = 4,sticky = E,padx=4)
-    history_button_refresh.grid(row=0,column =9,pady=4,sticky =E)
-    history_button_search.grid(row = 0,column = 5,sticky=W)
+    #history_search.grid(row=0,column = 4,sticky = E,padx=4)
+    #history_button_search.grid(row = 0,column = 5,sticky=W)
     history_listbox.interior.grid(row=1,column = 0,columnspan = 10,pady=4)
 
 #########################################TAB3############################################
     # set up ui for 'Processing'
-
     #orders ui elements
-    proc_text_name = Label(tab_proc, text ="Dispatch Orders",font = ("Calibri",title_size))
+    proc_text_name = Label(tab_proc, text ="派送订单",font = ("Calibri",title_size))
     proc_entry_num = Entry(tab_proc)
     proc_entry_num_city = Entry(tab_proc)
     proc_entry_num.insert(0,1)
-    proc_ps = Label(tab_proc, text = "*Only waiting orders can be\n assigned to dispatcher")
+    proc_ps = Label(tab_proc, text = "*Only waiting orders can be assigned to dispatcher")
     proc_left_box = Multicolumn_Listbox(tab_proc, header_small, \
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
                                         height=20,select_mode = EXTENDED)
     proc_right_box = Multicolumn_Listbox(tab_proc, header_small, \
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
                                         height=20)
-    proc_add_all_button = Button(tab_proc, text = "add all",command = add_all)
-    proc_add_button = Button(tab_proc, text = ">",command = left_to_right)
-    proc_delete_button = Button(tab_proc, text = "<",command = right_to_left)
+    proc_add_all_button = Button(tab_proc, text = "全选",command = add_all,width=4,padx=2)
+    proc_add_button = Button(tab_proc, text = ">",command = left_to_right,width=4,padx=2)
+    proc_delete_button = Button(tab_proc, text = "<",command = right_to_left,width=4,padx=2)
 
-    proc_clear_button = Button(tab_proc, text = "refresh",\
-                               command = refresh)
-    proc_run_button = Button(tab_proc, text = "run",command = run_order,\
-                             width=8)
+    proc_run_button = Button(tab_proc, text = "运行",command = run_order,\
+                             width=15)
     # proc_manually_button = Button(tab_proc, text = "manually assgin orders",command = manually_run,\
     #                          width=20)
     proc_start_loc = Entry(tab_proc)
@@ -1926,23 +2022,22 @@ if __name__ == "__main__":
     proc_start_loc.insert(0,start_location)
 
     #orders ui elements setup
-    proc_left_box.interior.bind("<Button-2>", do_popup)
+    proc_left_box.interior.bind("<Button-2>", do_popup_left)
     proc_text_name.grid(row = 0, column = 0,sticky=W)
-    Label(tab_proc, text ="Waiting to be dispatched").grid(row=1,column = 0,pady=4,sticky = W)
+    Label(tab_proc, text ="等待被派送:").grid(row=1,column = 0,pady=4,sticky = W)
     proc_left_box.interior.grid(row=2,rowspan = 10,column = 0,columnspan =2)
-    Label(tab_proc, text ="Ready to be dispatched").grid(row=1,column = 3,pady=4,sticky = W)
+    Label(tab_proc, text ="准备被派送:").grid(row=1,column = 3,pady=4,sticky = W)
     proc_right_box.interior.grid(row=2,rowspan = 10,column = 3,columnspan =2)
     proc_add_all_button.grid(row =5, column =2)
     proc_add_button.grid(row =4,column = 2)
     proc_delete_button.grid(row =6,column = 2)
-    proc_clear_button.grid(row =12,column=0,sticky = W)
-    proc_ps.grid(row = 12,column = 1,sticky = W)
+    proc_ps.grid(row = 12,column = 0,sticky = W)
 
-    Label(tab_proc, text = "Start location:").grid(row = 1,column =5,padx = 30,sticky = W)
+    Label(tab_proc, text = "起始地址:").grid(row = 1,column =5,padx = 30,sticky = W)
     proc_start_loc.grid(row=2,column = 5,sticky = W,padx = 30,ipady = 10)
-    Label(tab_proc, text = "Enter number of dispatchers\n(South-east Area):").grid(row = 3,column =5,padx = 30,sticky = W)
+    Label(tab_proc, text = "东南区派送员数量:").grid(row = 3,column =5,padx = 30,sticky = W)
     proc_entry_num.grid(row=4,column = 5,sticky = W,padx = 30)
-    Label(tab_proc, text = "Enter number of dispatchers\n(Melbourne City):").grid(row = 5,column =5,padx = 30,sticky = W)
+    Label(tab_proc, text = "City派送员数量:").grid(row = 5,column =5,padx = 30,sticky = W)
     proc_entry_num_city.grid(row=6,column = 5,sticky = W,padx = 30)
 
     proc_run_button.grid(row = 7,column =5,sticky = W,padx = 30)
@@ -1956,10 +2051,10 @@ if __name__ == "__main__":
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
                                         height=22)
     proc_left_box_dis.interior.bind("<Button-2>", do_popup_dis)
-    proc_add_dispatcher_button = Button(tab_dis, text = "Add new dispatchers",\
-                        command = lambda: add_dispatchers_window(tab_proc))
+    proc_add_dispatcher_button = Button(tab_dis, text = "添加新派送员",\
+                        command = lambda: add_dispatchers_window(tab_proc),width = 15)
 
-    Label(tab_dis, text ="Manage dispathcers",font=("Calibri",title_size))\
+    Label(tab_dis, text ="管理派送员",font=("Calibri",title_size))\
                 .grid(row=0,column = 0,pady=4,sticky = W)
     proc_left_box_dis.interior.grid(row=1,rowspan = 7,column = 0,columnspan =5)
     proc_add_dispatcher_button.grid(row =0,column=4,sticky = E,pady = 4)

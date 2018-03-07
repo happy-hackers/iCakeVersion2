@@ -36,24 +36,30 @@ file_log = 'file/log.txt'
 file_size = 'file/cake_size.csv'
 file_type = 'file/cake_type.csv'
 file_inner = 'file/cake_inner.csv'
+file_shapes = 'file/cake_shapes.csv'
 logo = 'file/1.jpg'
 title_size = 20
 cake_attr_num = 4
 # hint for option menu
-hint1= ">      Choose a dispatcher or not   "
+hint1= ">              请选择一个派送员              "
 # index for order
 index_no = 0
-index_address = 1
-index_pos =2
-index_name = 2
-index_phone = 3
-index_cakes = 4
-index_state = 5
-index_psinfo = 6
-index_dis = 7
-index_mode = 8
-index_date = 9
-index_time = 10
+index_agent = 1
+index_address = 2
+index_name = 3
+index_phone = 4
+index_candle = 5
+index_tableware = 6
+index_writing = 7
+index_price = 8
+index_state = 9
+index_mode = 10
+index_date = 11
+index_time = 12
+index_psinfo = 13
+index_cakes = 14
+index_dis = 15
+
 # index for cake
 index_cake_size = 0
 index_cake_shape =1
@@ -72,10 +78,10 @@ index_other = 1
 
 dis = '派送'
 pickup = '自取'
-processing = 'Processing'
-waiting = 'Waiting'
-arrived = 'Arrived'
-making = 'Making'
+processing = '正在派送'
+waiting = '等待被派送'
+arrived = '订单已签收'
+making = '正在制作中'
 start_location = ''
 warning_message1 = '      (*)栏不得为空     '
 warning_message2 = ' 至少需要一个订单来进行派送'
@@ -91,7 +97,7 @@ warning_message9 = ' 输入地址的格式有误，应是（street,postcode）'
 size  = ['small','medium','big']
 size2  = [['small'],['medium'],['big']]
 cake_types = ['CakeType1','CakeType2','CakeType3','CakeType4']
-states = ['Making','Waiting','Processing','Arrived']
+states = [making,waiting,processing,arrived]
 quantities = ['1','2','3','4','5','other(indicate \nin the ps block)']
 modes = [dis,pickup]
 
@@ -169,8 +175,6 @@ class Orders_database(object):
     postcode = []
     postcode_full = []
     dispatchers = []
-    cake_size = []
-    cake_types = []
     def __init__(self,fp = file_name):
         tmp = []
         postcodee = []
@@ -179,12 +183,14 @@ class Orders_database(object):
         f = open(fp,'rb')
         reader = csv.reader(f, delimiter=',')
         for line in reader:
-            order = Order(line[index_no],line[index_address],\
-                          line[index_name],line[index_phone],\
-                          convert_data_to_list(line[index_cakes]),\
-                          line[index_state])
-            add_info_2order(order,line)
-            
+            print "#line:{}".format(line)
+            print "#cakes:{}".format(line[index_cakes])
+            order = Order(line[index_no],line[index_agent],line[index_address],\
+                          line[index_name],line[index_phone],line[index_candle],\
+                          line[index_tableware],line[index_writing],line[index_price],\
+                          line[index_state],line[index_mode],line[index_date],line[index_time],\
+                          line[index_psinfo],convert_data_to_list(line[index_cakes]),\
+                          line[index_dis])            
             tmp.append(order)
         f.close()
 
@@ -207,20 +213,6 @@ class Orders_database(object):
             self.dispatchers.append(dis)
         f.close()
 
-        f = open(file_type,'rb')
-        reader = csv.reader(f,delimiter = ',')
-        for row in reader:
-            print row
-            self.cake_types = row
-            break
-        f.close()
-
-        f = open(file_size,'rb')
-        reader = csv.reader(f,delimiter = ',')
-        for row in reader:
-            self.cake_size = row
-            break
-        f.close()
 
         self.postcode = postcodee
         self.postcode_full = postcodee_full
@@ -332,26 +324,41 @@ class Orders_database(object):
     print its info and comparison"""
 class Order(object):
     """__init__() functions as the class constructor"""
-    dispatcher = None
-    mode = dis
-    pickup_date = None
-    pickup_time = None
+
     location_id = None
-    def __init__(self, order_number=None, \
-                     address=None, \
-                     name =None, \
-                     phone = None, \
-                     cake_type = None, \
-                     state = None, \
-                     ps_info = 'Empty',
+    def __init__(self, order_number=None, 
+                     agent = None,
+                     address=None, 
+                     name =None, 
+                     phone = None, 
+                     candle = None,
+                     tableware = None,
+                     writing = None,
+                     price = None,
+                     state = None, 
+                     mode = dis,
+                     pickup_date = None,
+                     pickup_time = None,
+                     ps_info = None,
+                     cake_type = None, 
+                     dispatcher = None
                      ):
         self.order_number = order_number
+        self.agent = agent
         self.address = address
         self.name = name
         self.phone = phone
-        self.cake_type = cake_type
+        self.candle = candle
+        self.tableware = tableware
+        self.writing = writing
+        self.price = price
         self.state = state
+        self.mode = mode
+        self.pickup_date = pickup_date
+        self.pickup_time = pickup_time
+        self.cake_type = cake_type
         self.ps_info = ps_info
+        self.dispatcher = dispatcher
 
     def __str__(self):
             return str(self.__dict__)
@@ -367,29 +374,14 @@ class Order(object):
     def set_dispatcher(self,dispatcher):
         self.dispatcher = dispatcher
 
-
-# convert a list of lists to a list of order classes
-def list_to_class(list_lists):
-    new_list = []
-    for item in list_lists:
-        try:
-            new_order_item = Order(item[index_no],item[index_address],\
-                             item[index_name],item[index_phone],\
-                             item[index_cakes],item[index_state],item[index_psinfo])
-        except IndexError:
-            new_order_item = Order(item[index_no],item[index_address],\
-                             item[index_name],item[index_phone],\
-                             item[index_cakes],item[index_state],"EMPTY")
-        new_list.append(new_order_item)
-
-    return new_list
-
 # convert a class to a list of str
 def class_to_order(item):
-    new_list_item = [item.order_number,item.address,\
-                     item.name,item.phone,item.cake_type,\
-                     item.state,item.ps_info,item.dispatcher,item.mode,\
-                     item.pickup_date,item.pickup_time]
+    new_list_item = [item.order_number,item.agent,item.address,\
+                     item.name,item.phone,item.candle,item.tableware,\
+                     item.writing,item.price,item.state,item.mode,\
+                     item.pickup_date,item.pickup_time,item.ps_info,\
+                     item.cake_type,item.dispatcher
+                     ]
 
     return new_list_item
 
@@ -535,7 +527,18 @@ def to_listbox(list1):
         tmp = [string]
         new_list.append(tmp)
     return new_list
-    
+
+# read cake shapes from file
+def read_cake_shapes():
+    cake_shapes = []
+    f = open(file_shapes,'rb')
+    reader = csv.reader(f,delimiter = ',')
+    for row in reader:
+        cake_shapes = row
+        break
+    f.close()
+    return cake_shapes
+        
 # read cake inner from file
 def read_cake_inner():
     cake_inner = []
@@ -569,24 +572,6 @@ def read_cake_types():
         break
     f.close()
     return cake_types
-
-# add info to order
-def add_info_2order(order,line):
-    print line
-    if line[index_psinfo]:
-        order.ps_info = line[index_psinfo]
-    if line[index_dis]:
-        order.dispatcher = line[index_dis]
-    if line[index_mode]:
-        order.mode = line[index_mode]
-    try:
-        order.date = line[index_date]
-    except IndexError:
-        order.date = ""
-    try:
-        order.time = line[index_time]
-    except IndexError:
-        order.time = ""
         
 # write error message to log file
 def write_2_log(message):
