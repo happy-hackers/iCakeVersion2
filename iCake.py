@@ -1037,10 +1037,10 @@ def confirm_date(window,ttkcal,pickup_date):
 
 # arrange all entries including text lables for windows
 # main use is to avoid duplicate codes
-def pack_order_entry(window,cakes,item):
+def pack_order_entry(window,cakes,item,indicator):
     order = Entry(window)                  # text entry for order
     agent = Entry(window)                  # agent entry for order
-    location = AutocompleteEntry(lista, window)    
+    location = AutocompleteEntry(window,indicator)    
     name = Entry(window)                   # name entry for order
     phone = Entry(window)                  # phone number
     candle = Entry(window)                 # candle info
@@ -1136,7 +1136,7 @@ def window_add_order():
         # user inputs
         order,agent,location,name,phone,candle,tableware,\
         writing,price,var2,ps_info,mode,pickup_date,\
-        pickup_time,row_num,list_box_cakes = pack_order_entry(window,cakes,None)
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,cakes,None,True)
 
         # popup Menu for cake
         popup_cake = Menu(window,tearoff = 0)
@@ -1184,7 +1184,7 @@ def edit_info_his(master):
         # user inputs
         order,agent,location,name,phone,candle,tableware,\
         writing,price,var2,ps_info,mode,pickup_date,\
-        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item)
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item,False)
 
         list_box_cakes.update(current_cakes)
         Label(window,text="配送员:").grid(row=row_num,column=0,sticky=W, pady=4)
@@ -1230,7 +1230,7 @@ def edit_info(master):
         # user inputs
         order,agent,location,name,phone,candle,tableware,\
         writing,price,var2,ps_info,mode,pickup_date,\
-        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item)
+        pickup_time,row_num,list_box_cakes = pack_order_entry(window,current_cakes,item,False)
 
         list_box_cakes.update(current_cakes)
 
@@ -1856,11 +1856,11 @@ def move2state(listbox,state):
 # @source: http://code.activestate.com/recipes/578253-an-entry-with-autocompletion-for-the-tkinter-gui/
 # modified by Rondo
 class AutocompleteEntry(Entry):
-    def __init__(self, lista,window):
+    def __init__(self,window,indicator):
         
         Entry.__init__(self,window)
-        self.lista = lista        
         self.window = window
+        self.indicator = indicator
         self.var = self["textvariable"]
         if self.var == '':
             self.var = self["textvariable"] = StringVar()
@@ -1872,12 +1872,17 @@ class AutocompleteEntry(Entry):
         
         self.lb_up = False
 
-    def changed(self, name, index, mode):  
+    def changed(self, name, index, mode):
+        
+        if not self.indicator:
+            self.indicator = True
+            return  
+            
         if self.var.get() == '' or len(self.var.get()) < 8:
             try:
                 self.lb.destroy()
             except:
-                print "AttributeError"              
+                print "AttributeError"
             self.lb_up = False
         else:
             words = self.get_loc(self.var.get())
