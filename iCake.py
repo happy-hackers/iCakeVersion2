@@ -28,11 +28,11 @@ from autocomplete import AutocompleteEntry
 
 lista = ['36 latrob st', 'actions', 'additional', 'also', 'an', 'and', 'angle', 'are', 'as', 'be', 'bind', 'bracket', 'brackets', 'button', 'can', 'cases', 'configure', 'course', 'detail', 'enter', 'event', 'events', 'example', 'field', 'fields', 'for', 'give', 'important', 'in', 'information', 'is', 'it', 'just', 'key', 'keyboard', 'kind', 'leave', 'left', 'like', 'manager', 'many', 'match', 'modifier', 'most', 'of', 'or', 'others', 'out', 'part', 'simplify', 'space', 'specifier', 'specifies', 'string;', 'that', 'the', 'there', 'to', 'type', 'unless', 'use', 'used', 'user', 'various', 'ways', 'we', 'window', 'wish', 'you']
 
-#gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
-# gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
-# gmaps = googlemaps.Client(key="AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s")
-gmaps = googlemaps.Client(key="AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY")
-
+gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
+keys = ["AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY",
+        "AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s",
+        "AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s",
+        "AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q"]
 
 prefix = "https://www.google.com/maps/dir/?api=1"
 origin = "&origin="
@@ -80,7 +80,7 @@ def cal_dis(orders,end_loc):
                            print "directions_result!!"
                            print directions_result
                            if not directions_result:
-                               warning_window(master,"一些地址的内容有错!")
+                               warning_window(master,"     一些地址的内容有错!     ")
                                return
             
                            lists = directions_result[0]['legs']
@@ -1852,16 +1852,105 @@ def move2state(listbox,state):
                     order.state = state
     db.update()
     refresh_all() 
+# autocomplete entry 
+# @source: http://code.activestate.com/recipes/578253-an-entry-with-autocompletion-for-the-tkinter-gui/
+# modified by Rondo
+class AutocompleteEntry(Entry):
+    def __init__(self, lista,window):
+        
+        Entry.__init__(self,window)
+        self.lista = lista        
+        self.window = window
+        self.var = self["textvariable"]
+        if self.var == '':
+            self.var = self["textvariable"] = StringVar()
+
+        self.var.trace('w', self.changed)
+        self.bind("<Right>", self.selection)
+        self.bind("<Up>", self.up)
+        self.bind("<Down>", self.down)
+        
+        self.lb_up = False
+
+    def changed(self, name, index, mode):  
+        if self.var.get() == '' or len(self.var.get()) < 8:
+            try:
+                self.lb.destroy()
+            except:
+                print "AttributeError"              
+            self.lb_up = False
+        else:
+            words = self.get_loc(self.var.get())
+            if words:            
+                if not self.lb_up:
+                    self.lb = Listbox(self.window)
+                    self.lb.config(width=0)
+                    self.lb.bind("<Double-Button-1>", self.selection)
+                    self.lb.bind("<Right>", self.selection)
+                    self.lb.place(x=(self.winfo_x()-50), y=self.winfo_y()+self.winfo_height())
+                    self.lb_up = True
+                
+                self.lb.delete(0, END)
+                for w in words:
+                    self.lb.insert(END,w)
+            else:
+                if self.lb_up:
+                    self.lb.destroy()
+                    self.lb_up = False
+        
+    def selection(self, event):
+
+        if self.lb_up:
+            self.var.set(self.lb.get(ACTIVE))
+            self.lb.destroy()
+            self.lb_up = False
+            self.icursor(END)
+
+    def up(self, event):
+
+        if self.lb_up:
+            if self.lb.curselection() == ():
+                index = '0'
+            else:
+                index = self.lb.curselection()[0]
+            if index != '0':                
+                self.lb.selection_clear(first=index)
+                index = str(int(index)-1)                
+                self.lb.selection_set(first=index)
+                self.lb.activate(index) 
+
+    def down(self, event):
+
+        if self.lb_up:
+            if self.lb.curselection() == ():
+                index = '0'
+            else:
+                index = self.lb.curselection()[0]
+            if index != END:                        
+                self.lb.selection_clear(first=index)
+                index = str(int(index)+1)        
+                self.lb.selection_set(first=index)
+                self.lb.activate(index) 
+                
+    def get_loc(self,txt):
+        new_loc = []
+        for loc in gmaps.places_autocomplete(input_text = txt):
+            print loc['description']
+            # print str(loc['description'].split(',')[-1])
+#             if str(loc['description'].split(',')[-1]) == 'Australia':
+#                 print loc['description']
+#                 new_loc.append(loc['description'])
+            new_loc.append(loc['description'])
+            
+        #new_loc = loc.remove(loc.split(',')[-1])
+        return new_loc
+        
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 if __name__ == "__main__":
-    f2 = open(file_postcode_full, "rb")
-    reader = csv.reader(f2,delimiter=',')
-    for line in reader:
-        print line
-    f2.close()
+    print gmaps.places_autocomplete(input_text = "135 abeckett s")[0]['description']
     
     # main window setup
     master = Tk()

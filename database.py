@@ -656,8 +656,7 @@ class VerticalScrolledFrame(Frame):
                 # update the inner frame's width to fill the canvas
                 canvas.itemconfigure(interior_id, width=canvas.winfo_width())
         canvas.bind('<Configure>', _configure_canvas)
-
-
+    
 if __name__ == "__main__":
     # for item in c_orders:
 #         print item.print_order()
