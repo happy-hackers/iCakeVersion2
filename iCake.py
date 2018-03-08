@@ -24,7 +24,9 @@ from datetime import datetime
 import googlemaps
 #from kmeans import *
 from PIL import Image, ImageTk
+from autocomplete import AutocompleteEntry
 
+lista = ['36 latrob st', 'actions', 'additional', 'also', 'an', 'and', 'angle', 'are', 'as', 'be', 'bind', 'bracket', 'brackets', 'button', 'can', 'cases', 'configure', 'course', 'detail', 'enter', 'event', 'events', 'example', 'field', 'fields', 'for', 'give', 'important', 'in', 'information', 'is', 'it', 'just', 'key', 'keyboard', 'kind', 'leave', 'left', 'like', 'manager', 'many', 'match', 'modifier', 'most', 'of', 'or', 'others', 'out', 'part', 'simplify', 'space', 'specifier', 'specifies', 'string;', 'that', 'the', 'there', 'to', 'type', 'unless', 'use', 'used', 'user', 'various', 'ways', 'we', 'window', 'wish', 'you']
 
 #gmaps = googlemaps.Client(key="AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q")
 # gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
@@ -47,82 +49,83 @@ popup_cake = None                    # right click menu for cakes windows
 def cal_dis(orders,end_loc):
     if orders:
         try:
-                    locations = to_loc(orders)
-                    print "proc_start_loc.get()"
-                    print proc_start_loc.get()
-                    new_location = gmaps.places_autocomplete(input_text = proc_start_loc.get(), \
-                                                             location = proc_start_loc.get())[0]['description']
-                    start_locationId = gmaps.geocode(new_location)[0]['place_id']
-                    locations.insert(0,proc_start_loc.get())
+                           locations = to_loc(orders)
+                           print "proc_start_loc.get()"
+                           print proc_start_loc.get()
+                           new_location = gmaps.places_autocomplete(input_text = proc_start_loc.get(), \
+                                                                    location = proc_start_loc.get())[0]['description']
+                           start_locationId = gmaps.geocode(new_location)[0]['place_id']
+                           locations.insert(0,proc_start_loc.get())
 
-                    # if there is specified end location append it to the end of locations
-                    print "end location:"
-                    print end_loc
-                    print ','.join(get_address(end_loc))
-                    if end_loc != hint1 and ','.join(get_address(end_loc)):
-                       print "$"
-                       locations.append(','.join(get_address(end_loc)))
+                           # if there is specified end location append it to the end of locations
+                           print "end location:"
+                           print end_loc
+                           print ','.join(get_address(end_loc))
+                           if end_loc != hint1 and ','.join(get_address(end_loc)):
+                              print "$"
+                              locations.append(','.join(get_address(end_loc)))
 
-                    print "locations"
-                    print locations
-                    directions_result = gmaps.directions(locations[0],
-                                                         locations[-1],
-                                                         waypoints=locations[1:-1],
-                                                         mode="driving", avoid="tolls",
-                                                         departure_time=datetime.now(),
-                                                         optimize_waypoints = True)
+                           print "locations"
+                           print locations
+                           directions_result = gmaps.directions(locations[0],
+                                                                locations[-1],
+                                                                waypoints=locations[1:-1],
+                                                                mode="driving", avoid="tolls",
+                                                                departure_time=datetime.now(),
+                                                                optimize_waypoints = True)
 
-                    totalDistance = 0
-                    totalDuration = 0
-                    newLocationIds = [start_locationId]
-                    print "directions_result!!"
-                    print directions_result
-                    if not directions_result:
-                        warning_window(master,"Some addresses can not be found!")
-                        return
+                           totalDistance = 0
+                           totalDuration = 0
+                           newLocationIds = [start_locationId]
+                           print "directions_result!!"
+                           print directions_result
+                           if not directions_result:
+                               warning_window(master,"一些地址的内容有错!")
+                               return
             
-                    lists = directions_result[0]['legs']
-            # Not loop to the last one
-                    for index in range(len(lists)):
-                        try:
-                            #get rid off unit so use -3 to kms, -4 to mins
-                            print lists[index]['distance']['text'][:-3]
-                            print lists[index]['duration']['text'][:-4]
-                            if lists[index]['distance']['text'][:-3]:
-                                totalDistance += float(lists[index]['distance']['text'][:-3])
-                            if lists[index]['duration']['text'][:-4]:
-                                totalDuration += float(lists[index]['duration']['text'][:-4])
+                           lists = directions_result[0]['legs']
+                   # Not loop to the last one
+                           for index in range(len(lists)):
+                               try:
+                                   #get rid off unit so use -3 to kms, -4 to mins
+                                   print lists[index]['distance']['text'][:-3]
+                                   print lists[index]['duration']['text'][:-4]
+                                   if lists[index]['distance']['text'][:-3]:
+                                       totalDistance += float(lists[index]['distance']['text'][:-3])
+                                   if lists[index]['duration']['text'][:-4]:
+                                       totalDuration += float(lists[index]['duration']['text'][:-4])
 
-                            locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
-                                    location = lists[index]['end_address'])[0]['description'])[0]['place_id']
-                            print "cal_dis:"
-                            print locationId
-                            print lists[index]['end_address']
-                            newLocationIds.append(locationId)
-                        except IndexError:
-                            warning_window(master,"Index Error in cal_dis(line 95)")
-                            return
+                                   locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
+                                           location = lists[index]['end_address'])[0]['description'])[0]['place_id']
+                                   print "cal_dis:"
+                                   print locationId
+                                   print lists[index]['end_address']
+                                   newLocationIds.append(locationId)
+                               except IndexError:
+                                   warning_window(master,"Index Error in cal_dis(line 95)")
+                                   return
                         
 
-            # add last location manunally
-                    # if end_loc != hint1 and ','.join(get_address(end_loc)):
-#                         print "end location!!!!!!!!!!!!"
-#                         print locations[-1]
-#
-#                         locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
-#                                 location = locations[-1])[0]['description'])[0]['place_id']
-#                         print locationId
-#                         newLocationIds.append(locationId)
+                   # add last location manunally
+                           # if end_loc != hint1 and ','.join(get_address(end_loc)):
+       #                         print "end location!!!!!!!!!!!!"
+       #                         print locations[-1]
+       #
+       #                         locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
+       #                                 location = locations[-1])[0]['description'])[0]['place_id']
+       #                         print locationId
+       #                         newLocationIds.append(locationId)
 
-                    print "new locations!!!"
-                    print newLocationIds
-                    print gmaps.reverse_geocode(newLocationIds[-1])[0]['formatted_address']
+                           print "new locations!!!"
+                           print newLocationIds
+                           print gmaps.reverse_geocode(newLocationIds[-1])[0]['formatted_address']
 
-                    finalLocations = outputFile(newLocationIds, totalDistance, \
-                                             totalDuration, (len(locations)-1), orders,end_loc)
-                    openWebsite(finalLocations)
+                           finalLocations = outputFile(newLocationIds, totalDistance, \
+                                                    totalDuration, (len(locations)-1), orders,end_loc)
+                           openWebsite(finalLocations) 
         except:
-            warning_window(master,"Server not available right now or one dispatcher can not have more than 21 orders, try again later") 
+            warning_window(master,"     服务器正忙，请稍后再试     ")
+            return
     else:
         return
         
@@ -135,11 +138,11 @@ def find_order_by_id2(orders,id):
 # setup doc
 def setup_doc(document,order,order_num):  
     document.add_heading("{} : {}\n".format(order_num,order.address, level = 1))
-    document.add_paragraph("Order number : {}".format(order.order_number))
-    document.add_paragraph("Client Name : {}".format(order.name))
-    document.add_paragraph("Phone : {}".format(order.phone))
-    document.add_paragraph("Order Ps : {}".format(order.ps_info))
-    document.add_paragraph("Cake info : ")
+    document.add_paragraph(u"订单号 : {}".format(order.order_number))
+    document.add_paragraph(u"客户姓名 : {}".format(order.name))
+    document.add_paragraph(u"客户电话 : {}".format(order.phone))
+    document.add_paragraph(u"备注 : {}".format(order.ps_info))
+    document.add_paragraph(u"蛋糕信息 : ")
     setup_table(document,order)
     
     
@@ -153,11 +156,11 @@ def setup_table(document,order):
 
     # setup header for the table
     row = table.rows[row_num]
-    row.cells[0].text = "Cake No"
-    row.cells[1].text = "Cake Type"
-    row.cells[2].text = "Cake Size"
-    row.cells[3].text = "Cake Quantity"
-    row.cells[4].text = "Ps Info"
+    row.cells[0].text = u"No"
+    row.cells[1].text = u"蛋糕款式"
+    row.cells[2].text = u"蛋糕尺寸"
+    row.cells[3].text = u"蛋糕内芯"
+    row.cells[4].text = u"蛋糕备注"
 
     row_num += 1
     for cake in order.cake_type:
@@ -175,7 +178,7 @@ def setup_table(document,order):
         run = cell_size.paragraphs[0].runs[0]
         run.font.bold = True
 
-        row.cells[3].text = cake[index_cake_quan]
+        row.cells[3].text = cake[index_cake_inner]
         row.cells[4].text = cake[index_cake_ps]
         
         row_num += 1
@@ -249,13 +252,13 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
                 order_num += 1
                 setup_doc(document,order,order_num)
         except KeyError:
-            warning_window(master,"{}\nError with this address.".format(fomattedAddress))
+            warning_window(master,"{}\n地址存在问题.".format(fomattedAddress))
         
        
             
     #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
     #document.add_paragraph("Total duration is %.1f mins." % totalDuration)
-    document.add_paragraph("Total number of orders are %d.\n" % order_num)
+    document.add_paragraph("\n总共%d个订单.\n" % order_num)
 
     now = datetime.now()
 
@@ -821,7 +824,7 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
         om_dispatchers = OptionMenu(manual_window,var_dis, *dispatchers)
         menu_var.append(var_dis)
 
-        Label(manual_window,text = "Dispatcher {}".format((i+1))).grid(row=row_num,column=col_num,sticky = W)
+        Label(manual_window,text = "派送员 No.{}".format((i+1))).grid(row=row_num,column=col_num,sticky = W)
         om_dispatchers.grid(row=(row_num+1),column=col_num,sticky = W)
         listbox = Multicolumn_Listbox(manual_window,
                             ['No'],
@@ -832,15 +835,15 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
         listbox.update(to_order2(orders[i]))
         listbox.interior.grid(row = (row_num+2),column =col_num)
         listboxes.append(listbox)
-        Button(manual_window,text ="add",command =
+        Button(manual_window,text ="添加",width = 8,command =
                       lambda i=i,orders=orders,listboxes=listboxes,order_numbers=order_numbers
                       : manual_add_window(i,orders,listboxes,order_numbers,manual_window)).grid(row=(row_num+3),column=col_num,sticky = W)
-        Button(manual_window,text ="删除",command =
+        Button(manual_window,text ="删除",width = 8,command =
                       lambda i=i,orders=orders,listboxes=listboxes,order_numbers=order_numbers
                       : manual_delete(i,orders,listboxes,order_numbers)).grid(row=(row_num+3),column=col_num,sticky = E,padx=5)
-        Button(manual_window,text ="print file and view route",command =
+        Button(manual_window,text ="打印文件并查看路线",command =
                       lambda i=i:cal_dis(orders[i],menu_var[i].get())).grid(row=(row_num+4),column=col_num,sticky = W)
-    Button(manual_window,text ="Confirm all routes",width = 12,
+    Button(manual_window,text ="确认所有订单",width = 12,
                  command = lambda i=num_dis: update_state2(i,orders,menu_var,manual_window)).grid(row=row_num+5,columnspan = (col_num+1))
     center(manual_window)
 
@@ -971,30 +974,38 @@ def add_all():
 # add order to the raw list
 def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
               var2,ps_info,window,dispatcher,current_cakes,
-              mode,pickup_date,pickup_time):
+              mode,pickup_date,pickup_time,indicator = True):
     global window_open
-
+    
+    new_location = location.get()
+    if isvalid_ad(location.get()) == 2:
+        list1 = []
+        for i in location.get():
+            if i == '，':
+                list1.append(',')
+            else:
+                list1.append(i)
+        new_location = "".join(list1)       
+          
     if (order.get() == '' or phone.get() == ''\
-        or location.get() == '' or current_cakes == []):
+        or new_location == '' or current_cakes == []):
         warning_window(window,warning_message1)
         return False
-    elif isvalid_ad(location.get()) == 1:
+    elif isvalid_ad(new_location) == 1:
         warning_window(window,warning_message8)
         return False
-    elif isvalid_ad(location.get()) < 0:
+    elif isvalid_ad(new_location) < 0:
         warning_window(window,warning_message9)
         return False
-    elif isvalid_ad(location.get()) == 2:
-        warning_window(window,"     地址中不允许含有中文逗号     ")
-        return False
-    else:
-        for order1 in db.orders_all:
-            if order1.order_number == order.get():
-                warning_window(master,"     订单号已存在，请重新输入     ")
-                return False
+    else:        
+        if indicator:
+            for order1 in db.orders_all:
+                if order1.order_number == order.get():
+                    warning_window(master,"     订单号已存在，请重新输入     ")
+                    return False  
         
-        location_g = location.get()
-        new_order = Order(order.get(),agent.get(),location.get(),name.get(),phone.get(),\
+        location_g = new_location
+        new_order = Order(order.get(),agent.get(),new_location,name.get(),phone.get(),\
                            candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
                            mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),current_cakes,\
                            dispatcher)
@@ -1029,7 +1040,7 @@ def confirm_date(window,ttkcal,pickup_date):
 def pack_order_entry(window,cakes,item):
     order = Entry(window)                  # text entry for order
     agent = Entry(window)                  # agent entry for order
-    location = Entry(window)               # location entry for order
+    location = AutocompleteEntry(lista, window)    
     name = Entry(window)                   # name entry for order
     phone = Entry(window)                  # phone number
     candle = Entry(window)                 # candle info
@@ -1241,11 +1252,11 @@ def edit_order(order,agent,location,name,phone,
     if dis:
         result = add_order(order,agent,location,name,phone,candle,\
                            tableware,writing,price,var2,ps_info,window,\
-                           dis,current_cakes,mode,pickup_date,pickup_time)
+                           dis,current_cakes,mode,pickup_date,pickup_time,False)
     else:
         result = add_order(order,agent,location,name,phone,candle,\
                            tableware,writing,price,var2,ps_info,window,\
-                           None,current_cakes,mode,pickup_date,pickup_time)
+                           None,current_cakes,mode,pickup_date,pickup_time,False)
     if result:
         delete_order2(item)
         
@@ -1437,6 +1448,16 @@ def get_selected_order():
 #refresh all listboxes
 def refresh_all():
     deselect_all()
+    update_dis_listbox()
+    today_list_box_processing.update(class_to_list_without_info2(db.orders_proc))
+    today_list_box_all.update(o2lists_mode(db.orders_today))
+    proc_left_box.update(ctl_num_address(db.orders_leftbox))
+    proc_right_box.update(ctl_num_address(db.orders_rightbox))
+    history_listbox.update(class_to_list_without_info(db.orders_history))
+
+def refresh_all2():
+    deselect_all()
+    db.update()
     update_dis_listbox()
     today_list_box_processing.update(class_to_list_without_info2(db.orders_proc))
     today_list_box_all.update(o2lists_mode(db.orders_today))
@@ -1899,7 +1920,6 @@ if __name__ == "__main__":
     popup.add_command(label="显示信息",command = lambda:edit_info(master))
     popup.add_command(label="删除",command = lambda:delete_selected(today_list_box_all))
     popup.add_command(label="移到历史",command = lambda:move2state(today_list_box_all,arrived))
-    popup.add_command(label="改成（正在制作中）",command = lambda:move2state(today_list_box_all,making))
     popup.add_command(label="改成（等待被派送）",command = lambda:move2state(today_list_box_all,waiting))
     popup.add_command(label="改成（正在派送）",command = lambda:move2state(today_list_box_all,processing))
     popup.add_command(label="刷新",command = lambda:refresh_all())
@@ -1911,10 +1931,9 @@ if __name__ == "__main__":
     popup_left.add_command(label="显示信息",command = lambda:edit_info(master))
     popup_left.add_command(label="删除",command = lambda:delete_selected(proc_left_box))
     popup_left.add_command(label="移到历史",command = lambda:move2state(proc_left_box,arrived))
-    popup_left.add_command(label="改成（正在制作中）",command = lambda:move2state(proc_left_box,making))
     popup_left.add_command(label="改成（等待被派送）",command = lambda:move2state(proc_left_box,waiting))
     popup_left.add_command(label="改成（正在派送）",command = lambda:move2state(proc_left_box,processing))
-    popup_left.add_command(label="刷新",command = lambda:refresh_all())
+    popup_left.add_command(label="刷新",command = lambda:refresh_all2())
     popup_left.add_separator()
 
     # popup Menu for dispatcher
@@ -1927,7 +1946,6 @@ if __name__ == "__main__":
     popup_his = Menu(master,tearoff = 0)
     popup_his.add_command(label="显示信息",command = lambda:edit_info_his(master))
     popup_his.add_command(label="删除",command = lambda:delete_selected(history_listbox))
-    popup_his.add_command(label="改成（正在制作中）",command = lambda:move2state(history_listbox,making))
     popup_his.add_command(label="改成（等待被派送）",command = lambda:move2state(history_listbox,waiting))
     popup_his.add_command(label="改成（正在派送）",command = lambda:move2state(history_listbox,processing))
     popup_his.add_command(label="刷新",command = lambda:refresh_all())
@@ -1953,7 +1971,7 @@ if __name__ == "__main__":
 #########################################TAB1############################################
     # set up ui for 'Today'
     today_search = Entry(tab_today)
-    today_add_order = Button(tab_today, text = '添加订单',command =window_add_order,width = 15)
+    today_add_order = Button(tab_today, text = '添加订单',command = window_add_order,width = 15)
     today_button_search = Button(tab_today, text = '查找',command =\
                                  lambda:search_listbox_today(today_search.\
                                                              get()),width = 15)

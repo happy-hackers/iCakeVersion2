@@ -81,7 +81,6 @@ pickup = '自取'
 processing = '正在派送'
 waiting = '等待被派送'
 arrived = '订单已签收'
-making = '正在制作中'
 start_location = ''
 warning_message1 = '      (*)栏不得为空     '
 warning_message2 = ' 至少需要一个订单来进行派送'
@@ -97,7 +96,7 @@ warning_message9 = ' 输入地址的格式有误，应是（street,postcode）'
 size  = ['small','medium','big']
 size2  = [['small'],['medium'],['big']]
 cake_types = ['CakeType1','CakeType2','CakeType3','CakeType4']
-states = [making,waiting,processing,arrived]
+states = [waiting,processing,arrived]
 quantities = ['1','2','3','4','5','other(indicate \nin the ps block)']
 modes = [dis,pickup]
 
@@ -281,9 +280,6 @@ class Orders_database(object):
                 else:
                     self.orders_today.append(item)
             else:
-                if item.state== making:
-                    item.set_dispatcher(None)
-                    self.orders_today.append(item)
                 if item.state == processing:
                     self.orders_proc.append(item)
                     self.orders_today.append(item)
@@ -583,7 +579,7 @@ def write_2_log(message):
 # check ps info doesnt contain special characters other than comma
 def isvalid(stringg):
     for i in stringg:
-        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ')):
+        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ') or (i == '，') ):
             return False
     return True
 
