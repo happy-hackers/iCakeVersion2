@@ -148,7 +148,7 @@ class Multicolumn_Listbox(object):
         
         self.row = self.List_Of_Rows(self)
         self.column = self.List_Of_Columns(self)
-
+        
         
         s = Style()
 
@@ -253,6 +253,7 @@ class Multicolumn_Listbox(object):
         if data is not None:
             for row in data:
                 self.insert_row(row)
+        
             
     @property
     def row_height(self):

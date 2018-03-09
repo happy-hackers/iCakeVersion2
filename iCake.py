@@ -48,84 +48,61 @@ popup_cake = None                    # right click menu for cakes windows
 # calculate distance between two points using google map
 def cal_dis(orders,end_loc):
     if orders:
-        try:
-                           locations = to_loc(orders)
-                           print "proc_start_loc.get()"
-                           print proc_start_loc.get()
-                           new_location = gmaps.places_autocomplete(input_text = proc_start_loc.get(), \
-                                                                    location = proc_start_loc.get())[0]['description']
-                           start_locationId = gmaps.geocode(new_location)[0]['place_id']
-                           locations.insert(0,proc_start_loc.get())
+            locations = to_loc(orders)
+            locations.insert(0,proc_start_loc.get())
 
-                           # if there is specified end location append it to the end of locations
-                           print "end location:"
-                           print end_loc
-                           print ','.join(get_address(end_loc))
-                           if end_loc != hint1 and ','.join(get_address(end_loc)):
-                              print "$"
-                              locations.append(','.join(get_address(end_loc)))
+            # if there is specified end location append it to the end of locations
+            print "end location: {}".format(end_loc)
+            print ','.join(get_address(end_loc))
+            if end_loc != hint1 and ','.join(get_address(end_loc)):
+                print "$"
+                locations.append(','.join(get_address(end_loc)))
+                print "locations"
+                print locations
+                
+            directions_result = gmaps.directions(locations[0],locations[-1],
+                                                waypoints=locations[1:-1],
+                                                mode="driving", avoid="tolls",
+                                                departure_time=datetime.now(),
+                                                optimize_waypoints = True)
+            totalDistance = 0
+            totalDuration = 0
+            newLocationIds = []
+            newLocations = {}
+            if not directions_result:
+                warning_window(master,"     一些地址的内容有错!     ")
+                return
+            lists = directions_result[0]['legs']
+            # loop through the details of direction results
+            for index in range(len(lists)):
+                try:
+                    #print lists[index]
+                    if lists[index]['distance']['text'][:-3]:
+                        totalDistance += float(lists[index]['distance']['text'][:-3])
+                    if lists[index]['duration']['text'][:-4]:
+                        totalDuration += float(lists[index]['duration']['text'][:-4])
+                except IndexError as e:
+                    print e
+                    return
+                    
+                #get the start location as well
+                if index == 0:
+                    locationId = gmaps.geocode(lists[index]['start_address'])[0]['place_id']
+                    print "######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId)
+                    print lists[index]['start_address']
+                    newLocations[locationId] = lists[index]['start_address']
+                    newLocationIds.append(locationId)
+        
+                locationId = gmaps.geocode(lists[index]['end_address'])[0]['place_id']
+                newLocations[locationId] = lists[index]['end_address']
+                newLocationIds.append(locationId)
+                print "location: {},id:{}".format(lists[index]['start_address'],locationId)
+                print lists[index]['start_address']
+            print newLocationIds
+            finalLocations = outputFile(newLocationIds, totalDistance, \
+                                     totalDuration, (len(locations)-1), orders,end_loc,newLocations)
+            openWebsite(finalLocations)    
 
-                           print "locations"
-                           print locations
-                           directions_result = gmaps.directions(locations[0],
-                                                                locations[-1],
-                                                                waypoints=locations[1:-1],
-                                                                mode="driving", avoid="tolls",
-                                                                departure_time=datetime.now(),
-                                                                optimize_waypoints = True)
-
-                           totalDistance = 0
-                           totalDuration = 0
-                           newLocationIds = [start_locationId]
-                           print "directions_result!!"
-                           print directions_result
-                           if not directions_result:
-                               warning_window(master,"     一些地址的内容有错!     ")
-                               return
-            
-                           lists = directions_result[0]['legs']
-                   # Not loop to the last one
-                           for index in range(len(lists)):
-                               try:
-                                   #get rid off unit so use -3 to kms, -4 to mins
-                                   print lists[index]['distance']['text'][:-3]
-                                   print lists[index]['duration']['text'][:-4]
-                                   if lists[index]['distance']['text'][:-3]:
-                                       totalDistance += float(lists[index]['distance']['text'][:-3])
-                                   if lists[index]['duration']['text'][:-4]:
-                                       totalDuration += float(lists[index]['duration']['text'][:-4])
-
-                                   locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = lists[index]['end_address'], \
-                                           location = lists[index]['end_address'])[0]['description'])[0]['place_id']
-                                   print "cal_dis:"
-                                   print locationId
-                                   print lists[index]['end_address']
-                                   newLocationIds.append(locationId)
-                               except IndexError:
-                                   warning_window(master,"Index Error in cal_dis(line 95)")
-                                   return
-                        
-
-                   # add last location manunally
-                           # if end_loc != hint1 and ','.join(get_address(end_loc)):
-       #                         print "end location!!!!!!!!!!!!"
-       #                         print locations[-1]
-       #
-       #                         locationId = gmaps.geocode(gmaps.places_autocomplete(input_text = locations[-1], \
-       #                                 location = locations[-1])[0]['description'])[0]['place_id']
-       #                         print locationId
-       #                         newLocationIds.append(locationId)
-
-                           print "new locations!!!"
-                           print newLocationIds
-                           print gmaps.reverse_geocode(newLocationIds[-1])[0]['formatted_address']
-
-                           finalLocations = outputFile(newLocationIds, totalDistance, \
-                                                    totalDuration, (len(locations)-1), orders,end_loc)
-                           openWebsite(finalLocations) 
-        except:
-            warning_window(master,"     服务器正忙，请稍后再试     ")
-            return
     else:
         return
         
@@ -186,7 +163,7 @@ def setup_table(document,order):
                
 ###############################################################################
 def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
-        orders,end_loc):
+        orders,end_loc,newLocations):
     from docx import Document
     from docx.shared import Inches
     from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -205,6 +182,7 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     dic_id = {}
     # input order info
     if end_loc != hint1:
+        # driver has address
         if ','.join(get_address(end_loc)):
             print "#####"
             print "end_loc is"
@@ -218,9 +196,7 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
 
             dic_id[end_loc_id] = "end location"
         else:
-            document.add_heading("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))
-            
-        
+            document.add_heading("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))  
     else:
         document.add_heading("Driver Not Determined".format(font=("Calibri",title_size)))
 
@@ -236,12 +212,10 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
 
     print dic_id
 
-
     print "ouput:"
     print finalLocationIds
     for item in finalLocationIds:
-        fomattedAddress = gmaps.reverse_geocode(item)[0]['formatted_address']
-        finalLocations.append(fomattedAddress)
+        finalLocations.append(newLocations[item])
         print item
         try:
             order_numberr = dic_id[item]
@@ -252,16 +226,15 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
                 order_num += 1
                 setup_doc(document,order,order_num)
         except KeyError:
-            warning_window(master,"{}\n地址存在问题.".format(fomattedAddress))
+            warning_window(master,"{}\n地址存在问题.".format(newLocations[item]))
         
        
             
     #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
     #document.add_paragraph("Total duration is %.1f mins." % totalDuration)
-    document.add_paragraph("\n总共%d个订单.\n" % order_num)
+    document.add_paragraph(u"\n总共%d个订单.\n" % order_num)
 
     now = datetime.now()
-
     path = easygui.diropenbox()
 
     if end_loc != hint1:
@@ -1003,8 +976,7 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
                 if order1.order_number == order.get():
                     warning_window(master,"     订单号已存在，请重新输入     ")
                     return False  
-        
-        location_g = new_location
+    
         new_order = Order(order.get(),agent.get(),new_location,name.get(),phone.get(),\
                            candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
                            mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),current_cakes,\
@@ -1891,8 +1863,8 @@ class AutocompleteEntry(Entry):
                     self.lb = Listbox(self.window)
                     self.lb.config(width=0)
                     self.lb.bind("<Double-Button-1>", self.selection)
-                    self.lb.bind("<Right>", self.selection)
-                    self.lb.place(x=(self.winfo_x()-50), y=self.winfo_y()+self.winfo_height())
+                    self.lb.bind("<Return>", self.selection)
+                    self.lb.place(x=(self.winfo_x()-150), y=self.winfo_y()+self.winfo_height())
                     self.lb_up = True
                 
                 self.lb.delete(0, END)
@@ -1941,11 +1913,15 @@ class AutocompleteEntry(Entry):
         new_loc = []
         for loc in gmaps.places_autocomplete(input_text = txt):
             print loc['description']
+            tmp = loc['description'].split(",")
+            print tmp
+            
+                
             # print str(loc['description'].split(',')[-1])
 #             if str(loc['description'].split(',')[-1]) == 'Australia':
 #                 print loc['description']
 #                 new_loc.append(loc['description'])
-            new_loc.append(loc['description'])
+            new_loc.append(tmp[0] + "," + tmp[1])
             
         #new_loc = loc.remove(loc.split(',')[-1])
         return new_loc
@@ -1954,9 +1930,7 @@ class AutocompleteEntry(Entry):
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
-if __name__ == "__main__":
-    print gmaps.places_autocomplete(input_text = "135 abeckett s")[0]['description']
-    
+if __name__ == "__main__":    
     # main window setup
     master = Tk()
     master.title("iCake")

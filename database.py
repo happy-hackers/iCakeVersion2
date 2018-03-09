@@ -189,11 +189,7 @@ class Orders_database(object):
                           line[index_tableware],line[index_writing],line[index_price],\
                           line[index_state],line[index_mode],line[index_date],line[index_time],\
                           line[index_psinfo],convert_data_to_list(line[index_cakes]),\
-                          line[index_dis])
-            try:
-                order.location_id = line[index_locId] 
-            except IndexError:
-                order.location_id = None               
+                          line[index_dis])           
             tmp.append(order)
         f.close()
 
@@ -325,7 +321,6 @@ class Orders_database(object):
 class Order(object):
     """__init__() functions as the class constructor"""
 
-    location_id = None
     def __init__(self, order_number=None, 
                      agent = None,
                      address=None, 
@@ -341,7 +336,7 @@ class Order(object):
                      pickup_time = None,
                      ps_info = None,
                      cake_type = None, 
-                     dispatcher = None
+                     dispatcher = None,
                      ):
         self.order_number = order_number
         self.agent = agent
@@ -380,8 +375,7 @@ def class_to_order(item):
                      item.name,item.phone,item.candle,item.tableware,\
                      item.writing,item.price,item.state,item.mode,\
                      item.pickup_date,item.pickup_time,item.ps_info,\
-                     item.cake_type,item.dispatcher,item.location_id
-                     ]
+                     item.cake_type,item.dispatcher]
 
     return new_list_item
 
