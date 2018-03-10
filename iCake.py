@@ -26,10 +26,19 @@ import googlemaps
 from PIL import Image, ImageTk
 from autocomplete import AutocompleteEntry
 
+import shopify
+import requests
+API_KEY = 'ffc3a9728b3e4f62be551fe88c99e83e'
+PASSWORD = 'e269e4af0f1a66f9248f576e09db35ee'
+SHOP_NAME = 'icake-melbourne'
+
+shop_url = "https://%s:%s@%s.myshopify.com/admin" % (API_KEY, PASSWORD, SHOP_NAME)
+
+
 lista = ['36 latrob st', 'actions', 'additional', 'also', 'an', 'and', 'angle', 'are', 'as', 'be', 'bind', 'bracket', 'brackets', 'button', 'can', 'cases', 'configure', 'course', 'detail', 'enter', 'event', 'events', 'example', 'field', 'fields', 'for', 'give', 'important', 'in', 'information', 'is', 'it', 'just', 'key', 'keyboard', 'kind', 'leave', 'left', 'like', 'manager', 'many', 'match', 'modifier', 'most', 'of', 'or', 'others', 'out', 'part', 'simplify', 'space', 'specifier', 'specifies', 'string;', 'that', 'the', 'there', 'to', 'type', 'unless', 'use', 'used', 'user', 'various', 'ways', 'we', 'window', 'wish', 'you']
 
-gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
-keys = ["AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY",
+# gmaps = googlemaps.Client(key="AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s")
+key = ["AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY",
         "AIzaSyD44UyOsGzuyngSnb2WPLPuFGzhIG1OL1s",
         "AIzaSyB3Ao6QZnqxngkZPB4d5yQaboPp-mSjf4s",
         "AIzaSyBykVZQJbt518Jh58CDo6vb3TH4pM0j21Q"]
@@ -121,8 +130,6 @@ def setup_doc(document,order,order_num):
     document.add_paragraph(u"备注 : {}".format(order.ps_info))
     document.add_paragraph(u"蛋糕信息 : ")
     setup_table(document,order)
-    
-    
     
 # setup doc table
 def setup_table(document,order):
@@ -1911,30 +1918,47 @@ class AutocompleteEntry(Entry):
                 
     def get_loc(self,txt):
         new_loc = []
-        for loc in gmaps.places_autocomplete(input_text = txt):
-            print loc['description']
-            tmp = loc['description'].split(",")
-            print tmp
+        try:
+            for loc in gmaps.places_autocomplete(input_text = txt):
+                print loc['description']
+                tmp = loc['description'].split(",")
+                print tmp
+                new_loc.append(tmp[0] + "," + tmp[1])
             
+            #new_loc = loc.remove(loc.split(',')[-1])
+            return new_loc
+        except:
+            if num >= len(key):
+                warning_window(master,"今日访问google次数到达上限")
+            else:
+                num+=1
+                gmaps = googlemaps.Client(key=key[num])
                 
-            # print str(loc['description'].split(',')[-1])
-#             if str(loc['description'].split(',')[-1]) == 'Australia':
-#                 print loc['description']
-#                 new_loc.append(loc['description'])
-            new_loc.append(tmp[0] + "," + tmp[1])
-            
-        #new_loc = loc.remove(loc.split(',')[-1])
-        return new_loc
+        
+        
         
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
-if __name__ == "__main__":    
+if __name__ == "__main__":  
+    # url = shop_url + "/orders.json"
+    # print url
+    # r = requests.get(url)
+    # orders = r.json()['orders']
+    # for order in orders:
+    #     print "id = " + str(order['id']) + " " + str(order['fulfillment_status'])
+    #     for line in order['line_items']:
+    #         print "  "+line['title']+" "+line['variant_title']
+ 
+##############################################################################
+    num = 0
+    gmaps = googlemaps.Client(key=key[num])
+    
     # main window setup
     master = Tk()
     master.title("iCake")
-
+    
     # scrollbar = Scrollbar(master)
 #     scrollbar.pack(side=BOTTOM, fill=X)
 
