@@ -1,0 +1,13 @@
+googlemaps==2.5.1
+xlrd==1.1.0
+pandas==0.22.0
+geopy==1.11.0
+numpy==1.14.0
+setuptools==28.8.0
+requests==2.18.4
+Pillow==5.0.0
+docx==0.2.4
+easygui==0.98.1
+matplotlib==2.2.0
+shopify==0.3.0
+scikit_learn==0.19.1
