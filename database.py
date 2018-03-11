@@ -59,13 +59,14 @@ index_time = 12
 index_psinfo = 13
 index_cakes = 14
 index_dis = 15
-index_locId = 16
+index_upfront = 16
 # index for cake
-index_cake_size = 0
-index_cake_shape =1
-index_cake_inner = 2
-index_cake_type =3
-index_cake_ps = 4
+index_cake_no = 0
+index_cake_size = 1
+index_cake_shape =2
+index_cake_inner = 3
+index_cake_type =4
+index_cake_ps = 5
 # index for dispatcher
 index_dis_name = 0
 index_dis_home = 1
@@ -90,7 +91,10 @@ warning_message7 = '  地区没有订单      '
 warning_message8 = ' 输入地址的区号有错误，或无法在数据库查找到'
 warning_message9 = ' 输入地址的格式有误，应是（street,postcode）'
 
-
+# sizes of column witdth
+col_size1 = 48
+col_size2 = 110
+col_size3 = 80
 
 # option menu items
 size  = ['small','medium','big']
@@ -101,13 +105,14 @@ quantities = ['1','2','3','4','5','other(indicate \nin the ps block)']
 modes = [dis,pickup]
 
 # header for listboxes
-header_full = ['No', 'Address','Name','Phone','Cakes','State']
-header_today = ['No', 'Address','Name','Mode','Cakes','State']
+header_new = ['订单号','蛋糕No','客服号','尺寸','形状','内芯','款式','价格','定金','写字','蜡烛','餐具','电话','地址','备注','状态']
+header_full = ['订单号','客服号','价格','定金','写字','蜡烛','餐具','电话','地址','备注']
+header_today = ['订单号', 'Address','Name','Mode','Cakes','State']
 header_proc = ['No', 'Address','Name','Phone','Dispatcher','State']
 header_small = ['No', 'Address']
-header_cake = ['尺寸','形状','内芯','款式','备注']
+header_cake = ['No','尺寸','形状','内芯','款式','备注']
 header_dispatcher = ['Name','Home Address']
-header_dispatcher_full = ['Name','Home Adderss','Phone','Ps']
+header_dispatcher_full = ['姓名','家庭住址','电话','备注']
 
 # end locations options
 end_location = ['8 Whiteman St, Southbank VIC 3006']
@@ -189,7 +194,7 @@ class Orders_database(object):
                           line[index_tableware],line[index_writing],line[index_price],\
                           line[index_state],line[index_mode],line[index_date],line[index_time],\
                           line[index_psinfo],convert_data_to_list(line[index_cakes]),\
-                          line[index_dis])           
+                          line[index_dis],line[index_upfront])       
             tmp.append(order)
         f.close()
 
@@ -337,6 +342,7 @@ class Order(object):
                      ps_info = None,
                      cake_type = None, 
                      dispatcher = None,
+                     upfront = None
                      ):
         self.order_number = order_number
         self.agent = agent
@@ -354,6 +360,7 @@ class Order(object):
         self.cake_type = cake_type
         self.ps_info = ps_info
         self.dispatcher = dispatcher
+        self.upfront = upfront
 
     def __str__(self):
             return str(self.__dict__)
@@ -375,22 +382,24 @@ def class_to_order(item):
                      item.name,item.phone,item.candle,item.tableware,\
                      item.writing,item.price,item.state,item.mode,\
                      item.pickup_date,item.pickup_time,item.ps_info,\
-                     item.cake_type,item.dispatcher]
+                     item.cake_type,item.dispatcher,item.upfront]
 
     return new_list_item
 
 # order to list with mode
-def o2list_mode(item):
-    new_list_item = [item.order_number,item.address,\
-                     item.name,item.mode,show_cake(item.cake_type),\
-                     item.state]
+def order2list(item,cake):
+    new_list_item = [item.order_number,cake[index_cake_no],item.agent,cake[index_cake_size],cake[index_cake_shape],\
+                     cake[index_cake_inner],cake[index_cake_type],item.price,item.upfront,\
+                     item.writing,item.candle,item.tableware,item.phone,item.address,\
+                     item.ps_info,item.state]
     return new_list_item
 
 # convert a list of lists to a list of order classes with mode
-def o2lists_mode(items):
+def order2lists(items):
     new_list = []
     for item in items:
-        new_list.append(o2list_mode(item))
+        for cake in item.cake_type:
+            new_list.append(order2list(item,cake))
     return new_list
 
 # show list of cakes nicely
@@ -431,11 +440,10 @@ def show_dis(dispatchers):
 def class_to_list_without_info(list_class):
     new_list = []
     for item in list_class:
-        new_list_item = [item.order_number,item.address,\
-                         item.name,item.phone,show_cake(item.cake_type),\
-                         item.state]
+        new_list_item = [item.order_number,item.agent,item.price,item.upfront,\
+                         item.writing,item.candle,item.tableware,item.phone,\
+                         item.address,item.ps_info]
         new_list.append(new_list_item)
-
     return new_list
 
 # convert a list of order classes to a list of lists used
@@ -598,7 +606,19 @@ def rip_num(str):
 def rip_num_full(str):
     new_str = rip_num(str)
     return new_str.split(',')[0]
-                
+
+# justify the order of listbo
+def justify_order(listbox):
+    last = len(listbox.table_data)-1
+    tmp =  listbox.table_data[last]
+    listbox.delete_row(last)
+    listbox.insert_row(tmp)  
+# update listbox
+def update_listbox(lists,listbox):
+    listbox.clear()
+    for i in lists:
+        listbox.row.insert(i)
+        justify_order(listbox)  
 # center a window
 # @sources: https://stackoverflow.com/questions/3352918/how-to-center-a-window-on-the-screen-in-tkinter
 def center(toplevel):
