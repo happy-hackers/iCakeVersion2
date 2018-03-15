@@ -1,1 +1,730 @@
-Error(2018-02-28 09:53:36.611043): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-02-28 10:11:48.289255): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.708455): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.708824): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.708902): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709107): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709257): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709394): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709535): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709618): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709771): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709907): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.709983): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710120): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710276): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710403): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710479): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710589): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710727): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710871): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.710943): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711080): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711170): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711318): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711413): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711477): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711547): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711616): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711796): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711891): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.711968): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712046): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712102): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712289): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712382): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712485): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712561): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712664): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712770): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.712931): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713012): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713100): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713238): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713322): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713410): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713493): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713566): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.713912): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714007): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714111): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714213): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714298): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714365): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714472): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714561): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714666): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714769): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714846): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714918): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.714990): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715090): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715176): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715273): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715368): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715434): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:42:49.715551): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466022): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466188): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466310): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466389): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466479): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466677): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466755): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.466975): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467071): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467252): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467362): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467549): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467660): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467778): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467877): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.467975): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468069): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468163): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468257): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468352): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468445): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468535): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468619): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468766): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468875): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.468946): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469064): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469175): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469304): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469586): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469701): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469824): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.469941): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470040): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470143): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470244): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470344): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470443): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:44:09.470541): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214050): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214549): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214643): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214732): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214842): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.214991): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215068): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215178): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215314): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215389): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215500): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215630): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215705): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215821): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.215950): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216024): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216094): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216167): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216336): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216414): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216551): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216646): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216732): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216878): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.216967): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217051): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217142): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217222): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217312): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217398): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217467): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217561): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217625): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217687): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217828): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.217938): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218004): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218077): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218210): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218285): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218380): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218447): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218575): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218655): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218712): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218787): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218844): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.218920): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219001): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219055): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219187): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219259): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219328): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219397): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219465): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219548): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219605): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219739): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219793): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219871): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.219925): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.220004): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.220086): cake[index_cake_type] IndexEror,database.py/show_cakeError(2018-03-07 14:53:29.220140): cake[index_cake_type] IndexEror,database.py/show_cake
+Log(2018-03-14 12:39:48.497874): cal_dis, working...
+Log(2018-03-14 12:39:48.506226): end location: Vincent,
+Log(2018-03-14 12:39:48.506425): 
+Log(2018-03-14 12:39:50.376597): range(len(lists) = 7
+Log(2018-03-14 12:39:50.384816): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:39:50.385012): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 12:39:50.385168): index = 0
+Log(2018-03-14 12:39:51.296797): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 12:39:51.305154): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:41:29.698869): cal_dis, working...
+Log(2018-03-14 12:41:29.706664): end location: Vincent,
+Log(2018-03-14 12:41:29.706825): 
+Log(2018-03-14 12:41:31.495816): range(len(lists) = 7
+Log(2018-03-14 12:41:31.504024): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:41:31.504211): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 12:41:31.504424): index = 0
+Log(2018-03-14 12:41:35.478682): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 12:41:35.486936): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:43:04.222885): cal_dis, working...
+Log(2018-03-14 12:43:04.231153): end location: Charlie,
+Log(2018-03-14 12:43:04.231412): 
+Log(2018-03-14 12:43:05.153580): range(len(lists) = 7
+Log(2018-03-14 12:43:05.161409): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:43:05.161640): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 12:43:05.161796): index = 0
+Log(2018-03-14 12:43:05.339722): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 12:43:05.348040): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:44:20.819089): cal_dis, working...
+Log(2018-03-14 12:44:20.827392): end location: Charlie,
+Log(2018-03-14 12:44:20.827600): 
+Log(2018-03-14 12:44:22.075171): range(len(lists) = 7
+Log(2018-03-14 12:44:22.075745): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:44:22.075844): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 12:44:22.075978): index = 0
+Log(2018-03-14 12:44:22.258145): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 12:44:22.266455): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 12:44:22.266718): line = 129
+Log(2018-03-14 12:44:22.266833): line = 130
+Log(2018-03-14 12:44:22.266962): line = 131
+Log(2018-03-14 12:44:22.267144): line = 132
+Log(2018-03-14 12:44:22.267277): line = 132.6
+Log(2018-03-14 12:44:22.267457): line = 133
+Log(2018-03-14 12:44:23.162312): line = 134
+Log(2018-03-14 12:44:23.170646): line = 135
+Log(2018-03-14 12:44:23.170894): 
+######location: 43 Hertford Rd, Doncaster East VIC 3109, Australia
+id:ChIJ3byYnGc41moRGzVmYEHuyuo
+Log(2018-03-14 12:44:23.171027): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 12:44:23.171133): index = 1
+Log(2018-03-14 12:44:23.171309): line = 133
+Log(2018-03-14 12:44:23.795997): line = 134
+Log(2018-03-14 12:44:23.803633): line = 135
+Log(2018-03-14 12:44:23.803815): 
+######location: 1/20 Pendle St, Box Hill VIC 3128, Australia
+id:EiwxLzIwIFBlbmRsZSBTdCwgQm94IEhpbGwgVklDIDMxMjgsIEF1c3RyYWxpYQ
+Log(2018-03-14 12:44:23.804020): 1/20 Pendle St, Box Hill VIC 3128, Australia
+Log(2018-03-14 12:44:23.804177): index = 2
+Log(2018-03-14 12:44:23.804289): line = 133
+Log(2018-03-14 12:44:24.708378): line = 134
+Log(2018-03-14 12:44:24.716553): line = 135
+Log(2018-03-14 12:44:24.716749): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-14 12:44:24.716875): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-14 12:44:24.716981): index = 3
+Log(2018-03-14 12:44:24.717103): line = 133
+Log(2018-03-14 12:44:25.444103): line = 134
+Log(2018-03-14 12:44:25.452363): line = 135
+Log(2018-03-14 12:44:25.452657): 
+######location: 147 Montague St, South Melbourne VIC 3205, Australia
+id:ChIJUYhWivln1moRYymJ9E2onbU
+Log(2018-03-14 12:44:25.452827): 147 Montague St, South Melbourne VIC 3205, Australia
+Log(2018-03-14 12:44:25.453027): index = 4
+Log(2018-03-14 12:44:25.453161): line = 133
+Log(2018-03-14 12:44:26.373298): line = 134
+Log(2018-03-14 12:44:26.373497): line = 135
+Log(2018-03-14 12:44:26.373636): 
+######location: 10 Claremont St, South Yarra VIC 3141, Australia
+id:ChIJh6SHtZxC1moRRnE6QMBqMDU
+Log(2018-03-14 12:44:26.373827): 10 Claremont St, South Yarra VIC 3141, Australia
+Log(2018-03-14 12:44:26.374063): index = 5
+Log(2018-03-14 12:44:26.374202): line = 133
+Log(2018-03-14 12:44:26.792686): line = 134
+Log(2018-03-14 12:44:26.792904): line = 135
+Log(2018-03-14 12:44:26.792995): 
+######location: 2 Willesden Rd, Hughesdale VIC 3166, Australia
+id:ChIJnSxLQkRq1moRJkjOfb0K4_I
+Log(2018-03-14 12:44:26.793096): 2 Willesden Rd, Hughesdale VIC 3166, Australia
+Log(2018-03-14 12:44:26.793217): index = 6
+Log(2018-03-14 12:44:26.793388): line = 133
+Log(2018-03-14 12:44:27.774558): line = 134
+Log(2018-03-14 12:44:27.774737): line = 135
+Log(2018-03-14 12:44:27.774827): 
+######location: 110/114 Mimosa Rd, Carnegie VIC 3163, Australia
+id:Ei8xMTAvMTE0IE1pbW9zYSBSZCwgQ2FybmVnaWUgVklDIDMxNjMsIEF1c3RyYWxpYQ
+Log(2018-03-14 12:44:27.774951): 110/114 Mimosa Rd, Carnegie VIC 3163, Australia
+Log(2018-03-14 12:44:27.775173): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ3byYnGc41moRGzVmYEHuyuo', u'EiwxLzIwIFBlbmRsZSBTdCwgQm94IEhpbGwgVklDIDMxMjgsIEF1c3RyYWxpYQ', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJUYhWivln1moRYymJ9E2onbU', u'ChIJh6SHtZxC1moRRnE6QMBqMDU', u'ChIJnSxLQkRq1moRJkjOfb0K4_I', u'Ei8xMTAvMTE0IE1pbW9zYSBSZCwgQ2FybmVnaWUgVklDIDMxNjMsIEF1c3RyYWxpYQ']
+Log(2018-03-14 12:44:33.423562): outputfile, working...
+Log(2018-03-14 13:02:32.651067): cal_dis, working...
+Log(2018-03-14 13:02:32.659472): end location: Charlie,
+Log(2018-03-14 13:02:32.659643): 
+Log(2018-03-14 13:02:34.497112): range(len(lists) = 7
+Log(2018-03-14 13:02:34.505414): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 13:02:34.505653): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 13:02:34.505827): index = 0
+Log(2018-03-14 13:02:34.966968): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 13:02:34.975314): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 13:02:34.975634): line = 129
+Log(2018-03-14 13:02:34.975763): line = 130
+Log(2018-03-14 13:02:34.975920): line = 131
+Log(2018-03-14 13:02:34.976075): line = 132
+Log(2018-03-14 13:02:34.976216): line = 132.6
+Log(2018-03-14 13:02:34.976441): line = 133
+Log(2018-03-14 13:02:35.563171): line = 134
+Log(2018-03-14 13:02:35.571475): line = 135
+Log(2018-03-14 13:02:35.571674): 
+######location: 43 Hertford Rd, Doncaster East VIC 3109, Australia
+id:ChIJ3byYnGc41moRGzVmYEHuyuo
+Log(2018-03-14 13:02:35.571877): 43 Hertford Rd, Doncaster East VIC 3109, Australia
+Log(2018-03-14 13:02:35.572043): index = 1
+Log(2018-03-14 13:02:35.572262): line = 133
+Log(2018-03-14 13:02:36.200550): line = 134
+Log(2018-03-14 13:02:36.208932): line = 135
+Log(2018-03-14 13:02:36.209126): 
+######location: 1/20 Pendle St, Box Hill VIC 3128, Australia
+id:EiwxLzIwIFBlbmRsZSBTdCwgQm94IEhpbGwgVklDIDMxMjgsIEF1c3RyYWxpYQ
+Log(2018-03-14 13:02:36.209259): 1/20 Pendle St, Box Hill VIC 3128, Australia
+Log(2018-03-14 13:02:36.209435): index = 2
+Log(2018-03-14 13:02:36.209641): line = 133
+Log(2018-03-14 13:02:36.806245): line = 134
+Log(2018-03-14 13:02:36.814613): line = 135
+Log(2018-03-14 13:02:36.814833): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-14 13:02:36.815031): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-14 13:02:36.815209): index = 3
+Log(2018-03-14 13:02:36.815384): line = 133
+Log(2018-03-14 13:02:37.349025): line = 134
+Log(2018-03-14 13:02:37.356426): line = 135
+Log(2018-03-14 13:02:37.356660): 
+######location: 147 Montague St, South Melbourne VIC 3205, Australia
+id:ChIJUYhWivln1moRYymJ9E2onbU
+Log(2018-03-14 13:02:37.356847): 147 Montague St, South Melbourne VIC 3205, Australia
+Log(2018-03-14 13:02:37.357076): index = 4
+Log(2018-03-14 13:02:37.357202): line = 133
+Log(2018-03-14 13:02:38.036699): line = 134
+Log(2018-03-14 13:02:38.045057): line = 135
+Log(2018-03-14 13:02:38.045257): 
+######location: 110/114 Mimosa Rd, Carnegie VIC 3163, Australia
+id:Ei8xMTAvMTE0IE1pbW9zYSBSZCwgQ2FybmVnaWUgVklDIDMxNjMsIEF1c3RyYWxpYQ
+Log(2018-03-14 13:02:38.045425): 110/114 Mimosa Rd, Carnegie VIC 3163, Australia
+Log(2018-03-14 13:02:38.045610): index = 5
+Log(2018-03-14 13:02:38.045823): line = 133
+Log(2018-03-14 13:02:38.488662): line = 134
+Log(2018-03-14 13:02:38.496947): line = 135
+Log(2018-03-14 13:02:38.497157): 
+######location: 2 Willesden Rd, Hughesdale VIC 3166, Australia
+id:ChIJnSxLQkRq1moRJkjOfb0K4_I
+Log(2018-03-14 13:02:38.497299): 2 Willesden Rd, Hughesdale VIC 3166, Australia
+Log(2018-03-14 13:02:38.497412): index = 6
+Log(2018-03-14 13:02:38.497586): line = 133
+Log(2018-03-14 13:02:39.266775): line = 134
+Log(2018-03-14 13:02:39.274926): line = 135
+Log(2018-03-14 13:02:39.275086): 
+######location: 10 Claremont St, South Yarra VIC 3141, Australia
+id:ChIJh6SHtZxC1moRRnE6QMBqMDU
+Log(2018-03-14 13:02:39.275176): 10 Claremont St, South Yarra VIC 3141, Australia
+Log(2018-03-14 13:02:39.275259): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ3byYnGc41moRGzVmYEHuyuo', u'EiwxLzIwIFBlbmRsZSBTdCwgQm94IEhpbGwgVklDIDMxMjgsIEF1c3RyYWxpYQ', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJUYhWivln1moRYymJ9E2onbU', u'Ei8xMTAvMTE0IE1pbW9zYSBSZCwgQ2FybmVnaWUgVklDIDMxNjMsIEF1c3RyYWxpYQ', u'ChIJnSxLQkRq1moRJkjOfb0K4_I', u'ChIJh6SHtZxC1moRRnE6QMBqMDU']
+Log(2018-03-14 13:02:44.452648): outputfile, working...
+Log(2018-03-14 17:39:43.436939): cal_dis, working...
+Log(2018-03-14 17:39:43.445522): end location: John,442 Elizabeth street,3000
+Log(2018-03-14 17:39:43.445673): 442 Elizabeth street,3000
+Log(2018-03-14 17:39:43.445878): locations
+Log(2018-03-14 17:39:43.446004): ['30 sunrise cres,3107', '135 abeckett st,3000', '50 albert road, south melbourne', "135 A'beckett Street,3000", '555 st kilda road,3004', '442 Elizabeth street,3000']
+Log(2018-03-14 17:39:45.445131): range(len(lists) = 5
+Log(2018-03-14 17:39:45.445395): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:39:45.445568): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-14 17:39:45.445678): index = 0
+Log(2018-03-14 17:39:46.339130): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 17:39:46.346604): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:39:46.346823): line = 130
+Log(2018-03-14 17:39:46.346988): line = 131
+Log(2018-03-14 17:39:46.347138): line = 132
+Log(2018-03-14 17:39:46.347269): line = 132.6
+Log(2018-03-14 17:39:46.347387): line = 133
+Log(2018-03-14 17:39:47.260740): line = 134
+Log(2018-03-14 17:39:47.269060): line = 135
+Log(2018-03-14 17:39:47.269273): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-14 17:39:47.269593): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-14 17:39:47.269722): index = 1
+Log(2018-03-14 17:39:47.269927): line = 133
+Log(2018-03-14 17:39:48.184619): line = 134
+Log(2018-03-14 17:39:48.192873): line = 135
+Log(2018-03-14 17:39:48.193098): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-14 17:39:48.193297): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-14 17:39:48.193469): index = 2
+Log(2018-03-14 17:39:48.193627): line = 133
+Log(2018-03-14 17:39:49.103947): line = 134
+Log(2018-03-14 17:39:49.112241): line = 135
+Log(2018-03-14 17:39:49.112465): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:39:49.112588): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:39:49.112695): index = 3
+Log(2018-03-14 17:39:49.112808): line = 133
+Log(2018-03-14 17:39:50.025460): line = 134
+Log(2018-03-14 17:39:50.032794): line = 135
+Log(2018-03-14 17:39:50.032990): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:39:50.033184): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:39:50.033359): index = 4
+Log(2018-03-14 17:39:50.033518): line = 133
+Log(2018-03-14 17:39:50.947336): line = 134
+Log(2018-03-14 17:39:50.955626): line = 135
+Log(2018-03-14 17:39:50.955874): 
+######location: 442 Elizabeth St, Melbourne VIC 3000, Australia
+id:ChIJAb-4yTRd1moR48D90e_1UII
+Log(2018-03-14 17:39:50.956017): 442 Elizabeth St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:39:50.956153): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJAb-4yTRd1moR48D90e_1UII']
+Log(2018-03-14 17:39:55.033142): outputfile, working...
+Log(2018-03-14 17:41:52.631489): cal_dis, working...
+Log(2018-03-14 17:41:52.632612): end location: Charlie,
+Log(2018-03-14 17:41:52.632891): 
+Log(2018-03-14 17:41:53.523282): range(len(lists) = 6
+Log(2018-03-14 17:41:53.532054): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:41:53.532233): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:41:53.532440): index = 0
+Log(2018-03-14 17:41:53.701906): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 17:41:53.710187): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:41:53.710480): line = 130
+Log(2018-03-14 17:41:53.710639): line = 131
+Log(2018-03-14 17:41:53.710785): line = 132
+Log(2018-03-14 17:41:53.710895): line = 132.6
+Log(2018-03-14 17:41:53.711076): line = 133
+Log(2018-03-14 17:41:54.623390): line = 134
+Log(2018-03-14 17:41:54.631626): line = 135
+Log(2018-03-14 17:41:54.631806): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-14 17:41:54.631988): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:41:54.632140): index = 1
+Log(2018-03-14 17:41:54.632246): line = 133
+Log(2018-03-14 17:41:55.362621): line = 134
+Log(2018-03-14 17:41:55.370901): line = 135
+Log(2018-03-14 17:41:55.371135): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-14 17:41:55.371301): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-14 17:41:55.371444): index = 2
+Log(2018-03-14 17:41:55.371576): line = 133
+Log(2018-03-14 17:41:56.284636): line = 134
+Log(2018-03-14 17:41:56.292924): line = 135
+Log(2018-03-14 17:41:56.293138): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-14 17:41:56.293417): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-14 17:41:56.293571): index = 3
+Log(2018-03-14 17:41:56.293784): line = 133
+Log(2018-03-14 17:41:57.513176): line = 134
+Log(2018-03-14 17:41:57.513383): line = 135
+Log(2018-03-14 17:41:57.513521): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-14 17:41:57.513612): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-14 17:41:57.513780): index = 4
+Log(2018-03-14 17:41:57.513933): line = 133
+Log(2018-03-14 17:41:58.440587): line = 134
+Log(2018-03-14 17:41:58.448550): line = 135
+Log(2018-03-14 17:41:58.448767): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-14 17:41:58.448908): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-14 17:41:58.449063): index = 5
+Log(2018-03-14 17:41:58.449209): line = 133
+Log(2018-03-14 17:41:59.356291): line = 134
+Log(2018-03-14 17:41:59.364582): line = 135
+Log(2018-03-14 17:41:59.364796): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-14 17:41:59.365098): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-14 17:41:59.365249): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y']
+Log(2018-03-14 17:42:03.422115): outputfile, working...
+Log(2018-03-14 17:47:05.267390): cal_dis, working...
+Log(2018-03-14 17:47:05.275789): end location: Charlie,
+Log(2018-03-14 17:47:05.275946): 
+Log(2018-03-14 17:47:07.484379): range(len(lists) = 5
+Log(2018-03-14 17:47:07.492737): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:47:07.492950): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:47:07.493094): index = 0
+Log(2018-03-14 17:47:08.098521): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 17:47:08.106830): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:47:08.107089): line = 129
+Log(2018-03-14 17:47:08.107215): line = 130
+Log(2018-03-14 17:47:08.107343): line = 131
+Log(2018-03-14 17:47:08.107435): line = 132
+Log(2018-03-14 17:47:08.107710): line = 132.6
+Log(2018-03-14 17:47:08.107860): line = 133
+Log(2018-03-14 17:47:08.286170): line = 134
+Log(2018-03-14 17:47:08.294444): line = 135
+Log(2018-03-14 17:47:08.294640): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:47:08.294827): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:47:08.294932): index = 1
+Log(2018-03-14 17:47:08.295144): line = 133
+Log(2018-03-14 17:47:08.470493): line = 134
+Log(2018-03-14 17:47:08.478813): line = 135
+Log(2018-03-14 17:47:08.479030): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:47:08.479214): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:47:08.479357): index = 2
+Log(2018-03-14 17:47:08.479474): line = 133
+Log(2018-03-14 17:47:09.330196): line = 134
+Log(2018-03-14 17:47:09.338414): line = 135
+Log(2018-03-14 17:47:09.338552): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-14 17:47:09.338750): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-14 17:47:09.338914): index = 3
+Log(2018-03-14 17:47:09.339004): line = 133
+Log(2018-03-14 17:47:09.508144): line = 134
+Log(2018-03-14 17:47:09.516480): line = 135
+Log(2018-03-14 17:47:09.516699): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-14 17:47:09.516881): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-14 17:47:09.517028): index = 4
+Log(2018-03-14 17:47:09.517148): line = 133
+Log(2018-03-14 17:47:10.245345): line = 134
+Log(2018-03-14 17:47:10.253671): line = 135
+Log(2018-03-14 17:47:10.253893): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-14 17:47:10.254189): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-14 17:47:10.254332): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE']
+Log(2018-03-14 17:47:14.634105): outputfile, working...
+Log(2018-03-14 17:48:05.579650): cal_dis, working...
+Log(2018-03-14 17:48:05.587480): end location: John,442 Elizabeth street,3000
+Log(2018-03-14 17:48:05.587635): 442 Elizabeth street,3000
+Log(2018-03-14 17:48:05.587896): locations
+Log(2018-03-14 17:48:05.588007): ['30 sunrise cres,3107', '13 Crouch Court,Doncaster', "O'sullivan Rd, Glen Waverley VIC 3150", "135 A'beckett Street,3000", '135 abeckett st,3000', '685 burke rd, camberwell', '50 albert road, south melbourne', '555 st kilda road,3004', '67 main drive, kew', '188 whitehorse rd, Balwyn', '882 glenhuntly rd, caulfield south', '442 Elizabeth street,3000']
+Log(2018-03-14 17:48:06.812444): range(len(lists) = 11
+Log(2018-03-14 17:48:06.812724): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:48:06.812907): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:48:06.813014): index = 0
+Log(2018-03-14 17:48:06.987665): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 17:48:06.995935): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:48:06.996146): line = 129
+Log(2018-03-14 17:48:06.996332): line = 130
+Log(2018-03-14 17:48:06.996461): line = 131
+Log(2018-03-14 17:48:06.996563): line = 132
+Log(2018-03-14 17:48:06.996682): line = 132.6
+Log(2018-03-14 17:48:06.996766): line = 133
+Log(2018-03-14 17:48:07.692587): line = 134
+Log(2018-03-14 17:48:07.700906): line = 135
+Log(2018-03-14 17:48:07.701153): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-14 17:48:07.701279): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:48:07.701377): index = 1
+Log(2018-03-14 17:48:07.701621): line = 133
+Log(2018-03-14 17:48:08.306676): line = 134
+Log(2018-03-14 17:48:08.315010): line = 135
+Log(2018-03-14 17:48:08.315229): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-14 17:48:08.315412): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-14 17:48:08.315554): index = 2
+Log(2018-03-14 17:48:08.315673): line = 133
+Log(2018-03-14 17:48:08.476265): line = 134
+Log(2018-03-14 17:48:08.484653): line = 135
+Log(2018-03-14 17:48:08.484880): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-14 17:48:08.485038): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-14 17:48:08.485188): index = 3
+Log(2018-03-14 17:48:08.485308): line = 133
+Log(2018-03-14 17:48:08.649245): line = 134
+Log(2018-03-14 17:48:08.657577): line = 135
+Log(2018-03-14 17:48:08.657795): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-14 17:48:08.657982): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-14 17:48:08.658117): index = 4
+Log(2018-03-14 17:48:08.658316): line = 133
+Log(2018-03-14 17:48:09.842751): line = 134
+Log(2018-03-14 17:48:09.851076): line = 135
+Log(2018-03-14 17:48:09.851314): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-14 17:48:09.851470): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-14 17:48:09.851623): index = 5
+Log(2018-03-14 17:48:09.851736): line = 133
+Log(2018-03-14 17:48:10.764545): line = 134
+Log(2018-03-14 17:48:10.771983): line = 135
+Log(2018-03-14 17:48:10.772165): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-14 17:48:10.772433): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-14 17:48:10.772590): index = 6
+Log(2018-03-14 17:48:10.772707): line = 133
+Log(2018-03-14 17:48:10.933563): line = 134
+Log(2018-03-14 17:48:10.941889): line = 135
+Log(2018-03-14 17:48:10.942103): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-14 17:48:10.942301): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-14 17:48:10.942433): index = 7
+Log(2018-03-14 17:48:10.942611): line = 133
+Log(2018-03-14 17:48:11.112441): line = 134
+Log(2018-03-14 17:48:11.120728): line = 135
+Log(2018-03-14 17:48:11.120929): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-14 17:48:11.121075): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-14 17:48:11.121226): index = 8
+Log(2018-03-14 17:48:11.121340): line = 133
+Log(2018-03-14 17:48:11.297181): line = 134
+Log(2018-03-14 17:48:11.305497): line = 135
+Log(2018-03-14 17:48:11.305720): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:48:11.305907): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:48:11.306064): index = 9
+Log(2018-03-14 17:48:11.306262): line = 133
+Log(2018-03-14 17:48:11.993228): line = 134
+Log(2018-03-14 17:48:12.001548): line = 135
+Log(2018-03-14 17:48:12.001777): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:48:12.001903): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:48:12.002095): index = 10
+Log(2018-03-14 17:48:12.002272): line = 133
+Log(2018-03-14 17:48:12.607982): line = 134
+Log(2018-03-14 17:48:12.616323): line = 135
+Log(2018-03-14 17:48:12.616548): 
+######location: 442 Elizabeth St, Melbourne VIC 3000, Australia
+id:ChIJAb-4yTRd1moR48D90e_1UII
+Log(2018-03-14 17:48:12.616650): 442 Elizabeth St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:48:12.616853): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJAb-4yTRd1moR48D90e_1UII']
+Log(2018-03-14 17:48:15.866256): outputfile, working...
+Log(2018-03-14 17:50:11.989691): cal_dis, working...
+Log(2018-03-14 17:50:11.998214): end location: John,442 Elizabeth street,3000
+Log(2018-03-14 17:50:11.998409): 442 Elizabeth street,3000
+Log(2018-03-14 17:50:11.998671): locations
+Log(2018-03-14 17:50:11.998780): ['30 sunrise cres,3107', '882 glenhuntly rd, caulfield south', "135 A'beckett Street,3000", '188 whitehorse rd, Balwyn', '13 Crouch Court,Doncaster', '555 st kilda road,3004', '50 albert road, south melbourne', '67 main drive, kew', '685 burke rd, camberwell', '135 abeckett st,3000', "O'sullivan Rd, Glen Waverley VIC 3150", '442 Elizabeth street,3000']
+Log(2018-03-14 17:50:13.344066): range(len(lists) = 11
+Log(2018-03-14 17:50:13.352294): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:50:13.352478): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:50:13.352705): index = 0
+Log(2018-03-14 17:50:13.519650): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-14 17:50:13.527944): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-14 17:50:13.528211): line = 129
+Log(2018-03-14 17:50:13.528320): line = 130
+Log(2018-03-14 17:50:13.528441): line = 131
+Log(2018-03-14 17:50:13.528598): line = 132
+Log(2018-03-14 17:50:13.528725): line = 132.6
+Log(2018-03-14 17:50:13.528814): line = 133
+Log(2018-03-14 17:50:13.727079): line = 134
+Log(2018-03-14 17:50:13.735275): line = 135
+Log(2018-03-14 17:50:13.735507): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-14 17:50:13.735631): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-14 17:50:13.735729): index = 1
+Log(2018-03-14 17:50:13.735960): line = 133
+Log(2018-03-14 17:50:13.919718): line = 134
+Log(2018-03-14 17:50:13.928031): line = 135
+Log(2018-03-14 17:50:13.928268): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-14 17:50:13.928414): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-14 17:50:13.928563): index = 2
+Log(2018-03-14 17:50:13.928682): line = 133
+Log(2018-03-14 17:50:14.567200): line = 134
+Log(2018-03-14 17:50:14.575521): line = 135
+Log(2018-03-14 17:50:14.575741): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-14 17:50:14.575927): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-14 17:50:14.576059): index = 3
+Log(2018-03-14 17:50:14.576320): line = 133
+Log(2018-03-14 17:50:14.745212): line = 134
+Log(2018-03-14 17:50:14.753466): line = 135
+Log(2018-03-14 17:50:14.753663): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-14 17:50:14.753868): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-14 17:50:14.754020): index = 4
+Log(2018-03-14 17:50:14.754244): line = 133
+Log(2018-03-14 17:50:14.936238): line = 134
+Log(2018-03-14 17:50:14.944571): line = 135
+Log(2018-03-14 17:50:14.944796): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-14 17:50:14.944918): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-14 17:50:14.945139): index = 5
+Log(2018-03-14 17:50:14.945281): line = 133
+Log(2018-03-14 17:50:15.111822): line = 134
+Log(2018-03-14 17:50:15.120136): line = 135
+Log(2018-03-14 17:50:15.120360): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-14 17:50:15.120634): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-14 17:50:15.120768): index = 6
+Log(2018-03-14 17:50:15.120876): line = 133
+Log(2018-03-14 17:50:16.103091): line = 134
+Log(2018-03-14 17:50:16.111407): line = 135
+Log(2018-03-14 17:50:16.111628): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-14 17:50:16.111825): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-14 17:50:16.111953): index = 7
+Log(2018-03-14 17:50:16.112152): line = 133
+Log(2018-03-14 17:50:16.292094): line = 134
+Log(2018-03-14 17:50:16.300381): line = 135
+Log(2018-03-14 17:50:16.300580): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-14 17:50:16.300726): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-14 17:50:16.300900): index = 8
+Log(2018-03-14 17:50:16.301134): line = 133
+Log(2018-03-14 17:50:16.462947): line = 134
+Log(2018-03-14 17:50:16.471265): line = 135
+Log(2018-03-14 17:50:16.471519): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:50:16.471628): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:50:16.471917): index = 9
+Log(2018-03-14 17:50:16.472060): line = 133
+Log(2018-03-14 17:50:16.673080): line = 134
+Log(2018-03-14 17:50:16.681391): line = 135
+Log(2018-03-14 17:50:16.681628): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-14 17:50:16.681775): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:50:16.681924): index = 10
+Log(2018-03-14 17:50:16.682044): line = 133
+Log(2018-03-14 17:50:16.847034): line = 134
+Log(2018-03-14 17:50:16.855359): line = 135
+Log(2018-03-14 17:50:16.855595): 
+######location: 442 Elizabeth St, Melbourne VIC 3000, Australia
+id:ChIJAb-4yTRd1moR48D90e_1UII
+Log(2018-03-14 17:50:16.855742): 442 Elizabeth St, Melbourne VIC 3000, Australia
+Log(2018-03-14 17:50:16.855900): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJAb-4yTRd1moR48D90e_1UII']
+Log(2018-03-14 17:50:20.880730): outputfile, working...
+Log(2018-03-16 10:05:01.164045): cal_dis, working...
+Log(2018-03-16 10:05:01.172242): end location: Vincent,
+Log(2018-03-16 10:05:01.172394): 
+Log(2018-03-16 10:05:02.772966):      请检查，一些地址的内容有错!     
+Log(2018-03-16 10:18:04.028208): cal_dis, working...
+Log(2018-03-16 10:18:04.036060): end location: >              请选择一个派送员              
+Log(2018-03-16 10:18:04.036246): 
+Log(2018-03-16 10:18:05.605270): range(len(lists) = 11
+Log(2018-03-16 10:18:05.605444): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:18:05.605585): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:18:05.605721): index = 0
+Log(2018-03-16 10:18:06.496670): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 10:18:06.505113): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:18:06.505445): line = 129
+Log(2018-03-16 10:18:06.505599): line = 130
+Log(2018-03-16 10:18:06.505775): line = 131
+Log(2018-03-16 10:18:06.505949): line = 132
+Log(2018-03-16 10:18:06.506226): line = 132.6
+Log(2018-03-16 10:18:06.506377): line = 133
+Log(2018-03-16 10:18:06.674781): line = 134
+Log(2018-03-16 10:18:06.682718): line = 135
+Log(2018-03-16 10:18:06.682889): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 10:18:06.683033): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:18:06.683181): index = 1
+Log(2018-03-16 10:18:06.683302): line = 133
+Log(2018-03-16 10:18:07.427211): line = 134
+Log(2018-03-16 10:18:07.435527): line = 135
+Log(2018-03-16 10:18:07.435750): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 10:18:07.436137): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 10:18:07.436308): index = 2
+Log(2018-03-16 10:18:07.436520): line = 133
+Log(2018-03-16 10:18:08.339153): line = 134
+Log(2018-03-16 10:18:08.347419): line = 135
+Log(2018-03-16 10:18:08.347615): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-16 10:18:08.347766): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 10:18:08.347889): index = 3
+Log(2018-03-16 10:18:08.348066): line = 133
+Log(2018-03-16 10:18:08.957255): line = 134
+Log(2018-03-16 10:18:08.965275): line = 135
+Log(2018-03-16 10:18:08.965558): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 10:18:08.965782): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 10:18:08.965946): index = 4
+Log(2018-03-16 10:18:08.966058): line = 133
+Log(2018-03-16 10:18:09.568400): line = 134
+Log(2018-03-16 10:18:09.568628): line = 135
+Log(2018-03-16 10:18:09.568851): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 10:18:09.569103): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 10:18:09.569252): index = 5
+Log(2018-03-16 10:18:09.569440): line = 133
+Log(2018-03-16 10:18:10.489600): line = 134
+Log(2018-03-16 10:18:10.496912): line = 135
+Log(2018-03-16 10:18:10.497089): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 10:18:10.497185): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 10:18:10.497458): index = 6
+Log(2018-03-16 10:18:10.497625): line = 133
+Log(2018-03-16 10:18:11.411392): line = 134
+Log(2018-03-16 10:18:11.419681): line = 135
+Log(2018-03-16 10:18:11.419881): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 10:18:11.419996): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 10:18:11.420102): index = 7
+Log(2018-03-16 10:18:11.420286): line = 133
+Log(2018-03-16 10:18:12.025942): line = 134
+Log(2018-03-16 10:18:12.034207): line = 135
+Log(2018-03-16 10:18:12.034390): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 10:18:12.034583): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 10:18:12.034748): index = 8
+Log(2018-03-16 10:18:12.034876): line = 133
+Log(2018-03-16 10:18:12.642206): line = 134
+Log(2018-03-16 10:18:12.650494): line = 135
+Log(2018-03-16 10:18:12.650679): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 10:18:12.650860): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 10:18:12.651016): index = 9
+Log(2018-03-16 10:18:12.651125): line = 133
+Log(2018-03-16 10:18:13.254683): line = 134
+Log(2018-03-16 10:18:13.262893): line = 135
+Log(2018-03-16 10:18:13.263078): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 10:18:13.263202): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 10:18:13.263375): index = 10
+Log(2018-03-16 10:18:13.263552): line = 133
+Log(2018-03-16 10:18:13.872320): line = 134
+Log(2018-03-16 10:18:13.880649): line = 135
+Log(2018-03-16 10:18:13.880876): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 10:18:13.881034): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 10:18:13.881201): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw']
+Log(2018-03-16 10:18:21.716939): outputfile, working...
+Log(2018-03-16 10:19:39.154891): cal_dis, working...
+Log(2018-03-16 10:19:39.163160): end location: Vincent,
+Log(2018-03-16 10:19:39.163347): 
+Log(2018-03-16 10:19:39.786394): range(len(lists) = 4
+Log(2018-03-16 10:19:39.793831): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:19:39.794012): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 10:19:39.794218): index = 0
+Log(2018-03-16 10:19:39.962699): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 10:19:39.971008): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 10:19:39.971272): line = 129
+Log(2018-03-16 10:19:39.971378): line = 130
+Log(2018-03-16 10:19:39.971557): line = 131
+Log(2018-03-16 10:19:39.971694): line = 132
+Log(2018-03-16 10:19:39.971794): line = 132.6
+Log(2018-03-16 10:19:39.971992): line = 133
+Log(2018-03-16 10:19:40.134858): line = 134
+Log(2018-03-16 10:19:40.143177): line = 135
+Log(2018-03-16 10:19:40.143433): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-16 10:19:40.143536): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 10:19:40.143643): index = 1
+Log(2018-03-16 10:19:40.143827): line = 133
+Log(2018-03-16 10:19:40.311486): line = 134
+Log(2018-03-16 10:19:40.319802): line = 135
+Log(2018-03-16 10:19:40.320022): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 10:19:40.320296): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 10:19:40.320439): index = 2
+Log(2018-03-16 10:19:40.320666): line = 133
+Log(2018-03-16 10:19:40.486662): line = 134
+Log(2018-03-16 10:19:40.494957): line = 135
+Log(2018-03-16 10:19:40.495139): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 10:19:40.495348): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 10:19:40.495505): index = 3
+Log(2018-03-16 10:19:40.495616): line = 133
+Log(2018-03-16 10:19:40.663310): line = 134
+Log(2018-03-16 10:19:40.671635): line = 135
+Log(2018-03-16 10:19:40.671852): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 10:19:40.671947): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 10:19:40.672215): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U']
+Log(2018-03-16 10:19:41.419988): outputfile, working...

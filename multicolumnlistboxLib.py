@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-  
 # Version: 2.3
 # Author: Miguel Martinez Lopez
 # Uncomment the next line to see my email
@@ -312,8 +313,9 @@ class Multicolumn_Listbox(object):
         
         if index is None:
             index = self._number_of_rows-1
-
-        item_ID = self.interior.insert('', index, values=data)        
+        print "data"
+        print data
+        item_ID = self.interior.insert('', index, values=data)    
         self.interior.item(item_ID, tags=item_ID)
 
         self._number_of_rows += 1        

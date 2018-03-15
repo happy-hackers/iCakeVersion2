@@ -30,9 +30,7 @@ file_order = 'file/orderandcakedata.csv'
 file_order_copy = 'file/orderandcakedata_copy.csv'
 file_dis = 'file/dispatchers.csv'
 file_dis_copy = 'file/dispatchers_copy.csv'
-
 file_log = 'file/log.txt'
-
 file_size = 'file/cake_size.csv'
 file_type = 'file/cake_type.csv'
 file_inner = 'file/cake_inner.csv'
@@ -190,7 +188,7 @@ class Orders_database(object):
             print "#line:{}".format(line)
             print "#cakes:{}".format(line[index_cakes])
             order = Order(line[index_no],line[index_agent],line[index_address],\
-                          line[index_name],line[index_phone],line[index_candle],\
+                          line[index_name],str(line[index_phone]),line[index_candle],\
                           line[index_tableware],line[index_writing],line[index_price],\
                           line[index_state],line[index_mode],line[index_date],line[index_time],\
                           line[index_psinfo],convert_data_to_list(line[index_cakes]),\
@@ -344,23 +342,23 @@ class Order(object):
                      dispatcher = None,
                      upfront = None
                      ):
-        self.order_number = order_number
-        self.agent = agent
-        self.address = address
-        self.name = name
+        self.order_number = int(order_number)
+        self.agent = str(agent)
+        self.address = str(address)
+        self.name = str(name)
         self.phone = phone
-        self.candle = candle
-        self.tableware = tableware
-        self.writing = writing
-        self.price = price
-        self.state = state
-        self.mode = mode
-        self.pickup_date = pickup_date
-        self.pickup_time = pickup_time
+        self.candle = str(candle)
+        self.tableware = str(tableware)
+        self.writing = str(writing)
+        self.price = str(price)
+        self.state = str(state)
+        self.mode = str(mode)
+        self.pickup_date = str(pickup_date)
+        self.pickup_time = str(pickup_time)
         self.cake_type = cake_type
-        self.ps_info = ps_info
-        self.dispatcher = dispatcher
-        self.upfront = upfront
+        self.ps_info = str(ps_info)
+        self.dispatcher = str(dispatcher)
+        self.upfront = str(upfront)
 
     def __str__(self):
             return str(self.__dict__)
@@ -379,7 +377,7 @@ class Order(object):
 # convert a class to a list of str
 def class_to_order(item):
     new_list_item = [item.order_number,item.agent,item.address,\
-                     item.name,item.phone,item.candle,item.tableware,\
+                     item.name,str(item.phone),item.candle,item.tableware,\
                      item.writing,item.price,item.state,item.mode,\
                      item.pickup_date,item.pickup_time,item.ps_info,\
                      item.cake_type,item.dispatcher,item.upfront]
@@ -388,9 +386,11 @@ def class_to_order(item):
 
 # order to list with mode
 def order2list(item,cake):
+    print item.phone
+    print str(item.phone)
     new_list_item = [item.order_number,cake[index_cake_no],item.agent,cake[index_cake_size],cake[index_cake_shape],\
                      cake[index_cake_inner],cake[index_cake_type],item.price,item.upfront,\
-                     item.writing,item.candle,item.tableware,item.phone,item.address,\
+                     item.writing,item.candle,item.tableware,strip(item.phone),item.address,\
                      item.ps_info,item.state]
     return new_list_item
 
@@ -398,6 +398,8 @@ def order2list(item,cake):
 def order2lists(items):
     new_list = []
     for item in items:
+        print item.phone
+        print str(item.phone)
         for cake in item.cake_type:
             new_list.append(order2list(item,cake))
     return new_list
@@ -579,7 +581,7 @@ def read_cake_types():
 def write_2_log(message):
     now = datetime.now()
     f = open(file_log,'a+')
-    f.write("Error({}): {}".format(now,message))
+    f.write("Log({}): {}\n".format(now,message))
     f.close()
 
 # check ps info doesnt contain special characters other than comma
@@ -608,17 +610,53 @@ def rip_num_full(str):
     return new_str.split(',')[0]
 
 # justify the order of listbo
-def justify_order(listbox):
+def justify_order(listbox,tmp):
     last = len(listbox.table_data)-1
-    tmp =  listbox.table_data[last]
-    listbox.delete_row(last)
-    listbox.insert_row(tmp)  
+    listbox.insert_row(tmp)
+    if last >= 0:
+        listbox.delete_row(last)
+
+def justify_order2(listbox):
+    last = len(listbox.table_data)-1
+    if last >= 0:
+        tmp =  listbox.table_data[last]
+        listbox.delete_row(last)
+        listbox.insert_row(tmp)
+    
 # update listbox
 def update_listbox(lists,listbox):
-    listbox.clear()
-    for i in lists:
-        listbox.row.insert(i)
-        justify_order(listbox)  
+    listbox.update(lists)
+    last = len(listbox.table_data)-1
+    if last > 0:
+        print listbox.table_data[last]
+        listbox.delete_row(last)
+        listbox.insert_row(lists[0],0)
+    # listbox.clear()
+ #    for i in lists:
+ #        listbox.insert_row(i)
+ #        listbox.insert_row(i)
+ #        last = len(listbox.table_data)-1
+ #        listbox.delete_row(last)
+ #    last = len(listbox.table_data)-1
+ #    if last > 0:
+ #        print listbox.table_data[last]
+ #        listbox.delete_row(last)
+
+# check wheter all integet or not
+def isvalid_id(idd):
+    print "idd"
+    print idd
+    for i in idd:
+        if not i.isdigit():
+            return True
+    return False
+# get rid of char which is not number
+def strip(strr):
+    new = []
+    for i in strr:
+        if i.isdigit():
+            new.append(i)
+    return "".join(new)
 # center a window
 # @sources: https://stackoverflow.com/questions/3352918/how-to-center-a-window-on-the-screen-in-tkinter
 def center(toplevel):

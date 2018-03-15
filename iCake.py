@@ -51,7 +51,7 @@ destination = "&destination="
 viaDriving = "&travelmode=driving"
 waypoints = "&waypoints="
 
-num_key = 0
+num_key = 1
 gmaps = googlemaps.Client(key=key[num_key])
 window_open = False                  # to ensure only one add/edit order window
                                      # can be opened at one time
@@ -65,13 +65,22 @@ def cal_dis(orders,end_loc):
             locations.insert(0,proc_start_loc.get())
 
             # if there is specified end location append it to the end of locations
-            print "end location: {}".format(end_loc)
+            write_2_log("cal_dis, working...")
+            write_2_log("end location: {}".format(end_loc))
+            write_2_log(','.join(get_address(end_loc)))
+            
+            
+            print "end location: {}".format(end_loc)            
             print ','.join(get_address(end_loc))
             if end_loc != hint1 and ','.join(get_address(end_loc)):
-                print "$"
+                print "$"                
                 locations.append(','.join(get_address(end_loc)))
                 print "locations"
                 print locations
+                write_2_log("locations")
+                write_2_log(locations)
+                
+                
                 
             directions_result = gmaps.directions(locations[0],locations[-1],
                                                 waypoints=locations[1:-1],
@@ -82,12 +91,22 @@ def cal_dis(orders,end_loc):
             totalDuration = 0
             newLocationIds = []
             newLocations = {}
+            
             if not directions_result:
-                warning_window(master,"     一些地址的内容有错!     ")
+                write_2_log("     请检查地址，一些地址的内容有错!     ")
+                warning_window(master,"     请检查地址，一些地址的内容有错!     ")
                 return
             lists = directions_result[0]['legs']
             # loop through the details of direction results
+            write_2_log("range(len(lists) = " + str(len(lists)))
+            write_2_log(lists[0]['start_address'])
+            write_2_log(lists[0]['end_address'])
+            # write_2_log(lists[1]['end_address'])
+#             write_2_log(lists[2]['end_address'])
+                
             for index in range(len(lists)):
+                write_2_log("index = {}".format(index))
+                
                 try:
                     #print lists[index]
                     if lists[index]['distance']['text'][:-3]:
@@ -95,22 +114,38 @@ def cal_dis(orders,end_loc):
                     if lists[index]['duration']['text'][:-4]:
                         totalDuration += float(lists[index]['duration']['text'][:-4])
                 except IndexError as e:
+                    write_2_log(e)
                     print e
                     return
                     
                 #get the start location as well
                 if index == 0:
                     locationId = gmaps.geocode(lists[index]['start_address'])[0]['place_id']
-                    print "######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId)
+                    write_2_log("######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId))
+                    write_2_log(lists[index]['start_address'])
+                    
+                    try:
+                        print "######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId)
+                    except:
+                        write_2_log("line = {}".format(129))   
+                    write_2_log("line = {}".format(130))   
                     print lists[index]['start_address']
+                    write_2_log("line = {}".format(131))   
                     newLocations[locationId] = lists[index]['start_address']
+                    write_2_log("line = {}".format(132))
                     newLocationIds.append(locationId)
-        
+                    write_2_log("line = {}".format(132.6))
+                
+                write_2_log("line = {}".format(133))   
                 locationId = gmaps.geocode(lists[index]['end_address'])[0]['place_id']
+                write_2_log("line = {}".format(134))
                 newLocations[locationId] = lists[index]['end_address']
+                write_2_log("line = {}".format(135))    
+                write_2_log("\n######location: {}\nid:{}".format(lists[index]['end_address'],locationId))
+                write_2_log(lists[index]['end_address'])
                 newLocationIds.append(locationId)
-                print "location: {},id:{}".format(lists[index]['start_address'],locationId)
-                print lists[index]['start_address']
+                
+            write_2_log(newLocationIds)
             print newLocationIds
             finalLocations = outputFile(newLocationIds, totalDistance, \
                                      totalDuration, (len(locations)-1), orders,end_loc,newLocations)
@@ -131,6 +166,11 @@ def setup_doc(document,order,order_num):
     document.add_paragraph(u"订单号 : {}".format(order.order_number))
     document.add_paragraph(u"客户姓名 : {}".format(order.name))
     document.add_paragraph(u"客户电话 : {}".format(order.phone))
+    document.add_paragraph(u"价格 : {}".format(order.price))
+    document.add_paragraph(u"定金 : {}".format(order.upfront))
+    document.add_paragraph(u"写字 : {}".format(order.writing))
+    document.add_paragraph(u"蜡烛 : {}".format(order.candle))
+    document.add_paragraph(u"餐具 : {}".format(order.tableware))
     document.add_paragraph(u"备注 : {}".format(order.ps_info))
     document.add_paragraph(u"蛋糕信息 : ")
     setup_table(document,order)
@@ -179,7 +219,6 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     from docx.shared import Inches
     from docx.enum.text import WD_ALIGN_PARAGRAPH
     from docx.shared import RGBColor
-    import pandas as pd
     import easygui
     import os
 
@@ -244,7 +283,9 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
     #document.add_paragraph("Total duration is %.1f mins." % totalDuration)
     document.add_paragraph(u"\n总共%d个订单.\n" % order_num)
-
+    
+    write_2_log("outputfile, working...")
+    
     now = datetime.now()
     path = easygui.diropenbox()
 
@@ -593,8 +634,6 @@ def edit_cake_window(master,list_box_cakes,cakes):
     if list_box_cakes.selected_rows:
         window = Toplevel(master)
         window.title("更改蛋糕信息")
-        window.config(width = 300,height = 200)
-        center(window)
 
         edit_cake = list_box_cakes.selected_rows[0]
         var_size,var_shape,var_inner,var_type,cake_ps,row_num = pack_cake_entry(window)
@@ -610,6 +649,8 @@ def edit_cake_window(master,list_box_cakes,cakes):
             .grid(row=row_num,column = 0,pady = 4)
         Button(window,text= "取消",command = window.destroy).\
             grid(row=row_num,column = 1,pady = 4)
+        center(window)
+          
     else:
         return
 
@@ -634,12 +675,12 @@ def edit_cake_info(edit_cake,size,shape,inner,typee,
     
 # window for deleting selected cake
 def delete_cake_window(master,list_box_cakes,cakes):
-    print "\n\n\n########################\nlist_box_cakes.selected_rows"
-    print list_box_cakes.selected_rows
-    print list_box_cakes.selected_rows[0][0]
-    print list_box_cakes.selected_rows[0][1]
-    print list_box_cakes.selected_rows[0][2]
-    print list_box_cakes.selected_rows[0][3]
+    # print "\n\n\n########################\nlist_box_cakes.selected_rows"
+ #    print list_box_cakes.selected_rows
+ #    print list_box_cakes.selected_rows[0][0]
+ #    print list_box_cakes.selected_rows[0][1]
+ #    print list_box_cakes.selected_rows[0][2]
+ #    print list_box_cakes.selected_rows[0][3]
 
     if list_box_cakes.selected_rows:
         edit_cake = list_box_cakes.selected_rows[0]
@@ -659,19 +700,19 @@ def delete_cake_window(master,list_box_cakes,cakes):
 
 # delete selected cakes
 def delete_cake(master,edit_cake,list_box_cakes,cakes):
-    print "edit cake :"
-    print edit_cake
-    print "######################"
-    print "cakes"
-    print cakes
+    # print "edit cake :"
+ #    print edit_cake
+ #    print "######################"
+ #    print "cakes"
+ #    print cakes
     for data in list_box_cakes.selected_rows:
         for cake in cakes:
             if data[index_cake_no] == cake[index_cake_no]:
                 cakes.remove(cake)
         
-    print "######################"
-    print "after:"
-    print cakes
+    # print "######################"
+#     print "after:"
+#     print cakes
     update_listbox(cakes,list_box_cakes)
     master.destroy()
 
@@ -716,7 +757,7 @@ def run_order():
     tmp = db.orders_rightbox
     print "tmp"
     print tmp 
-    order_numbers = [">Choose an order"]
+    order_numbers = [">       选择订单        "]
     
     if proc_entry_num_city.get() and proc_entry_num.get():
         orders_areas = in_city(db.orders_rightbox,db.postcode[index_city],db.postcode_full[index_city])
@@ -775,6 +816,8 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
     listboxes = []
     dispatchers = to_na_ad(db.dispatchers)
     dispatchers.insert(0,hint1)
+    print "dispatchers"
+    print dispatchers
     menu_var = []
     for i in range(num_dis):
         if i < 6:
@@ -802,6 +845,7 @@ def manual_order(title,num_dis,orders_area,orders,order_numbers):
                             height=5,
                             select_mode = EXTENDED)
         listbox.update(to_order2(orders[i]))
+        justify_order2(listbox)
         listbox.interior.grid(row = (row_num+2),column =col_num)
         listboxes.append(listbox)
         Button(manual_window,text ="添加",width = 8,command =
@@ -838,24 +882,25 @@ def manual_delete(i,orders,listboxes,order_numbers):
 # add order to corresspoding listbox in the manul window
 def manual_add_window(i,orders,listboxes,order_numbers,window):
     manual_add_window = Toplevel(window)
-    manual_add_window.title("Add")
+    manual_add_window.title("添加订单")
 
     var = StringVar()
     var.set(order_numbers[0])
     om_order_numebrs = OptionMenu(manual_add_window,var, *order_numbers)
 
     om_order_numebrs.pack()
-    Button(manual_add_window,text ="confirm",command =
+    Button(manual_add_window,width = 8,text ="确认",command =
                  lambda i=i,var=var,orders=orders,listboxes=
                  listboxes: manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,om_order_numebrs)).pack()
     center(manual_add_window)
 
 # add order to corresspoding listbox
 def manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,m):
-    if var.get() != "Choose Order":
+    if var.get() != ">       选择订单        ":
         order = get_item_by_num(var.get(),db.orders_rightbox)
         orders[i].append(order)
         print "orders[i]"
+        print order.address
         for k in orders[i]: 
             print k
         print order_numbers
@@ -885,8 +930,6 @@ def manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,m):
 def get_item(list,item):
     print "get_item"
     for item1 in list:
-        print item1
-        print item
         if str(item1.order_number) == str(item[index_no]):
             print "get_item:"
             print item1
@@ -943,7 +986,7 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
             else:
                 list1.append(i)
         new_location = "".join(list1)       
-          
+         
     if (order.get() == '' or phone.get() == ''\
         or new_location == '' or current_cakes == []):
         warning_window(window,warning_message1)
@@ -954,6 +997,9 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
     elif isvalid_ad(new_location) < 0:
         warning_window(window,warning_message9)
         return False
+    elif isvalid_id(order.get()):
+        warning_window(window,"    订单号仅允许数字！    ")
+        return False
     else:        
         if indicator:
             for order1 in db.orders_all:
@@ -961,7 +1007,7 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
                     warning_window(master,"     订单号已存在，请重新输入     ")
                     return False  
     
-        new_order = Order(order.get(),agent.get(),new_location,name.get(),phone.get(),\
+        new_order = Order(order.get(),agent.get(),new_location,name.get(),"ph: "+phone.get(),\
                            candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
                            mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),current_cakes,\
                            dispatcher,upfront.get())
@@ -1170,6 +1216,31 @@ def edit_order(order,agent,location,name,phone,
                 var2,ps_info,item,window,current_cakes,
                 mode,pickup_date,pickup_time,dis,upfront,
                 listbox,list_box_cakes):
+                
+    new_location = location.get()
+    if isvalid_ad(location.get()) == 2:
+        list1 = []
+        for i in location.get():
+            if i == '，':
+                list1.append(',')
+            else:
+                list1.append(i)
+        new_location = "".join(list1)       
+          
+    if (order.get() == '' or phone.get() == ''\
+        or new_location == '' or current_cakes == []):
+        warning_window(window,warning_message1)
+        return False
+    elif isvalid_ad(new_location) == 1:
+        warning_window(window,warning_message8)
+        return False
+    elif isvalid_ad(new_location) < 0:
+        warning_window(window,warning_message9)
+        return False
+    elif isvalid_id(order.get()):
+        warning_window(window,"    订单号仅允许数字！    ")
+        return False
+    
     indicator = True
     # order number didnt get changed
     if order.get() == item.order_number:
@@ -1194,7 +1265,7 @@ def edit_order(order,agent,location,name,phone,
     else:
         for o in db.orders_all:
             if o.order_number == item.order_number:
-                new_order = Order(order.get(),agent.get(),location.get(),name.get(),phone.get(),\
+                new_order = Order(order.get(),agent.get(),new_location,name.get(),phone.get(),\
                                    candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
                                    mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),\
                                    sorted(list_box_cakes.table_data),dis,upfront.get())
@@ -1209,10 +1280,7 @@ def edit_order(order,agent,location,name,phone,
     db.update()
     refresh_all()
     window.destroy()
-    
-    
-   
-        
+          
 # multiple delete
 def delete_selected(listbox):
     print "delete_selected"
@@ -1226,7 +1294,7 @@ def delete_selected(listbox):
             print order
             list_orders.append(order)
             if not (order.order_number in list_order_nums):
-                list_order_nums.append(order.order_number)
+                list_order_nums.append(str(order.order_number))
         
         # notify user to make sure he/she confirm the deletion
         window = Toplevel(master)
@@ -1357,7 +1425,7 @@ def refresh_all():
     update_listbox(order2lists(db.orders_today),today_list_box_all)
     update_listbox(ctl_num_address(db.orders_leftbox),proc_left_box)
     update_listbox(ctl_num_address(db.orders_rightbox),proc_right_box)
-    update_listbox(class_to_list_without_info(db.orders_history),history_listbox)
+    update_listbox(order2lists(db.orders_history),history_listbox)
 
 def refresh_all2():
     deselect_all()
@@ -1407,6 +1475,15 @@ def do_popup_left(event):
     finally:
         # make sure to release the grab (Tk 8.0a1 only)
         popup_left.grab_release()
+
+# bind popup menu to proc_rigtht listbox
+def do_popup_right(event):
+    # display the popup menu
+    try:
+        popup_right.tk_popup(event.x_root, event.y_root)
+    finally:
+        # make sure to release the grab (Tk 8.0a1 only)
+        popup_right.grab_release()
     
 # bind popup menu to cake listbox
 def do_popup_cake(event):
@@ -1549,6 +1626,7 @@ def to_na_ad(old_list):
         print "rip(dis[index_dis_name]"
         print rip(dis[index_dis_name])
         dispatchers.append("".join([rip(dis[index_dis_name]) + "," +dis[index_dis_home]]))
+        # if dis[index_dis_home]:
         #dispatchers.append("".join([dis[index_dis_name] + "," +dis[index_dis_home]]))
     return dispatchers
 #rip off comma
@@ -1795,7 +1873,41 @@ def build_table_his():
     listbox.configure_column(8,width = (size+50))
     listbox.configure_column(9,width = (size+50))
     return listbox
+# check location validity
+def check_location():
+    locations = [x.address for x in db.orders_leftbox]
+    # locs = [x.address for x in db.orders_rightbox]
+#     locations.append(locs)
+    isgood = 0
     
+    if proc_start_loc.get():
+        des = gmaps.places_autocomplete(input_text = proc_start_loc.get())
+        if not des:
+            warning_window(master," 初始地址可能存在问题 " +"\n请手动检查地址信息的正确性")
+            isgood = -1
+        
+    for loc in locations:
+        print loc
+        des = gmaps.places_autocomplete(input_text = loc)
+        if not des:
+            warning_window(master," 这个地址可能存在问题 " + loc+"\n请手动检查地址信息的正确性")
+            isgood = -1
+        else:
+          new_loc = gmaps.places_autocomplete(input_text = loc)[0]['description']
+          if not new_loc:
+              warning_window(master," 这个地址可能存在问题 " + loc+"\n请手动检查地址信息的正确性")
+              isgood = -1
+          else:
+              new_loc_id = gmaps.geocode(new_loc)[0]['place_id']
+              formatted_address = gmaps.reverse_geocode(new_loc_id)[0]['formatted_address']
+              loc_id = gmaps.geocode(formatted_address)[0]['place_id']
+              #print formatted_address + " " + loc_id
+              #print new_loc + " " + new_loc_id
+              if loc_id != new_loc_id:
+                  warning_window(master," 这个地址可能存在问题 " + loc +"\n请手动检查地址信息的正确性")
+                  isgood = -1
+    if isgood == 0:            
+        warning_window(master,"     暂未发现地址信息内存在任何问题     ")
     
 # autocomplete entry 
 # @source: http://code.activestate.com/recipes/578253-an-entry-with-autocompletion-for-the-tkinter-gui/
@@ -1964,9 +2076,9 @@ if __name__ == "__main__":
     popup = Menu(master,tearoff = 0)
     popup.add_command(label="显示信息",command = lambda:edit_info(master,today_list_box_all))
     popup.add_command(label="删除",command = lambda:delete_selected(today_list_box_all))
-    popup.add_command(label="移到历史",command = lambda:move2state(today_list_box_all,arrived))
-    popup.add_command(label="改成（等待被派送）",command = lambda:move2state(today_list_box_all,waiting))
-    popup.add_command(label="改成（正在派送）",command = lambda:move2state(today_list_box_all,processing))
+    # popup.add_command(label="移到历史",command = lambda:move2state(today_list_box_all,arrived))
+    # popup.add_command(label="改成（等待被派送）",command = lambda:move2state(today_list_box_all,waiting))
+    # popup.add_command(label="改成（正在派送）",command = lambda:move2state(today_list_box_all,processing))
     popup.add_command(label="刷新",command = lambda:refresh_all())
     
     popup.add_separator()
@@ -1975,11 +2087,16 @@ if __name__ == "__main__":
     popup_left = Menu(master,tearoff = 0)
     popup_left.add_command(label="显示信息",command = lambda:edit_info(master,today_list_box_all))
     popup_left.add_command(label="删除",command = lambda:delete_selected(proc_left_box))
-    popup_left.add_command(label="移到历史",command = lambda:move2state(proc_left_box,arrived))
-    popup_left.add_command(label="改成（等待被派送）",command = lambda:move2state(proc_left_box,waiting))
-    popup_left.add_command(label="改成（正在派送）",command = lambda:move2state(proc_left_box,processing))
+    #popup_left.add_command(label="移到历史",command = lambda:move2state(proc_left_box,arrived))
+    # popup_left.add_command(label="改成（等待被派送）",command = lambda:move2state(proc_left_box,waiting))
+    # popup_left.add_command(label="改成（正在派送）",command = lambda:move2state(proc_left_box,processing))
     popup_left.add_command(label="刷新",command = lambda:refresh_all2())
     popup_left.add_separator()
+    
+    # popup Menu for left listbox of processing tab
+    popup_right = Menu(master,tearoff = 0)
+    popup_right.add_command(label="刷新",command = lambda:refresh_all2())
+    popup_right.add_separator()
 
     # popup Menu for dispatcher
     popup_dis = Menu(tab_proc,tearoff = 0)
@@ -1991,8 +2108,8 @@ if __name__ == "__main__":
     popup_his = Menu(master,tearoff = 0)
     popup_his.add_command(label="显示信息",command = lambda:edit_info(master,history_listbox))
     popup_his.add_command(label="删除",command = lambda:delete_selected(history_listbox))
-    popup_his.add_command(label="改成（等待被派送）",command = lambda:move2state(history_listbox,waiting))
-    popup_his.add_command(label="改成（正在派送）",command = lambda:move2state(history_listbox,processing))
+    # popup_his.add_command(label="改成（等待被派送）",command = lambda:move2state(history_listbox,waiting))
+    # popup_his.add_command(label="改成（正在派送）",command = lambda:move2state(history_listbox,processing))
     popup_his.add_command(label="刷新",command = lambda:refresh_all())
     popup_his.add_separator()
 
@@ -2050,7 +2167,7 @@ if __name__ == "__main__":
     # history_button_search = Button(tab_history, text = '查找',width = 15,command =\
     #                              lambda:search_listbox_history(history_search.get()))
     # history_listbox = Listbox(tab_history, width = 70,height = 20)
-    history_listbox =build_table_his()
+    history_listbox = build_table(tab_history)
     history_listbox.interior.bind("<Button-2>", do_popup_his)
     #history_date.grid(row = 0,column = 0,sticky = W)
     Label(tab_history,text = '历史订单',font=("Calibri",title_size)).\
@@ -2078,14 +2195,20 @@ if __name__ == "__main__":
 
     proc_run_button = Button(tab_proc, text = "运行",command = run_order,\
                              width=15)
+    proc_check_button = Button(tab_proc, text = "检查地址",command = check_location,\
+                             width=15)
+    #Label(tab_proc,text = "（仅等待被派送列表内）").grid(row = 9,column =5,sticky = W,padx = 30)
     # proc_manually_button = Button(tab_proc, text = "manually assgin orders",command = manually_run,\
     #                          width=20)
     proc_start_loc = Entry(tab_proc)
     proc_end_loc = Entry(tab_proc)
-    proc_start_loc.insert(0,start_location)
+    #proc_start_loc.insert(0,start_location)
 
     #orders ui elements setup
     proc_left_box.interior.bind("<Button-2>", do_popup_left)
+    proc_right_box.interior.bind("<Button-2>", do_popup_right)
+    tab_proc.bind("<Button-2>", do_popup_right)
+    
     proc_text_name.grid(row = 0, column = 0,sticky=W)
     Label(tab_proc, text ="等待被派送:").grid(row=1,column = 0,pady=4,sticky = W)
     proc_left_box.interior.grid(row=2,rowspan = 10,column = 0,columnspan =2)
@@ -2103,6 +2226,7 @@ if __name__ == "__main__":
     proc_entry_num_city.grid(row=6,column = 5,sticky = W,padx = 30)
 
     proc_run_button.grid(row = 7,column =5,sticky = W,padx = 30)
+    proc_check_button.grid(row = 8,column =5,sticky = W,padx = 30)
     # Label(tab_proc, text = "Or").grid(row = 8,column =5,padx = 30,sticky = W)
  #    proc_manually_button.grid(row = 9,column =5,padx = 30,sticky = W)
 
