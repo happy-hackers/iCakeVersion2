@@ -26,8 +26,8 @@ import googlemaps
 from PIL import Image, ImageTk
 from autocomplete import AutocompleteEntry
 
-import shopify
-import requests
+#import shopify
+#import requests
 import re
 
 API_KEY = 'ffc3a9728b3e4f62be551fe88c99e83e'
@@ -51,7 +51,7 @@ destination = "&destination="
 viaDriving = "&travelmode=driving"
 waypoints = "&waypoints="
 
-num_key = 1
+num_key = 0
 gmaps = googlemaps.Client(key=key[num_key])
 window_open = False                  # to ensure only one add/edit order window
                                      # can be opened at one time
@@ -117,25 +117,12 @@ def cal_dis(orders,end_loc):
                     write_2_log(e)
                     print e
                     return
-                    
-                #get the start location as well
+                
                 if index == 0:
                     locationId = gmaps.geocode(lists[index]['start_address'])[0]['place_id']
-                    write_2_log("######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId))
-                    write_2_log(lists[index]['start_address'])
-                    
-                    try:
-                        print "######\nStart location: {}\nid:{}".format(lists[index]['start_address'],locationId)
-                    except:
-                        write_2_log("line = {}".format(129))   
-                    write_2_log("line = {}".format(130))   
-                    print lists[index]['start_address']
-                    write_2_log("line = {}".format(131))   
                     newLocations[locationId] = lists[index]['start_address']
-                    write_2_log("line = {}".format(132))
                     newLocationIds.append(locationId)
-                    write_2_log("line = {}".format(132.6))
-                
+                     
                 write_2_log("line = {}".format(133))   
                 locationId = gmaps.geocode(lists[index]['end_address'])[0]['place_id']
                 write_2_log("line = {}".format(134))
@@ -157,23 +144,35 @@ def cal_dis(orders,end_loc):
 # find order by id helper
 def find_order_by_id2(orders,id):
     for order in orders:
-        if order.order_number == id:
+        if str(order.order_number) == str(id):
             return order
 
 # setup doc
-def setup_doc(document,order,order_num):  
-    document.add_heading("{} : {}\n".format(order_num,order.address, level = 1))
-    document.add_paragraph(u"订单号 : {}".format(order.order_number))
-    document.add_paragraph(u"客户姓名 : {}".format(order.name))
-    document.add_paragraph(u"客户电话 : {}".format(order.phone))
-    document.add_paragraph(u"价格 : {}".format(order.price))
-    document.add_paragraph(u"定金 : {}".format(order.upfront))
-    document.add_paragraph(u"写字 : {}".format(order.writing))
-    document.add_paragraph(u"蜡烛 : {}".format(order.candle))
-    document.add_paragraph(u"餐具 : {}".format(order.tableware))
-    document.add_paragraph(u"备注 : {}".format(order.ps_info))
-    document.add_paragraph(u"蛋糕信息 : ")
-    setup_table(document,order)
+def setup_doc(document,order,order_num):
+    strr = u"订单号:{},{}".format(order.order_number,
+                                           order.phone)
+    if order.name:
+        strr = strr + " {}收".format(order.name)
+    if order.price:
+        strr = strr + " ${}".format(order.price)
+    if order.upfront:
+        strr = strr + "(${} paid)".format(order.upfront)
+    if order.writing:
+        strr = strr + " {}".format(order.writing)
+    if order.candle:
+        strr = strr + " {}".format(order.candle)
+    if order.tableware:
+        strr = strr + " {}".format(order.tableware)
+    if order.ps_info:
+        strr = strr + " {}".format(order.ps_info)
+               
+    document.add_paragraph(strr)
+    for cake in order.cake_type:
+        document.add_paragraph(u"{}) {} {} {} {}".format(cake[index_cake_no],
+                                                     cake[index_cake_type],
+                                                     cake[index_cake_size],
+                                                     cake[index_cake_inner],
+                                                     cake[index_cake_ps]))
     
 # setup doc table
 def setup_table(document,order):
@@ -224,11 +223,6 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
 
     document = Document()
 
-    heading = document.add_heading('iCake Delivery', 0)
-    heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
-    order_num = 0
-
     dic_id = {}
     # input order info
     if end_loc != hint1:
@@ -239,50 +233,61 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
             print end_loc
             end_loc_without_name = (','.join(get_address(end_loc)))
             print end_loc_without_name
-            document.add_heading("Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
+            document.add_paragraph("Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
             end_loc_id = gmaps.geocode(gmaps.places_autocomplete(\
                     input_text = end_loc_without_name, \
                         location = end_loc_without_name)[0]['description'])[0]['place_id']
 
             dic_id[end_loc_id] = "end location"
         else:
-            document.add_heading("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))  
+            document.add_paragraph("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))  
     else:
-        document.add_heading("Driver Not Determined".format(font=("Calibri",title_size)))
+        document.add_paragraph("Driver Not Determined".format(font=("Calibri",title_size)))
 
     finalLocations = []
 
     dic_id[finalLocationIds[0]] = "start location"
     for order in orders:
         id = gmaps.geocode(order.address)[0]['place_id']
-        dic_id[id] = order.order_number
-        print "id is :"
-        print id
-        print order.address
-
+        try:
+            dic_id[id] = str(dic_id[id]) + "," + str(order.order_number)
+        except KeyError:
+            dic_id[id] = str(order.order_number)      
+        print "dic_id[{}] = {}".format(id,dic_id[id])
+        
     print dic_id
-
     print "ouput:"
     print finalLocationIds
-    for item in finalLocationIds:
+    print unique(finalLocationIds)
+    order_num = 0
+    order_num2 = 0
+    for item in unique(finalLocationIds):
         finalLocations.append(newLocations[item])
         print item
         try:
-            order_numberr = dic_id[item]
-            order = find_order_by_id2(orders,order_numberr)
-            print order
-            print order_numberr
-            if order:
+            if order_num != 0:
+                order_numberr = dic_id[item]
+                print order_numberr
+                document.add_paragraph("{} : {}".format(order_num,newLocations[item], level = 1))
                 order_num += 1
-                setup_doc(document,order,order_num)
+                for num in order_numberr.split(","):
+                    order = find_order_by_id2(orders,num)
+                    print "num = {},order:".format(num)
+                    print order
+                    if order:
+                        order_num2 += 1
+                        setup_doc(document,order,order_num)
+            else:
+               order_num += 1 
+                
+             
         except KeyError:
             warning_window(master,"{}\n地址存在问题.".format(newLocations[item]))
         
        
             
     #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
-    #document.add_paragraph("Total duration is %.1f mins." % totalDuration)
-    document.add_paragraph(u"\n总共%d个订单.\n" % order_num)
+    #document.add_paragraph("Total duration is %.1f mins." % totalDuration)      #document.add_paragraph(u"\n总共{}个订单，{}个需要送货的地址.\n".format(order_num2,(order_num-1)))
     
     write_2_log("outputfile, working...")
     
@@ -1007,7 +1012,7 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
                     warning_window(master,"     订单号已存在，请重新输入     ")
                     return False  
     
-        new_order = Order(order.get(),agent.get(),new_location,name.get(),"ph: "+phone.get(),\
+        new_order = Order(order.get(),agent.get(),new_location,name.get(),phone.get(),\
                            candle.get(),tableware.get(),writing.get(),price.get(),var2.get(),\
                            mode.get(),pickup_date.get(),pickup_time.get(),ps_info.get(),current_cakes,\
                            dispatcher,upfront.get())
@@ -1654,7 +1659,7 @@ def build_scrollbar(container):
     yscroll = Scrollbar(container,command=canvas.yview)
     canvas.config(xscrollcommand=xscroll.set,
                   yscrollcommand=yscroll.set,
-                  scrollregion=(0,0,1210,500),
+                  scrollregion=(0,0,1400,500),
                   width=1200,height=490)
 
     xscroll.pack(side=BOTTOM, fill=X)
@@ -1851,7 +1856,7 @@ def build_table(window):
     listbox.configure_column(10,width = col_size1)
     listbox.configure_column(11,width = col_size2)
     listbox.configure_column(12,width = col_size2)
-    listbox.configure_column(13,width = (col_size2+70))
+    listbox.configure_column(13,width = (col_size2+250))
     listbox.configure_column(14,width = col_size2)
     listbox.configure_column(15,width = col_size3)
     return listbox
@@ -2154,7 +2159,7 @@ if __name__ == "__main__":
     #today_search.grid(row=0,column=4, sticky = E)
     #today_button_search.grid(row = 0,column =5, sticky = W)
     #today_button_multiple_delete.grid(row=0,column=0, sticky = E)
-    today_add_order.grid(row=0,column=9,sticky = E)
+    today_add_order.grid(row=0,column=7,sticky = E)
     #today_text_processing.grid(row=2,sticky = W,padx = 4)
     today_list_box_all.interior.grid(row=1,pady=4,column = 0,columnspan = 10)
     # today_list_box_processing.interior.grid(row=3,pady=4,column = 0,columnspan = 10)

@@ -107,7 +107,7 @@ header_new = ['订单号','蛋糕No','客服号','尺寸','形状','内芯','款
 header_full = ['订单号','客服号','价格','定金','写字','蜡烛','餐具','电话','地址','备注']
 header_today = ['订单号', 'Address','Name','Mode','Cakes','State']
 header_proc = ['No', 'Address','Name','Phone','Dispatcher','State']
-header_small = ['No', 'Address']
+header_small = ['订单号', '地址']
 header_cake = ['No','尺寸','形状','内芯','款式','备注']
 header_dispatcher = ['Name','Home Address']
 header_dispatcher_full = ['姓名','家庭住址','电话','备注']
@@ -390,7 +390,7 @@ def order2list(item,cake):
     print str(item.phone)
     new_list_item = [item.order_number,cake[index_cake_no],item.agent,cake[index_cake_size],cake[index_cake_shape],\
                      cake[index_cake_inner],cake[index_cake_type],item.price,item.upfront,\
-                     item.writing,item.candle,item.tableware,strip(item.phone),item.address,\
+                     item.writing,item.candle,item.tableware,item.phone,item.address,\
                      item.ps_info,item.state]
     return new_list_item
 
@@ -657,6 +657,16 @@ def strip(strr):
         if i.isdigit():
             new.append(i)
     return "".join(new)
+    
+# get rid of duplicate numbers in the list  
+def unique(list1):
+    new_list = []
+    for i in list1:
+        if not (i in new_list):
+            new_list.append(i)
+    return new_list
+            
+    
 # center a window
 # @sources: https://stackoverflow.com/questions/3352918/how-to-center-a-window-on-the-screen-in-tkinter
 def center(toplevel):

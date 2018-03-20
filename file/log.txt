@@ -728,3 +728,2549 @@ id:ChIJyeFmcBdo1moRm0mAKzyI58U
 Log(2018-03-16 10:19:40.671947): 555 St Kilda Rd, Melbourne VIC 3004, Australia
 Log(2018-03-16 10:19:40.672215): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U']
 Log(2018-03-16 10:19:41.419988): outputfile, working...
+Log(2018-03-16 13:36:53.514243): cal_dis, working...
+Log(2018-03-16 13:36:53.521961): end location: Vincent,
+Log(2018-03-16 13:36:53.522110): 
+Log(2018-03-16 13:36:55.852927): range(len(lists) = 11
+Log(2018-03-16 13:36:55.861128): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 13:36:55.861306): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 13:36:55.861553): index = 0
+Log(2018-03-16 13:36:56.708617): ######
+Start location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-16 13:36:56.708798): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 13:36:56.708995): line = 130
+Log(2018-03-16 13:36:56.709789): line = 131
+Log(2018-03-16 13:36:56.710359): line = 132
+Log(2018-03-16 13:36:56.710718): line = 132.6
+Log(2018-03-16 13:36:56.710913): line = 133
+Log(2018-03-16 13:36:57.939496): line = 134
+Log(2018-03-16 13:36:57.939674): line = 135
+Log(2018-03-16 13:36:57.939786): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-16 13:36:57.939957): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-16 13:36:57.940030): index = 1
+Log(2018-03-16 13:36:57.940194): line = 133
+Log(2018-03-16 13:36:58.711589): line = 134
+Log(2018-03-16 13:36:58.711803): line = 135
+Log(2018-03-16 13:36:58.711968): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:36:58.712120): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:36:58.712232): index = 2
+Log(2018-03-16 13:36:58.712352): line = 133
+Log(2018-03-16 13:36:59.360021): line = 134
+Log(2018-03-16 13:36:59.369907): line = 135
+Log(2018-03-16 13:36:59.370126): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 13:36:59.370238): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 13:36:59.370340): index = 3
+Log(2018-03-16 13:36:59.370500): line = 133
+Log(2018-03-16 13:37:00.408676): line = 134
+Log(2018-03-16 13:37:00.408884): line = 135
+Log(2018-03-16 13:37:00.408985): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 13:37:00.409073): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 13:37:00.409160): index = 4
+Log(2018-03-16 13:37:00.409289): line = 133
+Log(2018-03-16 13:37:01.097612): line = 134
+Log(2018-03-16 13:37:01.097746): line = 135
+Log(2018-03-16 13:37:01.097899): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 13:37:01.097995): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 13:37:01.098097): index = 5
+Log(2018-03-16 13:37:01.098181): line = 133
+Log(2018-03-16 13:37:01.929187): line = 134
+Log(2018-03-16 13:37:01.936532): line = 135
+Log(2018-03-16 13:37:01.936716): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 13:37:01.936870): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 13:37:01.937029): index = 6
+Log(2018-03-16 13:37:01.937358): line = 133
+Log(2018-03-16 13:37:02.859430): line = 134
+Log(2018-03-16 13:37:02.859609): line = 135
+Log(2018-03-16 13:37:02.859686): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 13:37:02.859759): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 13:37:02.859889): index = 7
+Log(2018-03-16 13:37:02.860087): line = 133
+Log(2018-03-16 13:37:03.776825): line = 134
+Log(2018-03-16 13:37:03.785056): line = 135
+Log(2018-03-16 13:37:03.785252): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 13:37:03.785394): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 13:37:03.785557): index = 8
+Log(2018-03-16 13:37:03.785754): line = 133
+Log(2018-03-16 13:37:04.464887): line = 134
+Log(2018-03-16 13:37:04.465168): line = 135
+Log(2018-03-16 13:37:04.465291): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:37:04.465470): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:37:04.465567): index = 9
+Log(2018-03-16 13:37:04.465676): line = 133
+Log(2018-03-16 13:37:05.310402): line = 134
+Log(2018-03-16 13:37:05.312400): line = 135
+Log(2018-03-16 13:37:05.312565): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 13:37:05.312726): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 13:37:05.312945): index = 10
+Log(2018-03-16 13:37:05.313232): line = 133
+Log(2018-03-16 13:37:06.537760): line = 134
+Log(2018-03-16 13:37:06.538033): line = 135
+Log(2018-03-16 13:37:06.538154): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 13:37:06.538254): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:37:06.538343): [u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw']
+Log(2018-03-16 13:37:14.633447): outputfile, working...
+Log(2018-03-16 13:46:01.566184): cal_dis, working...
+Log(2018-03-16 13:46:01.574400): end location: Vincent,
+Log(2018-03-16 13:46:01.574548): 
+Log(2018-03-16 13:46:03.259531): range(len(lists) = 11
+Log(2018-03-16 13:46:03.259674): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:46:03.259810): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:46:03.259909): index = 0
+Log(2018-03-16 13:46:04.458408): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:46:04.458555): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:46:04.458715): line = 130
+Log(2018-03-16 13:46:04.458787): line = 131
+Log(2018-03-16 13:46:04.458908): line = 132
+Log(2018-03-16 13:46:04.459020): line = 132.6
+Log(2018-03-16 13:46:04.459120): line = 133
+Log(2018-03-16 13:46:04.650403): line = 134
+Log(2018-03-16 13:46:04.658294): line = 135
+Log(2018-03-16 13:46:04.658474): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:46:04.658591): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:46:04.658710): index = 1
+Log(2018-03-16 13:46:04.658833): line = 133
+Log(2018-03-16 13:46:05.357008): line = 134
+Log(2018-03-16 13:46:05.365270): line = 135
+Log(2018-03-16 13:46:05.365527): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 13:46:05.365660): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 13:46:05.365791): index = 2
+Log(2018-03-16 13:46:05.365929): line = 133
+Log(2018-03-16 13:46:05.556531): line = 134
+Log(2018-03-16 13:46:05.564789): line = 135
+Log(2018-03-16 13:46:05.564976): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:46:05.565081): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:46:05.565194): index = 3
+Log(2018-03-16 13:46:05.565307): line = 133
+Log(2018-03-16 13:46:05.749823): line = 134
+Log(2018-03-16 13:46:05.758052): line = 135
+Log(2018-03-16 13:46:05.758241): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:46:05.758389): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:46:05.758490): index = 4
+Log(2018-03-16 13:46:05.758709): line = 133
+Log(2018-03-16 13:46:06.599883): line = 134
+Log(2018-03-16 13:46:06.608134): line = 135
+Log(2018-03-16 13:46:06.608341): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 13:46:06.608534): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 13:46:06.608652): index = 5
+Log(2018-03-16 13:46:06.608861): line = 133
+Log(2018-03-16 13:46:07.834038): line = 134
+Log(2018-03-16 13:46:07.842400): line = 135
+Log(2018-03-16 13:46:07.842611): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 13:46:07.842757): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 13:46:07.842911): index = 6
+Log(2018-03-16 13:46:07.843066): line = 133
+Log(2018-03-16 13:46:08.768374): line = 134
+Log(2018-03-16 13:46:08.776608): line = 135
+Log(2018-03-16 13:46:08.776799): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 13:46:08.776941): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 13:46:08.777127): index = 7
+Log(2018-03-16 13:46:08.777311): line = 133
+Log(2018-03-16 13:46:09.671143): line = 134
+Log(2018-03-16 13:46:09.679371): line = 135
+Log(2018-03-16 13:46:09.679562): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 13:46:09.679718): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 13:46:09.679820): index = 8
+Log(2018-03-16 13:46:09.679945): line = 133
+Log(2018-03-16 13:46:10.329351): line = 134
+Log(2018-03-16 13:46:10.337588): line = 135
+Log(2018-03-16 13:46:10.337784): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 13:46:10.337926): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 13:46:10.338084): index = 9
+Log(2018-03-16 13:46:10.338249): line = 133
+Log(2018-03-16 13:46:10.903410): line = 134
+Log(2018-03-16 13:46:10.911664): line = 135
+Log(2018-03-16 13:46:10.911898): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 13:46:10.912091): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 13:46:10.912210): index = 10
+Log(2018-03-16 13:46:10.912358): line = 133
+Log(2018-03-16 13:46:11.514247): line = 134
+Log(2018-03-16 13:46:11.522613): line = 135
+Log(2018-03-16 13:46:11.522825): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 13:46:11.522951): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:46:11.523053): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw']
+Log(2018-03-16 13:46:19.360543): outputfile, working...
+Log(2018-03-16 13:49:43.799172): cal_dis, working...
+Log(2018-03-16 13:49:43.807052): end location: Charlie,
+Log(2018-03-16 13:49:43.807336): 
+Log(2018-03-16 13:49:45.031911): range(len(lists) = 11
+Log(2018-03-16 13:49:45.032068): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:49:45.032200): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:49:45.032352): index = 0
+Log(2018-03-16 13:49:45.638627): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:49:45.646847): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:49:45.647065): line = 130
+Log(2018-03-16 13:49:45.647198): line = 131
+Log(2018-03-16 13:49:45.647344): line = 132
+Log(2018-03-16 13:49:45.647480): line = 132.6
+Log(2018-03-16 13:49:45.647678): line = 133
+Log(2018-03-16 13:49:46.248570): line = 134
+Log(2018-03-16 13:49:46.249645): line = 135
+Log(2018-03-16 13:49:46.249788): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 13:49:46.249894): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:49:46.250136): index = 1
+Log(2018-03-16 13:49:46.250342): line = 133
+Log(2018-03-16 13:49:46.870030): line = 134
+Log(2018-03-16 13:49:46.878303): line = 135
+Log(2018-03-16 13:49:46.878501): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:49:46.878632): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:49:46.878733): index = 2
+Log(2018-03-16 13:49:46.878842): line = 133
+Log(2018-03-16 13:49:47.061859): line = 134
+Log(2018-03-16 13:49:47.070088): line = 135
+Log(2018-03-16 13:49:47.070263): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:49:47.070446): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:49:47.070598): index = 3
+Log(2018-03-16 13:49:47.070705): line = 133
+Log(2018-03-16 13:49:47.784729): line = 134
+Log(2018-03-16 13:49:47.793023): line = 135
+Log(2018-03-16 13:49:47.793229): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 13:49:47.793370): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 13:49:47.793555): index = 4
+Log(2018-03-16 13:49:47.793723): line = 133
+Log(2018-03-16 13:49:48.707197): line = 134
+Log(2018-03-16 13:49:48.714525): line = 135
+Log(2018-03-16 13:49:48.714701): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 13:49:48.714896): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 13:49:48.715022): index = 5
+Log(2018-03-16 13:49:48.715229): line = 133
+Log(2018-03-16 13:49:49.330703): line = 134
+Log(2018-03-16 13:49:49.338918): line = 135
+Log(2018-03-16 13:49:49.339101): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 13:49:49.339315): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 13:49:49.339471): index = 6
+Log(2018-03-16 13:49:49.339640): line = 133
+Log(2018-03-16 13:49:49.942381): line = 134
+Log(2018-03-16 13:49:49.950083): line = 135
+Log(2018-03-16 13:49:49.950296): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 13:49:49.950447): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 13:49:49.950574): index = 7
+Log(2018-03-16 13:49:49.950705): line = 133
+Log(2018-03-16 13:49:51.169455): line = 134
+Log(2018-03-16 13:49:51.169726): line = 135
+Log(2018-03-16 13:49:51.169856): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 13:49:51.169952): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 13:49:51.170046): index = 8
+Log(2018-03-16 13:49:51.170252): line = 133
+Log(2018-03-16 13:49:51.781506): line = 134
+Log(2018-03-16 13:49:51.789798): line = 135
+Log(2018-03-16 13:49:51.790024): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 13:49:51.790168): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 13:49:51.790326): index = 9
+Log(2018-03-16 13:49:51.790461): line = 133
+Log(2018-03-16 13:49:52.265038): line = 134
+Log(2018-03-16 13:49:52.273419): line = 135
+Log(2018-03-16 13:49:52.273599): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 13:49:52.273954): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 13:49:52.274092): index = 10
+Log(2018-03-16 13:49:52.274271): line = 133
+Log(2018-03-16 13:49:52.709670): line = 134
+Log(2018-03-16 13:49:52.717624): line = 135
+Log(2018-03-16 13:49:52.717801): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:49:52.717926): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:49:52.718034): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJq-GSywhH1moR4cDkrRxKt2c']
+Log(2018-03-16 13:49:59.050601): outputfile, working...
+Log(2018-03-16 13:58:13.625273): cal_dis, working...
+Log(2018-03-16 13:58:13.626161): end location: Vincent,
+Log(2018-03-16 13:58:13.626269): 
+Log(2018-03-16 13:58:14.978775):      请检查地址，一些地址的内容有错!     
+Log(2018-03-16 13:58:33.598616): cal_dis, working...
+Log(2018-03-16 13:58:33.599209): end location: John,442 Elizabeth street,3000
+Log(2018-03-16 13:58:33.599451): 442 Elizabeth street,3000
+Log(2018-03-16 13:58:33.599692): locations
+Log(2018-03-16 13:58:33.599967): ['30 sunrise cres,3107', '67 main drive, kew', '50 albert road, south melbourne', '30 sunrise cres,3107', "O'sullivan Rd, Glen Waverley VIC 3150", '13 Crouch Court,Doncaster', '685 burke rd, camberwell', '555 st kilda road,3004', '188 whitehorse rd, Balwyn', '135 abeckett st,3053', '135 abeckett st,3053', '882 glenhuntly rd, caulfield south', '442 Elizabeth street,3000']
+Log(2018-03-16 13:58:34.332723): range(len(lists) = 12
+Log(2018-03-16 13:58:34.341004): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:58:34.341291): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:58:34.341441): index = 0
+Log(2018-03-16 13:58:34.945570): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:58:34.953146): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:58:34.953578): line = 130
+Log(2018-03-16 13:58:34.953867): line = 131
+Log(2018-03-16 13:58:34.953980): line = 132
+Log(2018-03-16 13:58:34.954078): line = 132.6
+Log(2018-03-16 13:58:34.954284): line = 133
+Log(2018-03-16 13:58:35.137424): line = 134
+Log(2018-03-16 13:58:35.137630): line = 135
+Log(2018-03-16 13:58:35.137742): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:58:35.137981): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:58:35.138148): index = 1
+Log(2018-03-16 13:58:35.138276): line = 133
+Log(2018-03-16 13:58:35.866496): line = 134
+Log(2018-03-16 13:58:35.874865): line = 135
+Log(2018-03-16 13:58:35.875065): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 13:58:35.875266): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 13:58:35.875393): index = 2
+Log(2018-03-16 13:58:35.875593): line = 133
+Log(2018-03-16 13:58:36.479143): line = 134
+Log(2018-03-16 13:58:36.479302): line = 135
+Log(2018-03-16 13:58:36.484669): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 13:58:36.484804): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:58:36.484907): index = 3
+Log(2018-03-16 13:58:36.485102): line = 133
+Log(2018-03-16 13:58:37.177706): line = 134
+Log(2018-03-16 13:58:37.177869): line = 135
+Log(2018-03-16 13:58:37.177954): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 13:58:37.178024): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 13:58:37.178184): index = 4
+Log(2018-03-16 13:58:37.178267): line = 133
+Log(2018-03-16 13:58:37.711219): line = 134
+Log(2018-03-16 13:58:37.711383): line = 135
+Log(2018-03-16 13:58:37.711525): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 13:58:37.711604): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 13:58:37.711847): index = 5
+Log(2018-03-16 13:58:37.711986): line = 133
+Log(2018-03-16 13:58:38.321773): line = 134
+Log(2018-03-16 13:58:38.330061): line = 135
+Log(2018-03-16 13:58:38.330255): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 13:58:38.330466): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 13:58:38.330596): index = 6
+Log(2018-03-16 13:58:38.330750): line = 133
+Log(2018-03-16 13:58:39.243693): line = 134
+Log(2018-03-16 13:58:39.251988): line = 135
+Log(2018-03-16 13:58:39.252227): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 13:58:39.252338): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 13:58:39.252496): index = 7
+Log(2018-03-16 13:58:39.252640): line = 133
+Log(2018-03-16 13:58:40.117737): line = 134
+Log(2018-03-16 13:58:40.125171): line = 135
+Log(2018-03-16 13:58:40.125362): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 13:58:40.125457): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 13:58:40.125567): index = 8
+Log(2018-03-16 13:58:40.125678): line = 133
+Log(2018-03-16 13:58:40.795735): line = 134
+Log(2018-03-16 13:58:40.805047): line = 135
+Log(2018-03-16 13:58:40.805191): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 13:58:40.805436): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 13:58:40.805593): index = 9
+Log(2018-03-16 13:58:40.805731): line = 133
+Log(2018-03-16 13:58:41.709307): line = 134
+Log(2018-03-16 13:58:41.717292): line = 135
+Log(2018-03-16 13:58:41.717500): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:58:41.717630): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:58:41.717733): index = 10
+Log(2018-03-16 13:58:41.717846): line = 133
+Log(2018-03-16 13:58:41.880733): line = 134
+Log(2018-03-16 13:58:41.889093): line = 135
+Log(2018-03-16 13:58:41.889312): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:58:41.889612): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:58:41.889736): index = 11
+Log(2018-03-16 13:58:41.889951): line = 133
+Log(2018-03-16 13:58:42.950268): line = 134
+Log(2018-03-16 13:58:42.958677): line = 135
+Log(2018-03-16 13:58:42.958999): 
+######location: 442 Elizabeth St, Melbourne VIC 3000, Australia
+id:ChIJAb-4yTRd1moR48D90e_1UII
+Log(2018-03-16 13:58:42.959154): 442 Elizabeth St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:58:42.959310): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJAb-4yTRd1moR48D90e_1UII']
+Log(2018-03-16 13:59:35.914296): cal_dis, working...
+Log(2018-03-16 13:59:35.922403): end location: Vincent,
+Log(2018-03-16 13:59:35.922607): 
+Log(2018-03-16 13:59:36.402382): range(len(lists) = 11
+Log(2018-03-16 13:59:36.410643): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:59:36.410888): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:59:36.411085): index = 0
+Log(2018-03-16 13:59:36.589208): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:59:36.589420): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:59:36.589578): line = 130
+Log(2018-03-16 13:59:36.589751): line = 131
+Log(2018-03-16 13:59:36.589970): line = 132
+Log(2018-03-16 13:59:36.590095): line = 132.6
+Log(2018-03-16 13:59:36.590340): line = 133
+Log(2018-03-16 13:59:36.766371): line = 134
+Log(2018-03-16 13:59:36.766592): line = 135
+Log(2018-03-16 13:59:36.766726): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 13:59:36.766823): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 13:59:36.766998): index = 1
+Log(2018-03-16 13:59:36.767155): line = 133
+Log(2018-03-16 13:59:36.948320): line = 134
+Log(2018-03-16 13:59:36.948528): line = 135
+Log(2018-03-16 13:59:36.948686): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 13:59:36.948937): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 13:59:36.949094): index = 2
+Log(2018-03-16 13:59:36.949212): line = 133
+Log(2018-03-16 13:59:37.131791): line = 134
+Log(2018-03-16 13:59:37.140049): line = 135
+Log(2018-03-16 13:59:37.140239): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 13:59:37.140426): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 13:59:37.140583): index = 3
+Log(2018-03-16 13:59:37.140877): line = 133
+Log(2018-03-16 13:59:37.414133): line = 134
+Log(2018-03-16 13:59:37.422352): line = 135
+Log(2018-03-16 13:59:37.422547): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 13:59:37.422645): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 13:59:37.422835): index = 4
+Log(2018-03-16 13:59:37.423049): line = 133
+Log(2018-03-16 13:59:37.585522): line = 134
+Log(2018-03-16 13:59:37.593742): line = 135
+Log(2018-03-16 13:59:37.593935): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:59:37.594142): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:59:37.594291): index = 5
+Log(2018-03-16 13:59:37.594509): line = 133
+Log(2018-03-16 13:59:37.765721): line = 134
+Log(2018-03-16 13:59:37.765924): line = 135
+Log(2018-03-16 13:59:37.766079): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 13:59:37.766192): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 13:59:37.766299): index = 6
+Log(2018-03-16 13:59:37.766449): line = 133
+Log(2018-03-16 13:59:37.938725): line = 134
+Log(2018-03-16 13:59:37.938945): line = 135
+Log(2018-03-16 13:59:37.939074): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 13:59:37.939202): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 13:59:37.939405): index = 7
+Log(2018-03-16 13:59:37.939554): line = 133
+Log(2018-03-16 13:59:38.105851): line = 134
+Log(2018-03-16 13:59:38.114089): line = 135
+Log(2018-03-16 13:59:38.114364): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 13:59:38.114630): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 13:59:38.114770): index = 8
+Log(2018-03-16 13:59:38.114876): line = 133
+Log(2018-03-16 13:59:38.289370): line = 134
+Log(2018-03-16 13:59:38.296852): line = 135
+Log(2018-03-16 13:59:38.297081): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 13:59:38.297207): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 13:59:38.297357): index = 9
+Log(2018-03-16 13:59:38.297483): line = 133
+Log(2018-03-16 13:59:38.465326): line = 134
+Log(2018-03-16 13:59:38.465481): line = 135
+Log(2018-03-16 13:59:38.465573): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 13:59:38.465638): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 13:59:38.465802): index = 10
+Log(2018-03-16 13:59:38.465891): line = 133
+Log(2018-03-16 13:59:38.637204): line = 134
+Log(2018-03-16 13:59:38.637474): line = 135
+Log(2018-03-16 13:59:38.637565): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 13:59:38.637668): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 13:59:38.637781): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8']
+Log(2018-03-16 14:02:42.146106): cal_dis, working...
+Log(2018-03-16 14:02:42.154470): end location: Vincent,
+Log(2018-03-16 14:02:42.154654): 
+Log(2018-03-16 14:02:43.477840): range(len(lists) = 11
+Log(2018-03-16 14:02:43.485877): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:02:43.486083): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:02:43.486211): index = 0
+Log(2018-03-16 14:02:43.920904): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:02:43.928937): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:02:43.929098): line = 130
+Log(2018-03-16 14:02:43.929201): line = 131
+Log(2018-03-16 14:02:43.929294): line = 132
+Log(2018-03-16 14:02:43.929427): line = 132.6
+Log(2018-03-16 14:02:43.929534): line = 133
+Log(2018-03-16 14:02:44.117680): line = 134
+Log(2018-03-16 14:02:44.117889): line = 135
+Log(2018-03-16 14:02:44.118024): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:02:44.118134): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:02:44.118237): index = 1
+Log(2018-03-16 14:02:44.118437): line = 133
+Log(2018-03-16 14:02:45.007814): line = 134
+Log(2018-03-16 14:02:45.016118): line = 135
+Log(2018-03-16 14:02:45.016368): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:02:45.016551): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:02:45.016706): index = 2
+Log(2018-03-16 14:02:45.017003): line = 133
+Log(2018-03-16 14:02:45.623558): line = 134
+Log(2018-03-16 14:02:45.631793): line = 135
+Log(2018-03-16 14:02:45.631978): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:02:45.632190): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:02:45.632346): index = 3
+Log(2018-03-16 14:02:45.632468): line = 133
+Log(2018-03-16 14:02:46.243085): line = 134
+Log(2018-03-16 14:02:46.251860): line = 135
+Log(2018-03-16 14:02:46.252045): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:02:46.252295): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:02:46.252452): index = 4
+Log(2018-03-16 14:02:46.252574): line = 133
+Log(2018-03-16 14:02:47.163289): line = 134
+Log(2018-03-16 14:02:47.171517): line = 135
+Log(2018-03-16 14:02:47.171833): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:02:47.172063): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:02:47.172182): index = 5
+Log(2018-03-16 14:02:47.172316): line = 133
+Log(2018-03-16 14:02:48.396330): line = 134
+Log(2018-03-16 14:02:48.396537): line = 135
+Log(2018-03-16 14:02:48.396687): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:02:48.396992): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:02:48.397141): index = 6
+Log(2018-03-16 14:02:48.397273): line = 133
+Log(2018-03-16 14:02:49.002477): line = 134
+Log(2018-03-16 14:02:49.010732): line = 135
+Log(2018-03-16 14:02:49.010962): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:02:49.011097): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:02:49.011297): index = 7
+Log(2018-03-16 14:02:49.011435): line = 133
+Log(2018-03-16 14:02:49.947459): line = 134
+Log(2018-03-16 14:02:49.955752): line = 135
+Log(2018-03-16 14:02:49.955983): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:02:49.956086): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:02:49.956291): index = 8
+Log(2018-03-16 14:02:49.956420): line = 133
+Log(2018-03-16 14:02:51.152510): line = 134
+Log(2018-03-16 14:02:51.160722): line = 135
+Log(2018-03-16 14:02:51.160922): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:02:51.161066): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:02:51.161211): index = 9
+Log(2018-03-16 14:02:51.161317): line = 133
+Log(2018-03-16 14:02:51.769676): line = 134
+Log(2018-03-16 14:02:51.778013): line = 135
+Log(2018-03-16 14:02:51.778232): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:02:51.778345): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:02:51.778451): index = 10
+Log(2018-03-16 14:02:51.778564): line = 133
+Log(2018-03-16 14:02:52.384432): line = 134
+Log(2018-03-16 14:02:52.392675): line = 135
+Log(2018-03-16 14:02:52.392872): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:02:52.392969): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:02:52.393122): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE']
+Log(2018-03-16 14:05:52.821908): cal_dis, working...
+Log(2018-03-16 14:05:52.830010): end location: Vincent,
+Log(2018-03-16 14:05:52.830176): 
+Log(2018-03-16 14:05:54.861998): range(len(lists) = 11
+Log(2018-03-16 14:05:54.870184): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:05:54.870367): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:05:54.870600): index = 0
+Log(2018-03-16 14:05:55.472372): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:05:55.472574): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:05:55.472862): line = 130
+Log(2018-03-16 14:05:55.473014): line = 131
+Log(2018-03-16 14:05:55.473115): line = 132
+Log(2018-03-16 14:05:55.473268): line = 132.6
+Log(2018-03-16 14:05:55.473359): line = 133
+Log(2018-03-16 14:05:55.646748): line = 134
+Log(2018-03-16 14:05:55.646960): line = 135
+Log(2018-03-16 14:05:55.647171): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:05:55.647289): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:05:55.647465): index = 1
+Log(2018-03-16 14:05:55.647594): line = 133
+Log(2018-03-16 14:05:56.700549): line = 134
+Log(2018-03-16 14:05:56.700757): line = 135
+Log(2018-03-16 14:05:56.700907): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:05:56.701181): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:05:56.701344): index = 2
+Log(2018-03-16 14:05:56.701471): line = 133
+Log(2018-03-16 14:05:57.321664): line = 134
+Log(2018-03-16 14:05:57.329942): line = 135
+Log(2018-03-16 14:05:57.330130): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:05:57.330266): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:05:57.330501): index = 3
+Log(2018-03-16 14:05:57.330648): line = 133
+Log(2018-03-16 14:05:57.946974): line = 134
+Log(2018-03-16 14:05:57.955236): line = 135
+Log(2018-03-16 14:05:57.955439): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:05:57.955546): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:05:57.955698): index = 4
+Log(2018-03-16 14:05:57.955842): line = 133
+Log(2018-03-16 14:05:58.550335): line = 134
+Log(2018-03-16 14:05:58.558578): line = 135
+Log(2018-03-16 14:05:58.558765): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:05:58.558954): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:05:58.559069): index = 5
+Log(2018-03-16 14:05:58.559216): line = 133
+Log(2018-03-16 14:05:58.762237): line = 134
+Log(2018-03-16 14:05:58.770664): line = 135
+Log(2018-03-16 14:05:58.770858): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:05:58.771110): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:05:58.771241): index = 6
+Log(2018-03-16 14:05:58.771420): line = 133
+Log(2018-03-16 14:05:59.467225): line = 134
+Log(2018-03-16 14:05:59.475438): line = 135
+Log(2018-03-16 14:05:59.475634): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:05:59.475826): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:05:59.475966): index = 7
+Log(2018-03-16 14:05:59.476086): line = 133
+Log(2018-03-16 14:06:00.107142): line = 134
+Log(2018-03-16 14:06:00.115382): line = 135
+Log(2018-03-16 14:06:00.115566): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:06:00.115785): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:06:00.115932): index = 8
+Log(2018-03-16 14:06:00.116074): line = 133
+Log(2018-03-16 14:06:01.002643): line = 134
+Log(2018-03-16 14:06:01.010893): line = 135
+Log(2018-03-16 14:06:01.011102): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:06:01.011305): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:06:01.011403): index = 9
+Log(2018-03-16 14:06:01.011591): line = 133
+Log(2018-03-16 14:06:02.231292): line = 134
+Log(2018-03-16 14:06:02.239496): line = 135
+Log(2018-03-16 14:06:02.239682): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:06:02.239786): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:06:02.239995): index = 10
+Log(2018-03-16 14:06:02.240161): line = 133
+Log(2018-03-16 14:06:03.481855): line = 134
+Log(2018-03-16 14:06:03.490100): line = 135
+Log(2018-03-16 14:06:03.490286): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:06:03.490499): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:06:03.490656): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y']
+Log(2018-03-16 14:06:53.539372): cal_dis, working...
+Log(2018-03-16 14:06:53.547445): end location: Vincent,
+Log(2018-03-16 14:06:53.547624): 
+Log(2018-03-16 14:06:54.770360): range(len(lists) = 11
+Log(2018-03-16 14:06:54.770526): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:06:54.770737): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:06:54.770830): index = 0
+Log(2018-03-16 14:06:54.942173): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:06:54.942382): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:06:54.942536): line = 130
+Log(2018-03-16 14:06:54.942661): line = 131
+Log(2018-03-16 14:06:54.942806): line = 132
+Log(2018-03-16 14:06:54.942929): line = 132.6
+Log(2018-03-16 14:06:54.943067): line = 133
+Log(2018-03-16 14:06:55.118011): line = 134
+Log(2018-03-16 14:06:55.126252): line = 135
+Log(2018-03-16 14:06:55.126463): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:06:55.126577): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:06:55.126691): index = 1
+Log(2018-03-16 14:06:55.126817): line = 133
+Log(2018-03-16 14:06:55.301532): line = 134
+Log(2018-03-16 14:06:55.309748): line = 135
+Log(2018-03-16 14:06:55.309931): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:06:55.310059): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:06:55.310183): index = 2
+Log(2018-03-16 14:06:55.310332): line = 133
+Log(2018-03-16 14:06:55.496445): line = 134
+Log(2018-03-16 14:06:55.504745): line = 135
+Log(2018-03-16 14:06:55.504973): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:06:55.505130): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:06:55.505254): index = 3
+Log(2018-03-16 14:06:55.505392): line = 133
+Log(2018-03-16 14:06:55.682328): line = 134
+Log(2018-03-16 14:06:55.690628): line = 135
+Log(2018-03-16 14:06:55.690844): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:06:55.690955): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:06:55.691232): index = 4
+Log(2018-03-16 14:06:55.691399): line = 133
+Log(2018-03-16 14:06:55.860564): line = 134
+Log(2018-03-16 14:06:55.868778): line = 135
+Log(2018-03-16 14:06:55.868971): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:06:55.869073): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:06:55.869276): index = 5
+Log(2018-03-16 14:06:55.869459): line = 133
+Log(2018-03-16 14:06:56.046362): line = 134
+Log(2018-03-16 14:06:56.054634): line = 135
+Log(2018-03-16 14:06:56.054817): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:06:56.055075): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:06:56.055206): index = 6
+Log(2018-03-16 14:06:56.055344): line = 133
+Log(2018-03-16 14:06:56.237862): line = 134
+Log(2018-03-16 14:06:56.246157): line = 135
+Log(2018-03-16 14:06:56.246376): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:06:56.246573): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:06:56.246698): index = 7
+Log(2018-03-16 14:06:56.246899): line = 133
+Log(2018-03-16 14:06:56.421530): line = 134
+Log(2018-03-16 14:06:56.429681): line = 135
+Log(2018-03-16 14:06:56.429855): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:06:56.429958): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:06:56.430065): index = 8
+Log(2018-03-16 14:06:56.430179): line = 133
+Log(2018-03-16 14:06:56.604426): line = 134
+Log(2018-03-16 14:06:56.612675): line = 135
+Log(2018-03-16 14:06:56.612872): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:06:56.612974): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:06:56.613174): index = 9
+Log(2018-03-16 14:06:56.613310): line = 133
+Log(2018-03-16 14:06:56.817085): line = 134
+Log(2018-03-16 14:06:56.825344): line = 135
+Log(2018-03-16 14:06:56.825533): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:06:56.825717): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:06:56.825873): index = 10
+Log(2018-03-16 14:06:56.826167): line = 133
+Log(2018-03-16 14:06:57.005270): line = 134
+Log(2018-03-16 14:06:57.013516): line = 135
+Log(2018-03-16 14:06:57.013708): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:06:57.014010): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:06:57.014177): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y']
+Log(2018-03-16 14:06:59.117066): outputfile, working...
+Log(2018-03-16 14:09:38.148161): cal_dis, working...
+Log(2018-03-16 14:09:38.155989): end location: Vincent,
+Log(2018-03-16 14:09:38.156086): 
+Log(2018-03-16 14:09:39.754586): range(len(lists) = 11
+Log(2018-03-16 14:09:39.754744): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:09:39.754837): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:09:39.754932): index = 0
+Log(2018-03-16 14:09:40.348586): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:09:40.356911): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:09:40.357176): line = 130
+Log(2018-03-16 14:09:40.357382): line = 131
+Log(2018-03-16 14:09:40.357529): line = 132
+Log(2018-03-16 14:09:40.357700): line = 132.6
+Log(2018-03-16 14:09:40.357832): line = 133
+Log(2018-03-16 14:09:40.548434): line = 134
+Log(2018-03-16 14:09:40.556676): line = 135
+Log(2018-03-16 14:09:40.556873): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:09:40.557033): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:09:40.557169): index = 1
+Log(2018-03-16 14:09:40.557384): line = 133
+Log(2018-03-16 14:09:41.278566): line = 134
+Log(2018-03-16 14:09:41.286844): line = 135
+Log(2018-03-16 14:09:41.287164): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:09:41.287300): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:09:41.287415): index = 2
+Log(2018-03-16 14:09:41.287671): line = 133
+Log(2018-03-16 14:09:41.881554): line = 134
+Log(2018-03-16 14:09:41.889730): line = 135
+Log(2018-03-16 14:09:41.889940): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:09:41.890059): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:09:41.890194): index = 3
+Log(2018-03-16 14:09:41.890320): line = 133
+Log(2018-03-16 14:09:42.496063): line = 134
+Log(2018-03-16 14:09:42.504160): line = 135
+Log(2018-03-16 14:09:42.504357): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:09:42.504502): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:09:42.504673): index = 4
+Log(2018-03-16 14:09:42.504822): line = 133
+Log(2018-03-16 14:09:43.116345): line = 134
+Log(2018-03-16 14:09:43.124643): line = 135
+Log(2018-03-16 14:09:43.124871): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:09:43.124970): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:09:43.125150): index = 5
+Log(2018-03-16 14:09:43.125275): line = 133
+Log(2018-03-16 14:09:43.725227): line = 134
+Log(2018-03-16 14:09:43.733529): line = 135
+Log(2018-03-16 14:09:43.733756): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:09:43.733914): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:09:43.734082): index = 6
+Log(2018-03-16 14:09:43.734351): line = 133
+Log(2018-03-16 14:09:44.670469): line = 134
+Log(2018-03-16 14:09:44.678843): line = 135
+Log(2018-03-16 14:09:44.679057): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:09:44.679196): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:09:44.679393): index = 7
+Log(2018-03-16 14:09:44.679552): line = 133
+Log(2018-03-16 14:09:45.273272): line = 134
+Log(2018-03-16 14:09:45.281488): line = 135
+Log(2018-03-16 14:09:45.281686): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:09:45.281832): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:09:45.281996): index = 8
+Log(2018-03-16 14:09:45.282128): line = 133
+Log(2018-03-16 14:09:46.183574): line = 134
+Log(2018-03-16 14:09:46.192556): line = 135
+Log(2018-03-16 14:09:46.192740): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:09:46.192952): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:09:46.193071): index = 9
+Log(2018-03-16 14:09:46.193285): line = 133
+Log(2018-03-16 14:09:46.358490): line = 134
+Log(2018-03-16 14:09:46.366785): line = 135
+Log(2018-03-16 14:09:46.366974): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:09:46.367146): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:09:46.367332): index = 10
+Log(2018-03-16 14:09:46.367506): line = 133
+Log(2018-03-16 14:09:47.126064): line = 134
+Log(2018-03-16 14:09:47.134354): line = 135
+Log(2018-03-16 14:09:47.134586): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:09:47.134746): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:09:47.134887): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg']
+Log(2018-03-16 14:09:53.252001): outputfile, working...
+Log(2018-03-16 14:11:46.857998): cal_dis, working...
+Log(2018-03-16 14:11:46.866053): end location: Vincent,
+Log(2018-03-16 14:11:46.866266): 
+Log(2018-03-16 14:11:48.762354): range(len(lists) = 11
+Log(2018-03-16 14:11:48.762530): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:11:48.762613): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:11:48.762728): index = 0
+Log(2018-03-16 14:11:48.980580): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:11:48.988877): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:11:48.989125): line = 130
+Log(2018-03-16 14:11:48.989287): line = 131
+Log(2018-03-16 14:11:48.989422): line = 132
+Log(2018-03-16 14:11:48.989536): line = 132.6
+Log(2018-03-16 14:11:48.989692): line = 133
+Log(2018-03-16 14:11:49.166484): line = 134
+Log(2018-03-16 14:11:49.166696): line = 135
+Log(2018-03-16 14:11:49.166847): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:11:49.167101): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:11:49.167242): index = 1
+Log(2018-03-16 14:11:49.167367): line = 133
+Log(2018-03-16 14:11:49.335393): line = 134
+Log(2018-03-16 14:11:49.342713): line = 135
+Log(2018-03-16 14:11:49.342900): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:11:49.343099): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:11:49.343291): index = 2
+Log(2018-03-16 14:11:49.343459): line = 133
+Log(2018-03-16 14:11:49.536027): line = 134
+Log(2018-03-16 14:11:49.544299): line = 135
+Log(2018-03-16 14:11:49.544508): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:11:49.544758): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:11:49.544917): index = 3
+Log(2018-03-16 14:11:49.545150): line = 133
+Log(2018-03-16 14:11:49.739741): line = 134
+Log(2018-03-16 14:11:49.747990): line = 135
+Log(2018-03-16 14:11:49.748194): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:11:49.748344): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:11:49.748452): index = 4
+Log(2018-03-16 14:11:49.748660): line = 133
+Log(2018-03-16 14:11:49.920000): line = 134
+Log(2018-03-16 14:11:49.927507): line = 135
+Log(2018-03-16 14:11:49.927652): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:11:49.927840): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:11:49.927926): index = 5
+Log(2018-03-16 14:11:49.928100): line = 133
+Log(2018-03-16 14:11:50.610664): line = 134
+Log(2018-03-16 14:11:50.618909): line = 135
+Log(2018-03-16 14:11:50.619111): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:11:50.619258): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:11:50.619421): index = 6
+Log(2018-03-16 14:11:50.619558): line = 133
+Log(2018-03-16 14:11:50.876557): line = 134
+Log(2018-03-16 14:11:50.884286): line = 135
+Log(2018-03-16 14:11:50.884472): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:11:50.884698): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:11:50.884819): index = 7
+Log(2018-03-16 14:11:50.885036): line = 133
+Log(2018-03-16 14:11:51.061065): line = 134
+Log(2018-03-16 14:11:51.069314): line = 135
+Log(2018-03-16 14:11:51.069508): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:11:51.069697): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:11:51.069896): index = 8
+Log(2018-03-16 14:11:51.070038): line = 133
+Log(2018-03-16 14:11:51.244836): line = 134
+Log(2018-03-16 14:11:51.252117): line = 135
+Log(2018-03-16 14:11:51.252323): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:11:51.252815): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:11:51.252956): index = 9
+Log(2018-03-16 14:11:51.253084): line = 133
+Log(2018-03-16 14:11:51.431642): line = 134
+Log(2018-03-16 14:11:51.439861): line = 135
+Log(2018-03-16 14:11:51.440062): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:11:51.440207): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:11:51.440367): index = 10
+Log(2018-03-16 14:11:51.440502): line = 133
+Log(2018-03-16 14:11:51.608654): line = 134
+Log(2018-03-16 14:11:51.616893): line = 135
+Log(2018-03-16 14:11:51.617079): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:11:51.617279): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:11:51.617427): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE']
+Log(2018-03-16 14:11:54.471805): outputfile, working...
+Log(2018-03-16 14:17:31.845887): cal_dis, working...
+Log(2018-03-16 14:17:31.854287): end location: Vincent,
+Log(2018-03-16 14:17:31.854443): 
+Log(2018-03-16 14:17:33.752212): range(len(lists) = 11
+Log(2018-03-16 14:17:33.760412): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:17:33.760606): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:17:33.760726): index = 0
+Log(2018-03-16 14:17:34.205574): ######
+Start location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:17:34.213804): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:17:34.214033): line = 130
+Log(2018-03-16 14:17:34.214158): line = 131
+Log(2018-03-16 14:17:34.214362): line = 132
+Log(2018-03-16 14:17:34.214525): line = 132.6
+Log(2018-03-16 14:17:34.214784): line = 133
+Log(2018-03-16 14:17:34.383727): line = 134
+Log(2018-03-16 14:17:34.392301): line = 135
+Log(2018-03-16 14:17:34.392515): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:17:34.392712): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:17:34.392837): index = 1
+Log(2018-03-16 14:17:34.393035): line = 133
+Log(2018-03-16 14:17:34.994381): line = 134
+Log(2018-03-16 14:17:35.002676): line = 135
+Log(2018-03-16 14:17:35.002897): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:17:35.003120): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:17:35.003289): index = 2
+Log(2018-03-16 14:17:35.003412): line = 133
+Log(2018-03-16 14:17:35.898171): line = 134
+Log(2018-03-16 14:17:35.906581): line = 135
+Log(2018-03-16 14:17:35.906794): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:17:35.906939): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:17:35.907072): index = 3
+Log(2018-03-16 14:17:35.907276): line = 133
+Log(2018-03-16 14:17:36.519099): line = 134
+Log(2018-03-16 14:17:36.527458): line = 135
+Log(2018-03-16 14:17:36.527655): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:17:36.527824): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:17:36.528021): index = 4
+Log(2018-03-16 14:17:36.528181): line = 133
+Log(2018-03-16 14:17:37.217675): line = 134
+Log(2018-03-16 14:17:37.225916): line = 135
+Log(2018-03-16 14:17:37.226115): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:17:37.226259): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:17:37.226869): index = 5
+Log(2018-03-16 14:17:37.227032): line = 133
+Log(2018-03-16 14:17:38.049635): line = 134
+Log(2018-03-16 14:17:38.057919): line = 135
+Log(2018-03-16 14:17:38.058139): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:17:38.058280): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:17:38.058510): index = 6
+Log(2018-03-16 14:17:38.058660): line = 133
+Log(2018-03-16 14:17:38.665468): line = 134
+Log(2018-03-16 14:17:38.673543): line = 135
+Log(2018-03-16 14:17:38.673790): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:17:38.673951): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:17:38.674107): index = 7
+Log(2018-03-16 14:17:38.674275): line = 133
+Log(2018-03-16 14:17:39.892911): line = 134
+Log(2018-03-16 14:17:39.901214): line = 135
+Log(2018-03-16 14:17:39.901458): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:17:39.901554): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:17:39.901843): index = 8
+Log(2018-03-16 14:17:39.902009): line = 133
+Log(2018-03-16 14:17:40.503459): line = 134
+Log(2018-03-16 14:17:40.511617): line = 135
+Log(2018-03-16 14:17:40.511824): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:17:40.511934): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:17:40.512077): index = 9
+Log(2018-03-16 14:17:40.512202): line = 133
+Log(2018-03-16 14:17:41.306251): line = 134
+Log(2018-03-16 14:17:41.306462): line = 135
+Log(2018-03-16 14:17:41.306608): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:17:41.306884): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:17:41.307039): index = 10
+Log(2018-03-16 14:17:41.307143): line = 133
+Log(2018-03-16 14:17:41.520950): line = 134
+Log(2018-03-16 14:17:41.529199): line = 135
+Log(2018-03-16 14:17:41.529394): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:17:41.529539): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:17:41.529671): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE']
+Log(2018-03-16 14:17:48.357082): outputfile, working...
+Log(2018-03-16 14:22:01.537892): cal_dis, working...
+Log(2018-03-16 14:22:01.546038): end location: Vincent,
+Log(2018-03-16 14:22:01.546198): 
+Log(2018-03-16 14:22:04.845399): range(len(lists) = 11
+Log(2018-03-16 14:22:04.853773): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:22:04.854062): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:22:04.854224): index = 0
+Log(2018-03-16 14:22:04.854333): line = 133
+Log(2018-03-16 14:22:05.631607): line = 134
+Log(2018-03-16 14:22:05.639866): line = 135
+Log(2018-03-16 14:22:05.640065): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:22:05.640209): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:22:05.640394): index = 1
+Log(2018-03-16 14:22:05.640557): line = 133
+Log(2018-03-16 14:22:07.769082): line = 134
+Log(2018-03-16 14:22:07.777298): line = 135
+Log(2018-03-16 14:22:07.777497): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:22:07.777626): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:22:07.777826): index = 2
+Log(2018-03-16 14:22:07.777952): line = 133
+Log(2018-03-16 14:22:09.001708): line = 134
+Log(2018-03-16 14:22:09.010084): line = 135
+Log(2018-03-16 14:22:09.010282): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:22:09.010386): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:22:09.010653): index = 3
+Log(2018-03-16 14:22:09.010816): line = 133
+Log(2018-03-16 14:22:09.204537): line = 134
+Log(2018-03-16 14:22:09.212154): line = 135
+Log(2018-03-16 14:22:09.212313): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:22:09.212398): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:22:09.212482): index = 4
+Log(2018-03-16 14:22:09.212575): line = 133
+Log(2018-03-16 14:22:09.932000): line = 134
+Log(2018-03-16 14:22:09.940210): line = 135
+Log(2018-03-16 14:22:09.940409): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:22:09.940553): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:22:09.940717): index = 5
+Log(2018-03-16 14:22:09.940849): line = 133
+Log(2018-03-16 14:22:10.550139): line = 134
+Log(2018-03-16 14:22:10.558408): line = 135
+Log(2018-03-16 14:22:10.558614): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:22:10.558723): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:22:10.558837): index = 6
+Log(2018-03-16 14:22:10.558966): line = 133
+Log(2018-03-16 14:22:11.492289): line = 134
+Log(2018-03-16 14:22:11.500527): line = 135
+Log(2018-03-16 14:22:11.500705): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:22:11.500874): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:22:11.501165): index = 7
+Log(2018-03-16 14:22:11.501322): line = 133
+Log(2018-03-16 14:22:12.381888): line = 134
+Log(2018-03-16 14:22:12.390173): line = 135
+Log(2018-03-16 14:22:12.390396): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:22:12.390523): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:22:12.390727): index = 8
+Log(2018-03-16 14:22:12.390855): line = 133
+Log(2018-03-16 14:22:13.199849): line = 134
+Log(2018-03-16 14:22:13.200055): line = 135
+Log(2018-03-16 14:22:13.200315): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:22:13.200508): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:22:13.200664): index = 9
+Log(2018-03-16 14:22:13.200926): line = 133
+Log(2018-03-16 14:22:13.930947): line = 134
+Log(2018-03-16 14:22:13.939280): line = 135
+Log(2018-03-16 14:22:13.939476): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:22:13.939673): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:22:13.939819): index = 10
+Log(2018-03-16 14:22:13.939980): line = 133
+Log(2018-03-16 14:22:14.388400): line = 134
+Log(2018-03-16 14:22:14.388610): line = 135
+Log(2018-03-16 14:22:14.388717): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:22:14.388827): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:22:14.389073): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw']
+Log(2018-03-16 14:22:22.084185): outputfile, working...
+Log(2018-03-16 14:27:38.746242): cal_dis, working...
+Log(2018-03-16 14:27:38.754776): end location: Vincent,
+Log(2018-03-16 14:27:38.754926): 
+Log(2018-03-16 14:27:41.103416): range(len(lists) = 11
+Log(2018-03-16 14:27:41.103576): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:27:41.103789): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:27:41.103912): index = 0
+Log(2018-03-16 14:27:41.104007): line = 133
+Log(2018-03-16 14:27:42.007511): line = 134
+Log(2018-03-16 14:27:42.015660): line = 135
+Log(2018-03-16 14:27:42.015853): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:27:42.015953): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:27:42.016126): index = 1
+Log(2018-03-16 14:27:42.016263): line = 133
+Log(2018-03-16 14:27:42.205393): line = 134
+Log(2018-03-16 14:27:42.213609): line = 135
+Log(2018-03-16 14:27:42.213818): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:27:42.213961): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:27:42.214165): index = 2
+Log(2018-03-16 14:27:42.214296): line = 133
+Log(2018-03-16 14:27:42.926586): line = 134
+Log(2018-03-16 14:27:42.934885): line = 135
+Log(2018-03-16 14:27:42.935126): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:27:42.935275): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:27:42.935415): index = 3
+Log(2018-03-16 14:27:42.935610): line = 133
+Log(2018-03-16 14:27:43.144822): line = 134
+Log(2018-03-16 14:27:43.153066): line = 135
+Log(2018-03-16 14:27:43.153250): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:27:43.153367): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:27:43.153683): index = 4
+Log(2018-03-16 14:27:43.153866): line = 133
+Log(2018-03-16 14:27:44.183734): line = 134
+Log(2018-03-16 14:27:44.192041): line = 135
+Log(2018-03-16 14:27:44.192364): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:27:44.192527): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:27:44.192719): index = 5
+Log(2018-03-16 14:27:44.192894): line = 133
+Log(2018-03-16 14:27:45.082457): line = 134
+Log(2018-03-16 14:27:45.090709): line = 135
+Log(2018-03-16 14:27:45.090896): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:27:45.091008): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:27:45.091165): index = 6
+Log(2018-03-16 14:27:45.091309): line = 133
+Log(2018-03-16 14:27:45.637699): line = 134
+Log(2018-03-16 14:27:45.646145): line = 135
+Log(2018-03-16 14:27:45.646373): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:27:45.646479): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:27:45.646580): index = 7
+Log(2018-03-16 14:27:45.646796): line = 133
+Log(2018-03-16 14:27:46.305509): line = 134
+Log(2018-03-16 14:27:46.314387): line = 135
+Log(2018-03-16 14:27:46.314573): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:27:46.314875): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:27:46.315201): index = 8
+Log(2018-03-16 14:27:46.315406): line = 133
+Log(2018-03-16 14:27:46.925620): line = 134
+Log(2018-03-16 14:27:46.933961): line = 135
+Log(2018-03-16 14:27:46.934185): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:27:46.934455): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:27:46.934658): index = 9
+Log(2018-03-16 14:27:46.934800): line = 133
+Log(2018-03-16 14:27:48.777736): line = 134
+Log(2018-03-16 14:27:48.785986): line = 135
+Log(2018-03-16 14:27:48.786182): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:27:48.786280): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:27:48.786483): index = 10
+Log(2018-03-16 14:27:48.786619): line = 133
+Log(2018-03-16 14:27:49.388857): line = 134
+Log(2018-03-16 14:27:49.397111): line = 135
+Log(2018-03-16 14:27:49.397349): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:27:49.397542): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:27:49.397640): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ']
+Log(2018-03-16 14:27:57.210074): outputfile, working...
+Log(2018-03-16 14:30:53.398386): cal_dis, working...
+Log(2018-03-16 14:30:53.406159): end location: Andy,3-13 Harrow St,3128
+Log(2018-03-16 14:30:53.406311): 3-13 Harrow St,3128
+Log(2018-03-16 14:30:53.406619): locations
+Log(2018-03-16 14:30:53.406734): ['30 sunrise cres,3107', '188 whitehorse rd, Balwyn', '50 albert road, south melbourne', '135 abeckett st,3053', '13 Crouch Court,Doncaster', '882 glenhuntly rd, caulfield south', '685 burke rd, camberwell', "O'sullivan Rd, Glen Waverley VIC 3150", '67 main drive, kew', '135 abeckett st,3053', '30 sunrise cres,3107', '555 st kilda road,3004', '3-13 Harrow St,3128']
+Log(2018-03-16 14:30:55.707686): range(len(lists) = 12
+Log(2018-03-16 14:30:55.716028): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:30:55.716233): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:30:55.716345): index = 0
+Log(2018-03-16 14:30:55.716557): line = 133
+Log(2018-03-16 14:30:57.079743): line = 134
+Log(2018-03-16 14:30:57.088036): line = 135
+Log(2018-03-16 14:30:57.088278): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:30:57.088411): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:30:57.088620): index = 1
+Log(2018-03-16 14:30:57.088750): line = 133
+Log(2018-03-16 14:30:57.782364): line = 134
+Log(2018-03-16 14:30:57.790713): line = 135
+Log(2018-03-16 14:30:57.790934): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:30:57.791050): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:30:57.791180): index = 2
+Log(2018-03-16 14:30:57.791299): line = 133
+Log(2018-03-16 14:30:58.318672): line = 134
+Log(2018-03-16 14:30:58.327062): line = 135
+Log(2018-03-16 14:30:58.327275): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:30:58.327422): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:30:58.327583): index = 3
+Log(2018-03-16 14:30:58.327718): line = 133
+Log(2018-03-16 14:30:59.232786): line = 134
+Log(2018-03-16 14:30:59.241498): line = 135
+Log(2018-03-16 14:30:59.241642): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:30:59.241757): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:30:59.241997): index = 4
+Log(2018-03-16 14:30:59.242165): line = 133
+Log(2018-03-16 14:31:00.152380): line = 134
+Log(2018-03-16 14:31:00.152614): line = 135
+Log(2018-03-16 14:31:00.152833): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:31:00.152986): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:31:00.153186): index = 5
+Log(2018-03-16 14:31:00.153343): line = 133
+Log(2018-03-16 14:31:01.686491): line = 134
+Log(2018-03-16 14:31:01.686735): line = 135
+Log(2018-03-16 14:31:01.686891): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:31:01.687029): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:31:01.687137): index = 6
+Log(2018-03-16 14:31:01.687288): line = 133
+Log(2018-03-16 14:31:02.388011): line = 134
+Log(2018-03-16 14:31:02.396018): line = 135
+Log(2018-03-16 14:31:02.396206): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:31:02.396395): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:31:02.397125): index = 7
+Log(2018-03-16 14:31:02.397435): line = 133
+Log(2018-03-16 14:31:03.839640): line = 134
+Log(2018-03-16 14:31:03.847899): line = 135
+Log(2018-03-16 14:31:03.848132): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:31:03.848323): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:31:03.848474): index = 8
+Log(2018-03-16 14:31:03.848594): line = 133
+Log(2018-03-16 14:31:04.456832): line = 134
+Log(2018-03-16 14:31:04.465075): line = 135
+Log(2018-03-16 14:31:04.465281): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:31:04.465414): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:31:04.465619): index = 9
+Log(2018-03-16 14:31:04.465749): line = 133
+Log(2018-03-16 14:31:05.387911): line = 134
+Log(2018-03-16 14:31:05.395488): line = 135
+Log(2018-03-16 14:31:05.395675): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:31:05.395930): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:31:05.396086): index = 10
+Log(2018-03-16 14:31:05.396195): line = 133
+Log(2018-03-16 14:31:06.926721): line = 134
+Log(2018-03-16 14:31:06.935036): line = 135
+Log(2018-03-16 14:31:06.935253): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:31:06.935365): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:31:06.935479): index = 11
+Log(2018-03-16 14:31:06.935618): line = 133
+Log(2018-03-16 14:31:07.833350): line = 134
+Log(2018-03-16 14:31:07.840974): line = 135
+Log(2018-03-16 14:31:07.841191): 
+######location: 3-13 Harrow St, Box Hill VIC 3128, Australia
+id:ChIJx-a3jrpA1moRSaFwb4RTEzQ
+Log(2018-03-16 14:31:07.841329): 3-13 Harrow St, Box Hill VIC 3128, Australia
+Log(2018-03-16 14:31:07.841436): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJx-a3jrpA1moRSaFwb4RTEzQ']
+Log(2018-03-16 14:31:22.417781): outputfile, working...
+Log(2018-03-16 14:36:41.278970): cal_dis, working...
+Log(2018-03-16 14:36:41.287572): end location: Vincent,
+Log(2018-03-16 14:36:41.287736): 
+Log(2018-03-16 14:36:42.941820): range(len(lists) = 11
+Log(2018-03-16 14:36:42.950008): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:36:42.950206): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:36:42.950322): index = 0
+Log(2018-03-16 14:36:43.478116): line = 133
+Log(2018-03-16 14:36:43.707313): line = 134
+Log(2018-03-16 14:36:43.707523): line = 135
+Log(2018-03-16 14:36:43.707682): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:36:43.707953): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:36:43.708109): index = 1
+Log(2018-03-16 14:36:43.708314): line = 133
+Log(2018-03-16 14:36:44.404086): line = 134
+Log(2018-03-16 14:36:44.404297): line = 135
+Log(2018-03-16 14:36:44.404430): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:36:44.404531): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:36:44.404776): index = 2
+Log(2018-03-16 14:36:44.404970): line = 133
+Log(2018-03-16 14:36:45.447519): line = 134
+Log(2018-03-16 14:36:45.455733): line = 135
+Log(2018-03-16 14:36:45.456000): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:36:45.456124): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:36:45.456290): index = 3
+Log(2018-03-16 14:36:45.456401): line = 133
+Log(2018-03-16 14:36:45.681688): line = 134
+Log(2018-03-16 14:36:45.689604): line = 135
+Log(2018-03-16 14:36:45.689776): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:36:45.689959): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:36:45.690117): index = 4
+Log(2018-03-16 14:36:45.690235): line = 133
+Log(2018-03-16 14:36:46.675280): line = 134
+Log(2018-03-16 14:36:46.683922): line = 135
+Log(2018-03-16 14:36:46.684109): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:36:46.684209): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:36:46.684284): index = 5
+Log(2018-03-16 14:36:46.684401): line = 133
+Log(2018-03-16 14:36:47.446230): line = 134
+Log(2018-03-16 14:36:47.446388): line = 135
+Log(2018-03-16 14:36:47.446519): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:36:47.446637): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:36:47.446744): index = 6
+Log(2018-03-16 14:36:47.446845): line = 133
+Log(2018-03-16 14:36:47.992980): line = 134
+Log(2018-03-16 14:36:48.001224): line = 135
+Log(2018-03-16 14:36:48.001404): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:36:48.001659): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:36:48.001815): index = 7
+Log(2018-03-16 14:36:48.001948): line = 133
+Log(2018-03-16 14:36:48.562806): line = 134
+Log(2018-03-16 14:36:48.571103): line = 135
+Log(2018-03-16 14:36:48.571348): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:36:48.571483): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:36:48.571591): index = 8
+Log(2018-03-16 14:36:48.571702): line = 133
+Log(2018-03-16 14:36:49.136360): line = 134
+Log(2018-03-16 14:36:49.144757): line = 135
+Log(2018-03-16 14:36:49.144960): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:36:49.145094): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:36:49.145189): index = 9
+Log(2018-03-16 14:36:49.145306): line = 133
+Log(2018-03-16 14:36:50.053317): line = 134
+Log(2018-03-16 14:36:50.061598): line = 135
+Log(2018-03-16 14:36:50.061786): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:36:50.061930): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:36:50.062064): index = 10
+Log(2018-03-16 14:36:50.062267): line = 133
+Log(2018-03-16 14:36:50.975694): line = 134
+Log(2018-03-16 14:36:50.983903): line = 135
+Log(2018-03-16 14:36:50.984090): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:36:50.984311): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:36:50.984443): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw']
+Log(2018-03-16 14:37:01.271586): outputfile, working...
+Log(2018-03-16 14:41:16.321522): cal_dis, working...
+Log(2018-03-16 14:41:16.330120): end location: Vincent,
+Log(2018-03-16 14:41:16.330269): 
+Log(2018-03-16 14:41:18.014015): range(len(lists) = 11
+Log(2018-03-16 14:41:18.022388): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:41:18.022605): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:41:18.022761): index = 0
+Log(2018-03-16 14:41:18.855064): line = 133
+Log(2018-03-16 14:41:19.041941): line = 134
+Log(2018-03-16 14:41:19.049487): line = 135
+Log(2018-03-16 14:41:19.049671): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:41:19.049837): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:41:19.050100): index = 1
+Log(2018-03-16 14:41:19.050311): line = 133
+Log(2018-03-16 14:41:20.082908): line = 134
+Log(2018-03-16 14:41:20.091250): line = 135
+Log(2018-03-16 14:41:20.091441): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:41:20.091632): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:41:20.091788): index = 2
+Log(2018-03-16 14:41:20.091907): line = 133
+Log(2018-03-16 14:41:20.695587): line = 134
+Log(2018-03-16 14:41:20.695818): line = 135
+Log(2018-03-16 14:41:20.695947): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:41:20.696052): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:41:20.696201): index = 3
+Log(2018-03-16 14:41:20.696315): line = 133
+Log(2018-03-16 14:41:21.317416): line = 134
+Log(2018-03-16 14:41:21.325729): line = 135
+Log(2018-03-16 14:41:21.325962): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:41:21.326107): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:41:21.326272): index = 4
+Log(2018-03-16 14:41:21.326405): line = 133
+Log(2018-03-16 14:41:21.925686): line = 134
+Log(2018-03-16 14:41:21.934034): line = 135
+Log(2018-03-16 14:41:21.934215): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:41:21.934415): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:41:21.934576): index = 5
+Log(2018-03-16 14:41:21.934694): line = 133
+Log(2018-03-16 14:41:23.464799): line = 134
+Log(2018-03-16 14:41:23.473040): line = 135
+Log(2018-03-16 14:41:23.473221): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:41:23.473468): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:41:23.473628): index = 6
+Log(2018-03-16 14:41:23.473757): line = 133
+Log(2018-03-16 14:41:24.385802): line = 134
+Log(2018-03-16 14:41:24.394120): line = 135
+Log(2018-03-16 14:41:24.394336): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:41:24.394496): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:41:24.394641): index = 7
+Log(2018-03-16 14:41:24.394803): line = 133
+Log(2018-03-16 14:41:25.132591): line = 134
+Log(2018-03-16 14:41:25.133873): line = 135
+Log(2018-03-16 14:41:25.134016): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:41:25.134264): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:41:25.134449): index = 8
+Log(2018-03-16 14:41:25.134774): line = 133
+Log(2018-03-16 14:41:25.920998): line = 134
+Log(2018-03-16 14:41:25.929214): line = 135
+Log(2018-03-16 14:41:25.929409): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:41:25.929554): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:41:25.929720): index = 9
+Log(2018-03-16 14:41:25.929859): line = 133
+Log(2018-03-16 14:41:26.135885): line = 134
+Log(2018-03-16 14:41:26.136084): line = 135
+Log(2018-03-16 14:41:26.136191): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:41:26.136432): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:41:26.136588): index = 10
+Log(2018-03-16 14:41:26.136695): line = 133
+Log(2018-03-16 14:41:27.462771): line = 134
+Log(2018-03-16 14:41:27.462976): line = 135
+Log(2018-03-16 14:41:27.463123): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:41:27.463395): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:41:27.463550): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg']
+Log(2018-03-16 14:41:36.537053): outputfile, working...
+Log(2018-03-16 14:42:57.270120): cal_dis, working...
+Log(2018-03-16 14:42:57.278262): end location: Andy,3-13 Harrow St,3128
+Log(2018-03-16 14:42:57.278419): 3-13 Harrow St,3128
+Log(2018-03-16 14:42:57.278700): locations
+Log(2018-03-16 14:42:57.278809): ['30 sunrise cres,3107', '13 Crouch Court,Doncaster', "O'sullivan Rd, Glen Waverley VIC 3150", '67 main drive, kew', '882 glenhuntly rd, caulfield south', '135 abeckett st,3053', '555 st kilda road,3004', '685 burke rd, camberwell', '50 albert road, south melbourne', '188 whitehorse rd, Balwyn', '30 sunrise cres,3107', '135 abeckett st,3053', '3-13 Harrow St,3128']
+Log(2018-03-16 14:42:59.430674): range(len(lists) = 12
+Log(2018-03-16 14:42:59.438886): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:42:59.439064): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:42:59.439357): index = 0
+Log(2018-03-16 14:42:59.630209): line = 133
+Log(2018-03-16 14:42:59.863810): line = 134
+Log(2018-03-16 14:42:59.872044): line = 135
+Log(2018-03-16 14:42:59.872231): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:42:59.872445): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:42:59.872571): index = 1
+Log(2018-03-16 14:42:59.872778): line = 133
+Log(2018-03-16 14:43:00.079949): line = 134
+Log(2018-03-16 14:43:00.080161): line = 135
+Log(2018-03-16 14:43:00.080406): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:43:00.080538): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:43:00.080636): index = 2
+Log(2018-03-16 14:43:00.080820): line = 133
+Log(2018-03-16 14:43:00.283186): line = 134
+Log(2018-03-16 14:43:00.291429): line = 135
+Log(2018-03-16 14:43:00.291626): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:43:00.291798): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:43:00.291949): index = 3
+Log(2018-03-16 14:43:00.292062): line = 133
+Log(2018-03-16 14:43:00.516483): line = 134
+Log(2018-03-16 14:43:00.524670): line = 135
+Log(2018-03-16 14:43:00.524815): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:43:00.524964): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:43:00.525048): index = 4
+Log(2018-03-16 14:43:00.525145): line = 133
+Log(2018-03-16 14:43:00.745444): line = 134
+Log(2018-03-16 14:43:00.745661): line = 135
+Log(2018-03-16 14:43:00.745784): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:43:00.745878): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:43:00.746050): index = 5
+Log(2018-03-16 14:43:00.746183): line = 133
+Log(2018-03-16 14:43:01.459408): line = 134
+Log(2018-03-16 14:43:01.467684): line = 135
+Log(2018-03-16 14:43:01.467882): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:43:01.468038): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:43:01.468177): index = 6
+Log(2018-03-16 14:43:01.468306): line = 133
+Log(2018-03-16 14:43:01.667029): line = 134
+Log(2018-03-16 14:43:01.675349): line = 135
+Log(2018-03-16 14:43:01.675570): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:43:01.675775): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:43:01.675981): index = 7
+Log(2018-03-16 14:43:01.676111): line = 133
+Log(2018-03-16 14:43:01.870346): line = 134
+Log(2018-03-16 14:43:01.878594): line = 135
+Log(2018-03-16 14:43:01.878793): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:43:01.879389): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:43:01.879546): index = 8
+Log(2018-03-16 14:43:01.879797): line = 133
+Log(2018-03-16 14:43:02.067408): line = 134
+Log(2018-03-16 14:43:02.075644): line = 135
+Log(2018-03-16 14:43:02.075836): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:43:02.075983): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:43:02.076087): index = 9
+Log(2018-03-16 14:43:02.076320): line = 133
+Log(2018-03-16 14:43:02.261180): line = 134
+Log(2018-03-16 14:43:02.269173): line = 135
+Log(2018-03-16 14:43:02.269359): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:43:02.269590): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:43:02.269730): index = 10
+Log(2018-03-16 14:43:02.269938): line = 133
+Log(2018-03-16 14:43:03.003248): line = 134
+Log(2018-03-16 14:43:03.011541): line = 135
+Log(2018-03-16 14:43:03.011772): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:43:03.011920): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:43:03.012023): index = 11
+Log(2018-03-16 14:43:03.012242): line = 133
+Log(2018-03-16 14:43:03.925205): line = 134
+Log(2018-03-16 14:43:03.933422): line = 135
+Log(2018-03-16 14:43:03.933601): 
+######location: 3-13 Harrow St, Box Hill VIC 3128, Australia
+id:ChIJx-a3jrpA1moRSaFwb4RTEzQ
+Log(2018-03-16 14:43:03.933921): 3-13 Harrow St, Box Hill VIC 3128, Australia
+Log(2018-03-16 14:43:03.934051): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJx-a3jrpA1moRSaFwb4RTEzQ']
+Log(2018-03-16 14:43:08.224508): outputfile, working...
+Log(2018-03-16 14:48:38.520945): cal_dis, working...
+Log(2018-03-16 14:48:38.528973): end location: Vincent,
+Log(2018-03-16 14:48:38.529133): 
+Log(2018-03-16 14:48:41.227677): range(len(lists) = 11
+Log(2018-03-16 14:48:41.235933): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:48:41.236131): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:48:41.236265): index = 0
+Log(2018-03-16 14:48:42.143305): line = 133
+Log(2018-03-16 14:48:42.331144): line = 134
+Log(2018-03-16 14:48:42.339523): line = 135
+Log(2018-03-16 14:48:42.339719): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:48:42.339817): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:48:42.339917): index = 1
+Log(2018-03-16 14:48:42.340107): line = 133
+Log(2018-03-16 14:48:43.113147): line = 134
+Log(2018-03-16 14:48:43.121377): line = 135
+Log(2018-03-16 14:48:43.121576): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:48:43.121723): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:48:43.121885): index = 2
+Log(2018-03-16 14:48:43.122020): line = 133
+Log(2018-03-16 14:48:44.016668): line = 134
+Log(2018-03-16 14:48:44.024790): line = 135
+Log(2018-03-16 14:48:44.024980): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:48:44.025168): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:48:44.025324): index = 3
+Log(2018-03-16 14:48:44.025511): line = 133
+Log(2018-03-16 14:48:44.601759): line = 134
+Log(2018-03-16 14:48:44.610034): line = 135
+Log(2018-03-16 14:48:44.610261): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:48:44.610369): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:48:44.610495): index = 4
+Log(2018-03-16 14:48:44.610676): line = 133
+Log(2018-03-16 14:48:45.216172): line = 134
+Log(2018-03-16 14:48:45.224409): line = 135
+Log(2018-03-16 14:48:45.224592): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:48:45.224752): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:48:45.224909): index = 5
+Log(2018-03-16 14:48:45.225041): line = 133
+Log(2018-03-16 14:48:45.830713): line = 134
+Log(2018-03-16 14:48:45.831269): line = 135
+Log(2018-03-16 14:48:45.836086): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:48:45.837403): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:48:45.850225): index = 6
+Log(2018-03-16 14:48:45.850364): line = 133
+Log(2018-03-16 14:48:46.445071): line = 134
+Log(2018-03-16 14:48:46.453376): line = 135
+Log(2018-03-16 14:48:46.453584): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:48:46.453731): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:48:46.453889): index = 7
+Log(2018-03-16 14:48:46.454021): line = 133
+Log(2018-03-16 14:48:47.366696): line = 134
+Log(2018-03-16 14:48:47.374945): line = 135
+Log(2018-03-16 14:48:47.375135): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:48:47.375375): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:48:47.375537): index = 8
+Log(2018-03-16 14:48:47.375709): line = 133
+Log(2018-03-16 14:48:48.290988): line = 134
+Log(2018-03-16 14:48:48.298277): line = 135
+Log(2018-03-16 14:48:48.298516): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:48:48.298665): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:48:48.298787): index = 9
+Log(2018-03-16 14:48:48.298911): line = 133
+Log(2018-03-16 14:48:49.217077): line = 134
+Log(2018-03-16 14:48:49.225456): line = 135
+Log(2018-03-16 14:48:49.225720): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:48:49.225878): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:48:49.226046): index = 10
+Log(2018-03-16 14:48:49.226222): line = 133
+Log(2018-03-16 14:48:49.475904): line = 134
+Log(2018-03-16 14:48:49.484123): line = 135
+Log(2018-03-16 14:48:49.484305): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:48:49.484501): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:48:49.484632): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE']
+Log(2018-03-16 14:50:55.431457): cal_dis, working...
+Log(2018-03-16 14:50:55.440040): end location: Vincent,
+Log(2018-03-16 14:50:55.440192): 
+Log(2018-03-16 14:50:56.734431): range(len(lists) = 11
+Log(2018-03-16 14:50:56.734619): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:50:56.734769): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:50:56.735043): index = 0
+Log(2018-03-16 14:50:56.905646): line = 133
+Log(2018-03-16 14:50:57.070689): line = 134
+Log(2018-03-16 14:50:57.078996): line = 135
+Log(2018-03-16 14:50:57.079215): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:50:57.079327): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:50:57.079471): index = 1
+Log(2018-03-16 14:50:57.079605): line = 133
+Log(2018-03-16 14:50:57.247212): line = 134
+Log(2018-03-16 14:50:57.255505): line = 135
+Log(2018-03-16 14:50:57.255736): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:50:57.255868): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:50:57.256080): index = 2
+Log(2018-03-16 14:50:57.256208): line = 133
+Log(2018-03-16 14:50:57.424845): line = 134
+Log(2018-03-16 14:50:57.433139): line = 135
+Log(2018-03-16 14:50:57.433347): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:50:57.433494): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:50:57.433654): index = 3
+Log(2018-03-16 14:50:57.433788): line = 133
+Log(2018-03-16 14:50:57.612212): line = 134
+Log(2018-03-16 14:50:57.620532): line = 135
+Log(2018-03-16 14:50:57.620739): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:50:57.620879): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:50:57.621079): index = 4
+Log(2018-03-16 14:50:57.621236): line = 133
+Log(2018-03-16 14:50:57.800219): line = 134
+Log(2018-03-16 14:50:57.808498): line = 135
+Log(2018-03-16 14:50:57.808714): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:50:57.808872): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:50:57.808997): index = 5
+Log(2018-03-16 14:50:57.809133): line = 133
+Log(2018-03-16 14:50:57.975651): line = 134
+Log(2018-03-16 14:50:57.983953): line = 135
+Log(2018-03-16 14:50:57.984193): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:50:57.984303): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:50:57.984478): index = 6
+Log(2018-03-16 14:50:57.984613): line = 133
+Log(2018-03-16 14:50:58.151721): line = 134
+Log(2018-03-16 14:50:58.159987): line = 135
+Log(2018-03-16 14:50:58.160195): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:50:58.160330): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:50:58.160446): index = 7
+Log(2018-03-16 14:50:58.160570): line = 133
+Log(2018-03-16 14:50:58.355949): line = 134
+Log(2018-03-16 14:50:58.364274): line = 135
+Log(2018-03-16 14:50:58.364477): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:50:58.364616): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:50:58.364798): index = 8
+Log(2018-03-16 14:50:58.365008): line = 133
+Log(2018-03-16 14:50:58.530963): line = 134
+Log(2018-03-16 14:50:58.539192): line = 135
+Log(2018-03-16 14:50:58.539393): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:50:58.539539): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:50:58.539698): index = 9
+Log(2018-03-16 14:50:58.539830): line = 133
+Log(2018-03-16 14:50:58.712676): line = 134
+Log(2018-03-16 14:50:58.720903): line = 135
+Log(2018-03-16 14:50:58.721056): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:50:58.721186): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:50:58.721277): index = 10
+Log(2018-03-16 14:50:58.721387): line = 133
+Log(2018-03-16 14:50:58.885620): line = 134
+Log(2018-03-16 14:50:58.893874): line = 135
+Log(2018-03-16 14:50:58.894073): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:50:58.894218): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:50:58.894378): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE']
+Log(2018-03-16 14:51:01.944037): outputfile, working...
+Log(2018-03-16 14:53:29.989510): cal_dis, working...
+Log(2018-03-16 14:53:29.997532): end location: Vincent,
+Log(2018-03-16 14:53:29.997683): 
+Log(2018-03-16 14:53:31.459600): range(len(lists) = 11
+Log(2018-03-16 14:53:31.459758): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:53:31.460016): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:53:31.460152): index = 0
+Log(2018-03-16 14:53:31.880322): line = 133
+Log(2018-03-16 14:53:32.078181): line = 134
+Log(2018-03-16 14:53:32.086457): line = 135
+Log(2018-03-16 14:53:32.086761): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:53:32.086921): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:53:32.087139): index = 1
+Log(2018-03-16 14:53:32.087308): line = 133
+Log(2018-03-16 14:53:32.779724): line = 134
+Log(2018-03-16 14:53:32.788042): line = 135
+Log(2018-03-16 14:53:32.788279): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:53:32.788383): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:53:32.788490): index = 2
+Log(2018-03-16 14:53:32.788661): line = 133
+Log(2018-03-16 14:53:33.317946): line = 134
+Log(2018-03-16 14:53:33.318086): line = 135
+Log(2018-03-16 14:53:33.318174): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:53:33.318238): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:53:33.318406): index = 3
+Log(2018-03-16 14:53:33.318507): line = 133
+Log(2018-03-16 14:53:33.840757): line = 134
+Log(2018-03-16 14:53:33.848992): line = 135
+Log(2018-03-16 14:53:33.849179): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:53:33.849398): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:53:33.849519): index = 4
+Log(2018-03-16 14:53:33.849737): line = 133
+Log(2018-03-16 14:53:34.282367): line = 134
+Log(2018-03-16 14:53:34.290604): line = 135
+Log(2018-03-16 14:53:34.290803): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:53:34.290950): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:53:34.291112): index = 5
+Log(2018-03-16 14:53:34.291247): line = 133
+Log(2018-03-16 14:53:34.788544): line = 134
+Log(2018-03-16 14:53:34.796772): line = 135
+Log(2018-03-16 14:53:34.796965): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:53:34.797235): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:53:34.797411): index = 6
+Log(2018-03-16 14:53:34.797585): line = 133
+Log(2018-03-16 14:53:35.832263): line = 134
+Log(2018-03-16 14:53:35.840871): line = 135
+Log(2018-03-16 14:53:35.841067): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:53:35.841204): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:53:35.841313): index = 7
+Log(2018-03-16 14:53:35.841493): line = 133
+Log(2018-03-16 14:53:36.733190): line = 134
+Log(2018-03-16 14:53:36.741500): line = 135
+Log(2018-03-16 14:53:36.741736): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:53:36.741835): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:53:36.741944): index = 8
+Log(2018-03-16 14:53:36.742057): line = 133
+Log(2018-03-16 14:53:37.675145): line = 134
+Log(2018-03-16 14:53:37.683447): line = 135
+Log(2018-03-16 14:53:37.683719): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:53:37.683863): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:53:37.684065): index = 9
+Log(2018-03-16 14:53:37.684193): line = 133
+Log(2018-03-16 14:53:38.596491): line = 134
+Log(2018-03-16 14:53:38.604745): line = 135
+Log(2018-03-16 14:53:38.604930): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:53:38.605148): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:53:38.605277): index = 10
+Log(2018-03-16 14:53:38.605487): line = 133
+Log(2018-03-16 14:53:38.789279): line = 134
+Log(2018-03-16 14:53:38.796770): line = 135
+Log(2018-03-16 14:53:38.796950): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:53:38.797224): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:53:38.797378): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE']
+Log(2018-03-16 14:53:45.677225): outputfile, working...
+Log(2018-03-16 14:56:26.955213): cal_dis, working...
+Log(2018-03-16 14:56:26.963405): end location: Vincent,
+Log(2018-03-16 14:56:26.963553): 
+Log(2018-03-16 14:56:28.824685): range(len(lists) = 11
+Log(2018-03-16 14:56:28.832270): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:56:28.832457): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:56:28.832715): index = 0
+Log(2018-03-16 14:56:29.605924): line = 133
+Log(2018-03-16 14:56:29.785031): line = 134
+Log(2018-03-16 14:56:29.793005): line = 135
+Log(2018-03-16 14:56:29.793213): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:56:29.793321): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:56:29.793568): index = 1
+Log(2018-03-16 14:56:29.793735): line = 133
+Log(2018-03-16 14:56:30.326085): line = 134
+Log(2018-03-16 14:56:30.334285): line = 135
+Log(2018-03-16 14:56:30.334430): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:56:30.334586): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:56:30.334684): index = 2
+Log(2018-03-16 14:56:30.334825): line = 133
+Log(2018-03-16 14:56:30.954146): line = 134
+Log(2018-03-16 14:56:30.962386): line = 135
+Log(2018-03-16 14:56:30.962569): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:56:30.962781): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:56:30.962940): index = 3
+Log(2018-03-16 14:56:30.963207): line = 133
+Log(2018-03-16 14:56:31.860826): line = 134
+Log(2018-03-16 14:56:31.869043): line = 135
+Log(2018-03-16 14:56:31.869246): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:56:31.869357): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:56:31.869546): index = 4
+Log(2018-03-16 14:56:31.869719): line = 133
+Log(2018-03-16 14:56:32.478771): line = 134
+Log(2018-03-16 14:56:32.487132): line = 135
+Log(2018-03-16 14:56:32.487402): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:56:32.487561): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:56:32.487701): index = 5
+Log(2018-03-16 14:56:32.487907): line = 133
+Log(2018-03-16 14:56:32.830646): line = 134
+Log(2018-03-16 14:56:32.838883): line = 135
+Log(2018-03-16 14:56:32.839066): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:56:32.839223): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:56:32.839414): index = 6
+Log(2018-03-16 14:56:32.839574): line = 133
+Log(2018-03-16 14:56:33.709481): line = 134
+Log(2018-03-16 14:56:33.717863): line = 135
+Log(2018-03-16 14:56:33.718080): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:56:33.718328): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:56:33.718484): index = 7
+Log(2018-03-16 14:56:33.718604): line = 133
+Log(2018-03-16 14:56:34.645498): line = 134
+Log(2018-03-16 14:56:34.653923): line = 135
+Log(2018-03-16 14:56:34.654127): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:56:34.654283): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:56:34.654433): index = 8
+Log(2018-03-16 14:56:34.654550): line = 133
+Log(2018-03-16 14:56:35.255912): line = 134
+Log(2018-03-16 14:56:35.264154): line = 135
+Log(2018-03-16 14:56:35.264338): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:56:35.264594): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:56:35.264728): index = 9
+Log(2018-03-16 14:56:35.264907): line = 133
+Log(2018-03-16 14:56:35.868468): line = 134
+Log(2018-03-16 14:56:35.876765): line = 135
+Log(2018-03-16 14:56:35.876984): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:56:35.877100): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:56:35.877258): index = 10
+Log(2018-03-16 14:56:35.877402): line = 133
+Log(2018-03-16 14:56:36.466537): line = 134
+Log(2018-03-16 14:56:36.466753): line = 135
+Log(2018-03-16 14:56:36.466957): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:56:36.467075): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:56:36.467258): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJzxYwB78_1moRPFU1KXMy1w8']
+Log(2018-03-16 14:56:43.689054): outputfile, working...
+Log(2018-03-16 14:59:12.786599): cal_dis, working...
+Log(2018-03-16 14:59:12.795157): end location: Vincent,
+Log(2018-03-16 14:59:12.795309): 
+Log(2018-03-16 14:59:14.382488): range(len(lists) = 11
+Log(2018-03-16 14:59:14.382634): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:59:14.382721): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:59:14.382821): index = 0
+Log(2018-03-16 14:59:15.035883): line = 133
+Log(2018-03-16 14:59:15.242185): line = 134
+Log(2018-03-16 14:59:15.250464): line = 135
+Log(2018-03-16 14:59:15.250652): 
+######location: 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+id:ChIJq-GSywhH1moR4cDkrRxKt2c
+Log(2018-03-16 14:59:15.250882): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-16 14:59:15.251015): index = 1
+Log(2018-03-16 14:59:15.251137): line = 133
+Log(2018-03-16 14:59:15.911735): line = 134
+Log(2018-03-16 14:59:15.912598): line = 135
+Log(2018-03-16 14:59:15.912718): 
+######location: 67 Main Dr, Kew VIC 3101, Australia
+id:ChIJYRyEPOtD1moRjafLs45OIcw
+Log(2018-03-16 14:59:15.912880): 67 Main Dr, Kew VIC 3101, Australia
+Log(2018-03-16 14:59:15.913015): index = 2
+Log(2018-03-16 14:59:15.913234): line = 133
+Log(2018-03-16 14:59:16.825228): line = 134
+Log(2018-03-16 14:59:16.833491): line = 135
+Log(2018-03-16 14:59:16.833727): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:59:16.833906): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:59:16.834105): index = 3
+Log(2018-03-16 14:59:16.834268): line = 133
+Log(2018-03-16 14:59:17.031148): line = 134
+Log(2018-03-16 14:59:17.039540): line = 135
+Log(2018-03-16 14:59:17.039749): 
+######location: 135 A'Beckett St, Melbourne VIC 3000, Australia
+id:ChIJ7ahCFzVd1moRwpoGyTweKJE
+Log(2018-03-16 14:59:17.039847): 135 A'Beckett St, Melbourne VIC 3000, Australia
+Log(2018-03-16 14:59:17.039956): index = 4
+Log(2018-03-16 14:59:17.040135): line = 133
+Log(2018-03-16 14:59:17.747091): line = 134
+Log(2018-03-16 14:59:17.755378): line = 135
+Log(2018-03-16 14:59:17.755602): 
+######location: 50 Albert Rd, South Melbourne VIC 3205, Australia
+id:ChIJuVQIpwJo1moRXc7dMNmcxKg
+Log(2018-03-16 14:59:17.756256): 50 Albert Rd, South Melbourne VIC 3205, Australia
+Log(2018-03-16 14:59:17.756409): index = 5
+Log(2018-03-16 14:59:17.756542): line = 133
+Log(2018-03-16 14:59:18.668773): line = 134
+Log(2018-03-16 14:59:18.677099): line = 135
+Log(2018-03-16 14:59:18.677307): 
+######location: 555 St Kilda Rd, Melbourne VIC 3004, Australia
+id:ChIJyeFmcBdo1moRm0mAKzyI58U
+Log(2018-03-16 14:59:18.677452): 555 St Kilda Rd, Melbourne VIC 3004, Australia
+Log(2018-03-16 14:59:18.677610): index = 6
+Log(2018-03-16 14:59:18.677744): line = 133
+Log(2018-03-16 14:59:19.285052): line = 134
+Log(2018-03-16 14:59:19.293419): line = 135
+Log(2018-03-16 14:59:19.293635): 
+######location: 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+id:ChIJ699X0qFp1moRZRampbUh2ro
+Log(2018-03-16 14:59:19.293734): 882 Glen Huntly Rd, Caulfield South VIC 3162, Australia
+Log(2018-03-16 14:59:19.293834): index = 7
+Log(2018-03-16 14:59:19.293947): line = 133
+Log(2018-03-16 14:59:20.559268): line = 134
+Log(2018-03-16 14:59:20.559474): line = 135
+Log(2018-03-16 14:59:20.559625): 
+######location: Osullivan Rd, Glen Waverley VIC 3150, Australia
+id:ChIJzxYwB78_1moRPFU1KXMy1w8
+Log(2018-03-16 14:59:20.559890): Osullivan Rd, Glen Waverley VIC 3150, Australia
+Log(2018-03-16 14:59:20.560092): index = 8
+Log(2018-03-16 14:59:20.560257): line = 133
+Log(2018-03-16 14:59:22.052688): line = 134
+Log(2018-03-16 14:59:22.061006): line = 135
+Log(2018-03-16 14:59:22.061236): 
+######location: 685 Burke Rd, Camberwell VIC 3124, Australia
+id:ChIJ_-szxoVB1moRpEfk0LyVt4Y
+Log(2018-03-16 14:59:22.061361): 685 Burke Rd, Camberwell VIC 3124, Australia
+Log(2018-03-16 14:59:22.061478): index = 9
+Log(2018-03-16 14:59:22.061621): line = 133
+Log(2018-03-16 14:59:22.689085): line = 134
+Log(2018-03-16 14:59:22.697324): line = 135
+Log(2018-03-16 14:59:22.697509): 
+######location: 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+id:ChIJ5wiQGD5B1moRXSOFxwZEFVE
+Log(2018-03-16 14:59:22.697723): 188 Whitehorse Rd, Balwyn VIC 3103, Australia
+Log(2018-03-16 14:59:22.697841): index = 10
+Log(2018-03-16 14:59:22.698035): line = 133
+Log(2018-03-16 14:59:23.276741): line = 134
+Log(2018-03-16 14:59:23.285000): line = 135
+Log(2018-03-16 14:59:23.285200): 
+######location: 13 Crouch Ct, Doncaster VIC 3108, Australia
+id:ChIJ1UpSeIFH1moRihfGdUGPUbQ
+Log(2018-03-16 14:59:23.285343): 13 Crouch Ct, Doncaster VIC 3108, Australia
+Log(2018-03-16 14:59:23.285505): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJYRyEPOtD1moRjafLs45OIcw', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJ7ahCFzVd1moRwpoGyTweKJE', u'ChIJuVQIpwJo1moRXc7dMNmcxKg', u'ChIJyeFmcBdo1moRm0mAKzyI58U', u'ChIJ699X0qFp1moRZRampbUh2ro', u'ChIJzxYwB78_1moRPFU1KXMy1w8', u'ChIJ_-szxoVB1moRpEfk0LyVt4Y', u'ChIJ5wiQGD5B1moRXSOFxwZEFVE', u'ChIJ1UpSeIFH1moRihfGdUGPUbQ']
+Log(2018-03-16 14:59:31.112707): outputfile, working...
+Log(2018-03-17 11:32:15.143796): cal_dis, working...
+Log(2018-03-17 11:32:15.152183): end location: Andy,3-13 Harrow St,3128
+Log(2018-03-17 11:32:15.152331): 3-13 Harrow St,3128
+Log(2018-03-17 11:32:15.152484): locations
+Log(2018-03-17 11:32:15.152578): ['30 sunrise cres,3107', '210 Normanby Rd,3168', '3-13 Harrow St,3128']
+Log(2018-03-17 11:32:15.873892): range(len(lists) = 2
+Log(2018-03-17 11:32:15.882174): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-17 11:32:15.882402): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-17 11:32:15.882618): index = 0
+Log(2018-03-17 11:32:16.476671): line = 133
+Log(2018-03-17 11:32:17.193637): line = 134
+Log(2018-03-17 11:32:17.201934): line = 135
+Log(2018-03-17 11:32:17.202152): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-17 11:32:17.202350): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-17 11:32:17.202480): index = 1
+Log(2018-03-17 11:32:17.202676): line = 133
+Log(2018-03-17 11:32:17.912565): line = 134
+Log(2018-03-17 11:32:17.920803): line = 135
+Log(2018-03-17 11:32:17.920999): 
+######location: 3-13 Harrow St, Box Hill VIC 3128, Australia
+id:ChIJx-a3jrpA1moRSaFwb4RTEzQ
+Log(2018-03-17 11:32:17.921184): 3-13 Harrow St, Box Hill VIC 3128, Australia
+Log(2018-03-17 11:32:17.921280): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJx-a3jrpA1moRSaFwb4RTEzQ']
+Log(2018-03-17 11:32:19.669823): outputfile, working...
+Log(2018-03-18 10:53:49.004928): cal_dis, working...
+Log(2018-03-18 10:53:49.013524): end location: Vincent,
+Log(2018-03-18 10:53:49.013677): 
+Log(2018-03-18 10:53:50.320280):      请检查地址，一些地址的内容有错!     
+Log(2018-03-18 10:54:27.592160): cal_dis, working...
+Log(2018-03-18 10:54:27.601012): end location: Vincent,
+Log(2018-03-18 10:54:27.601175): 
+Log(2018-03-18 10:54:28.191527): range(len(lists) = 2
+Log(2018-03-18 10:54:28.191742): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-18 10:54:28.191820): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-18 10:54:28.191961): index = 0
+Log(2018-03-18 10:54:28.801190): line = 133
+Log(2018-03-18 10:54:28.978007): line = 134
+Log(2018-03-18 10:54:28.986264): line = 135
+Log(2018-03-18 10:54:28.986511): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-18 10:54:28.986675): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-18 10:54:28.986817): index = 1
+Log(2018-03-18 10:54:28.986973): line = 133
+Log(2018-03-18 10:54:29.952282): line = 134
+Log(2018-03-18 10:54:29.960457): line = 135
+Log(2018-03-18 10:54:29.960638): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-18 10:54:29.960821): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 10:54:29.960974): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJGXItR9RC1moRiT0gZnsNW08']
+Log(2018-03-18 10:54:31.203559): outputfile, working...
+Log(2018-03-18 10:58:17.977164): cal_dis, working...
+Log(2018-03-18 10:58:17.985287): end location: Vincent,
+Log(2018-03-18 10:58:17.985434): 
+Log(2018-03-18 10:58:18.967738): range(len(lists) = 2
+Log(2018-03-18 10:58:18.967957): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-18 10:58:18.968097): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 10:58:18.968262): index = 0
+Log(2018-03-18 10:58:19.142940): line = 133
+Log(2018-03-18 10:58:19.739737): line = 134
+Log(2018-03-18 10:58:19.747559): line = 135
+Log(2018-03-18 10:58:19.747829): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-18 10:58:19.748121): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 10:58:19.748274): index = 1
+Log(2018-03-18 10:58:19.748515): line = 133
+Log(2018-03-18 10:58:19.923281): line = 134
+Log(2018-03-18 10:58:19.931665): line = 135
+Log(2018-03-18 10:58:19.931871): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-18 10:58:19.932015): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-18 10:58:19.932177): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-18 10:58:20.476127): outputfile, working...
+Log(2018-03-18 11:01:55.069516): cal_dis, working...
+Log(2018-03-18 11:01:55.077517): end location: Vincent,
+Log(2018-03-18 11:01:55.077924): 
+Log(2018-03-18 11:01:55.954639): range(len(lists) = 2
+Log(2018-03-18 11:01:55.955363): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-18 11:01:55.955479): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 11:01:55.955737): index = 0
+Log(2018-03-18 11:01:56.364051): line = 133
+Log(2018-03-18 11:01:56.937348): line = 134
+Log(2018-03-18 11:01:56.945603): line = 135
+Log(2018-03-18 11:01:56.945795): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-18 11:01:56.945896): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 11:01:56.946095): index = 1
+Log(2018-03-18 11:01:56.946222): line = 133
+Log(2018-03-18 11:01:57.150159): line = 134
+Log(2018-03-18 11:01:57.150405): line = 135
+Log(2018-03-18 11:01:57.150998): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-18 11:01:57.151136): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-18 11:01:57.151256): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-18 11:01:58.220144): outputfile, working...
+Log(2018-03-18 11:03:49.231666): cal_dis, working...
+Log(2018-03-18 11:03:49.239867): end location: Vincent,
+Log(2018-03-18 11:03:49.240190): 
+Log(2018-03-18 11:03:50.597239): range(len(lists) = 2
+Log(2018-03-18 11:03:50.597455): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-18 11:03:50.597575): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 11:03:50.597679): index = 0
+Log(2018-03-18 11:03:51.516201): line = 133
+Log(2018-03-18 11:03:51.689859): line = 134
+Log(2018-03-18 11:03:51.690067): line = 135
+Log(2018-03-18 11:03:51.690261): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-18 11:03:51.690397): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-18 11:03:51.690494): index = 1
+Log(2018-03-18 11:03:51.690771): line = 133
+Log(2018-03-18 11:03:51.893526): line = 134
+Log(2018-03-18 11:03:51.901763): line = 135
+Log(2018-03-18 11:03:51.901958): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-18 11:03:51.902112): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-18 11:03:51.902233): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-18 11:03:53.268931): outputfile, working...
+Log(2018-03-20 11:00:36.714541): cal_dis, working...
+Log(2018-03-20 11:00:36.722615): end location: Vincent,
+Log(2018-03-20 11:00:36.722765): 
+Log(2018-03-20 11:00:38.447843): range(len(lists) = 2
+Log(2018-03-20 11:00:38.448041): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:00:38.448150): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:00:38.448267): index = 0
+Log(2018-03-20 11:00:39.353571): line = 133
+Log(2018-03-20 11:00:40.262342): line = 134
+Log(2018-03-20 11:00:40.262548): line = 135
+Log(2018-03-20 11:00:40.262742): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:00:40.262868): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:00:40.262982): index = 1
+Log(2018-03-20 11:00:40.263246): line = 133
+Log(2018-03-20 11:00:41.497098): line = 134
+Log(2018-03-20 11:00:41.505393): line = 135
+Log(2018-03-20 11:00:41.505628): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:00:41.505763): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:00:41.505964): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-20 11:00:42.777711): outputfile, working...
+Log(2018-03-20 11:02:54.015550): cal_dis, working...
+Log(2018-03-20 11:02:54.023829): end location: Vincent,
+Log(2018-03-20 11:02:54.023982): 
+Log(2018-03-20 11:02:54.694857): range(len(lists) = 2
+Log(2018-03-20 11:02:54.703447): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:02:54.703676): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:02:54.703808): index = 0
+Log(2018-03-20 11:02:54.957069): line = 133
+Log(2018-03-20 11:02:55.179482): line = 134
+Log(2018-03-20 11:02:55.188025): line = 135
+Log(2018-03-20 11:02:55.188246): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:02:55.188362): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:02:55.188608): index = 1
+Log(2018-03-20 11:02:55.188774): line = 133
+Log(2018-03-20 11:02:55.388860): line = 134
+Log(2018-03-20 11:02:55.397349): line = 135
+Log(2018-03-20 11:02:55.397741): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:02:55.398077): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:02:55.398290): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJGXItR9RC1moRiT0gZnsNW08']
+Log(2018-03-20 11:02:55.972761): outputfile, working...
+Log(2018-03-20 11:05:36.207382): cal_dis, working...
+Log(2018-03-20 11:05:36.215505): end location: Vincent,
+Log(2018-03-20 11:05:36.215717): 
+Log(2018-03-20 11:05:37.040669): range(len(lists) = 2
+Log(2018-03-20 11:05:37.048067): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:05:37.048236): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:05:37.048375): index = 0
+Log(2018-03-20 11:05:38.178436): line = 133
+Log(2018-03-20 11:05:38.388864): line = 134
+Log(2018-03-20 11:05:38.397080): line = 135
+Log(2018-03-20 11:05:38.397275): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:05:38.397413): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:05:38.397612): index = 1
+Log(2018-03-20 11:05:38.397773): line = 133
+Log(2018-03-20 11:05:39.109505): line = 134
+Log(2018-03-20 11:05:39.117743): line = 135
+Log(2018-03-20 11:05:39.117941): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:05:39.118086): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:05:39.118243): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-20 11:05:39.520956): outputfile, working...
+Log(2018-03-20 11:11:53.320774): cal_dis, working...
+Log(2018-03-20 11:11:53.329200): end location: Vincent,
+Log(2018-03-20 11:11:53.329361): 
+Log(2018-03-20 11:11:58.800348): range(len(lists) = 2
+Log(2018-03-20 11:11:58.808657): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:11:58.808869): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:11:58.809095): index = 0
+Log(2018-03-20 11:11:58.990967): line = 133
+Log(2018-03-20 11:11:59.182086): line = 134
+Log(2018-03-20 11:11:59.190372): line = 135
+Log(2018-03-20 11:11:59.190594): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:11:59.190868): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:11:59.190988): index = 1
+Log(2018-03-20 11:11:59.191195): line = 133
+Log(2018-03-20 11:11:59.366075): line = 134
+Log(2018-03-20 11:11:59.374428): line = 135
+Log(2018-03-20 11:11:59.374616): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:11:59.374821): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:11:59.374945): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJGXItR9RC1moRiT0gZnsNW08']
+Log(2018-03-20 11:13:35.509784): cal_dis, working...
+Log(2018-03-20 11:13:35.517775): end location: Vincent,
+Log(2018-03-20 11:13:35.517913): 
+Log(2018-03-20 11:13:36.609368): range(len(lists) = 2
+Log(2018-03-20 11:13:36.617653): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:13:36.617889): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:13:36.618038): index = 0
+Log(2018-03-20 11:13:36.802619): line = 133
+Log(2018-03-20 11:13:36.977058): line = 134
+Log(2018-03-20 11:13:36.985296): line = 135
+Log(2018-03-20 11:13:36.985481): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:13:36.985697): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:13:36.985814): index = 1
+Log(2018-03-20 11:13:36.986007): line = 133
+Log(2018-03-20 11:13:37.161986): line = 134
+Log(2018-03-20 11:13:37.162196): line = 135
+Log(2018-03-20 11:13:37.162462): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:13:37.162611): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:13:37.162831): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-20 11:13:37.672164): outputfile, working...
+Log(2018-03-20 11:15:35.779928): cal_dis, working...
+Log(2018-03-20 11:15:35.788748): end location: Vincent,
+Log(2018-03-20 11:15:35.788899): 
+Log(2018-03-20 11:15:37.043329): range(len(lists) = 2
+Log(2018-03-20 11:15:37.043571): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:15:37.043769): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:15:37.043926): index = 0
+Log(2018-03-20 11:15:37.840576): line = 133
+Log(2018-03-20 11:15:38.449576): line = 134
+Log(2018-03-20 11:15:38.457946): line = 135
+Log(2018-03-20 11:15:38.458232): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:15:38.458390): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:15:38.458555): index = 1
+Log(2018-03-20 11:15:38.458733): line = 133
+Log(2018-03-20 11:15:38.638136): line = 134
+Log(2018-03-20 11:15:38.646351): line = 135
+Log(2018-03-20 11:15:38.646535): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:15:38.646742): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:15:38.646859): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJGXItR9RC1moRiT0gZnsNW08']
+Log(2018-03-20 11:15:39.207225): outputfile, working...
+Log(2018-03-20 11:17:32.769517): cal_dis, working...
+Log(2018-03-20 11:17:32.777717): end location: Vincent,
+Log(2018-03-20 11:17:32.777865): 
+Log(2018-03-20 11:17:33.619407): range(len(lists) = 2
+Log(2018-03-20 11:17:33.627752): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:17:33.627940): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:17:33.628164): index = 0
+Log(2018-03-20 11:17:33.803964): line = 133
+Log(2018-03-20 11:17:34.571559): line = 134
+Log(2018-03-20 11:17:34.579913): line = 135
+Log(2018-03-20 11:17:34.580106): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:17:34.580209): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:17:34.580410): index = 1
+Log(2018-03-20 11:17:34.580548): line = 133
+Log(2018-03-20 11:17:34.816124): line = 134
+Log(2018-03-20 11:17:34.823482): line = 135
+Log(2018-03-20 11:17:34.823658): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:17:34.823755): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:17:34.823850): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJGXItR9RC1moRiT0gZnsNW08', u'ChIJJQRJT0kV1moRcrWmQfKBlyU']
+Log(2018-03-20 11:17:35.803840): outputfile, working...
+Log(2018-03-20 11:19:31.739639): cal_dis, working...
+Log(2018-03-20 11:19:31.748395): end location: Vincent,
+Log(2018-03-20 11:19:31.748917): 
+Log(2018-03-20 11:19:56.688485): range(len(lists) = 2
+Log(2018-03-20 11:19:56.696789): 30 Sunrise Cres, Templestowe Lower VIC 3107, Australia
+Log(2018-03-20 11:19:56.696938): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:19:56.697121): index = 0
+Log(2018-03-20 11:19:56.948895): line = 133
+Log(2018-03-20 11:19:57.148216): line = 134
+Log(2018-03-20 11:19:57.156514): line = 135
+Log(2018-03-20 11:19:57.156740): 
+######location: 210 Normanby Rd, Notting Hill VIC 3168, Australia
+id:ChIJJQRJT0kV1moRcrWmQfKBlyU
+Log(2018-03-20 11:19:57.156885): 210 Normanby Rd, Notting Hill VIC 3168, Australia
+Log(2018-03-20 11:19:57.157026): index = 1
+Log(2018-03-20 11:19:57.157146): line = 133
+Log(2018-03-20 11:19:57.348864): line = 134
+Log(2018-03-20 11:19:57.357157): line = 135
+Log(2018-03-20 11:19:57.357386): 
+######location: 800 Swanston St, Carlton VIC 3053, Australia
+id:ChIJGXItR9RC1moRiT0gZnsNW08
+Log(2018-03-20 11:19:57.357524): 800 Swanston St, Carlton VIC 3053, Australia
+Log(2018-03-20 11:19:57.357715): [u'ChIJq-GSywhH1moR4cDkrRxKt2c', u'ChIJJQRJT0kV1moRcrWmQfKBlyU', u'ChIJGXItR9RC1moRiT0gZnsNW08']
+Log(2018-03-20 11:19:57.963557): outputfile, working...

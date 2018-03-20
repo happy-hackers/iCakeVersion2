@@ -8,6 +8,7 @@ This is a PC application used to help iCake to arrange its orders.
 # Run nstructions
 
 1. install all the libs
+pip install --upgrade ShopifyAPI
 sudo pip2 install xlrd
 sudo pip2 install geopy
 sudo pip2 install googlemaps
