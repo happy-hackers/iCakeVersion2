@@ -48,8 +48,9 @@ key = ["AIzaSyCWzV0pbt_84I2DraGqg1OaC5kil5pZESY",
 prefix = "https://www.google.com/maps/dir/?api=1"
 origin = "&origin="
 destination = "&destination="
-viaDriving = "&travelmode=driving"
+viaDriving = "&mode=driving"
 waypoints = "&waypoints="
+avoidtoll = "&avoid=tolls"
 
 num_key = 0
 gmaps = googlemaps.Client(key=key[num_key])
@@ -149,30 +150,37 @@ def find_order_by_id2(orders,id):
 
 # setup doc
 def setup_doc(document,order,order_num):
-    strr = u"订单号:{},{}".format(order.order_number,
-                                           order.phone)
-    if order.name:
-        strr = strr + " {}收".format(order.name)
+    strr2 = u"{}".format(order.phone)
     if order.price:
-        strr = strr + " ${}".format(order.price)
+        strr2 = strr2 + " ${}".format(order.price)
     if order.upfront:
-        strr = strr + "(${} paid)".format(order.upfront)
-    if order.writing:
-        strr = strr + " {}".format(order.writing)
-    if order.candle:
-        strr = strr + " {}".format(order.candle)
-    if order.tableware:
-        strr = strr + " {}".format(order.tableware)
+        strr2 = strr2 + "(${} paid)".format(order.upfront)
     if order.ps_info:
-        strr = strr + " {}".format(order.ps_info)
+        strr2 = strr2 + " {}".format(order.ps_info)
+    document.add_paragraph(strr2)
                
-    document.add_paragraph(strr)
     for cake in order.cake_type:
-        document.add_paragraph(u"{}) {} {} {} {}".format(cake[index_cake_no],
+        paragraph = document.add_paragraph()
+        run2 = paragraph.add_run(u"{}) {} {} {}".format(cake[index_cake_no],
                                                      cake[index_cake_type],
                                                      cake[index_cake_size],
-                                                     cake[index_cake_inner],
-                                                     cake[index_cake_ps]))
+                                                     cake[index_cake_inner]))
+        run2.underline = True
+        strr = u" "
+        # if order.name:
+    #         strr = strr + " {}收".format(order.name)
+        if cake[index_cake_ps]:
+            strr = strr + " {}".format(cake[index_cake_ps])
+        if order.writing:
+            strr = strr + " 写字：{}".format(order.writing)
+        if order.candle:
+            strr = strr + " 蜡烛：{}".format(order.candle)
+        if order.tableware:
+            strr = strr + " 餐具：{}".format(order.tableware)
+
+        paragraph.add_run(strr)
+        
+    document.add_paragraph("") 
     
 # setup doc table
 def setup_table(document,order):
@@ -268,7 +276,9 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
             if order_num != 0:
                 order_numberr = dic_id[item]
                 print order_numberr
-                document.add_paragraph("{} : {}".format(order_num,newLocations[item], level = 1))
+                run = document.add_paragraph()
+                runner = run.add_run("{} : {}".format(order_num,newLocations[item], level = 1))
+                runner.bold = True
                 order_num += 1
                 for num in order_numberr.split(","):
                     order = find_order_by_id2(orders,num)
@@ -283,9 +293,7 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
              
         except KeyError:
             warning_window(master,"{}\n地址存在问题.".format(newLocations[item]))
-        
-       
-            
+            return 
     #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
     #document.add_paragraph("Total duration is %.1f mins." % totalDuration)      #document.add_paragraph(u"\n总共{}个订单，{}个需要送货的地址.\n".format(order_num2,(order_num-1)))
     
@@ -313,7 +321,9 @@ def openWebsite(finalLocations):
     while i < len(finalLocations):
         if (i % 10 == 0):
             if i != 0:
-                webbrowser.open(prefix+origin+ start_point +destination+ end_point +\
+                webbrowser.open(prefix+origin+ start_point +destination+ end_point +avoidtoll+\
+                        viaDriving + waypoints + quote(points[:-1]) )
+                print (prefix+origin+ start_point +destination+ end_point +avoidtoll+\
                         viaDriving + waypoints + quote(points[:-1]) )
             points = ""
             start_point = quote(finalLocations[i])
@@ -322,7 +332,9 @@ def openWebsite(finalLocations):
         elif ((i + 1) % 10 == 0 or i == len(finalLocations)-1):
             end_point = quote(finalLocations[i])
             if (i == len(finalLocations)-1):
-                webbrowser.open(prefix+origin+ start_point +destination+ end_point +\
+                print (prefix+origin+ start_point +destination+ end_point +avoidtoll+\
+                        viaDriving + waypoints + quote(points[:-1]) )
+                webbrowser.open(prefix+origin+ start_point +destination+ end_point+avoidtoll +\
                         viaDriving + waypoints + quote(points[:-1]) )
 
         else:
@@ -535,6 +547,7 @@ def warning_window(master,message):
     window = Toplevel(master)
     window.title("Warning")
     Label(window,text = message).pack()
+    window.bind('<Return>',lambda event:window.destroy())
     Button(window, text = "OK", command = window.destroy).pack()
     center(window)
 
@@ -589,7 +602,7 @@ def window_add_cake(root,list_box_cakes,cakes):
             .grid(row=row_num,column = 0,pady = 4)
     Button(window,text= "取消",command = window.destroy).\
     grid(row=row_num,column = 1,pady = 4)
-    center(window)
+    center2(window)
     
 
 # pack text labels for text
@@ -648,7 +661,10 @@ def edit_cake_window(master,list_box_cakes,cakes):
         var_inner.set(edit_cake[index_cake_inner])
         var_type.set(edit_cake[index_cake_type])
         cake_ps.insert(0,edit_cake[index_cake_ps])
-
+        
+        
+        window.bind('<Return>',lambda event:edit_cake_info(\
+            edit_cake,var_size,var_shape,var_inner,var_type,cake_ps,window,list_box_cakes,cakes))
         Button(window,text = "确认",command = lambda:edit_cake_info(\
             edit_cake,var_size,var_shape,var_inner,var_type,cake_ps,window,list_box_cakes,cakes))\
             .grid(row=row_num,column = 0,pady = 4)
@@ -695,6 +711,7 @@ def delete_cake_window(master,list_box_cakes,cakes):
         center(window)
         window.title("删除蛋糕")
         Label(window, text="       确定删除这些蛋糕吗？       ").pack()
+        window.bind('<Return>',lambda event:delete_cake(window,edit_cake,list_box_cakes,cakes))
         Button(window, width = 8,text='确认', command= lambda:delete_cake(\
             window,edit_cake,list_box_cakes,cakes)).pack(pady=2)
 
@@ -894,6 +911,8 @@ def manual_add_window(i,orders,listboxes,order_numbers,window):
     om_order_numebrs = OptionMenu(manual_add_window,var, *order_numbers)
 
     om_order_numebrs.pack()
+    manual_add_window.bind('<Return>',lambda event: manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,om_order_numebrs))
+    
     Button(manual_add_window,width = 8,text ="确认",command =
                  lambda i=i,var=var,orders=orders,listboxes=
                  listboxes: manual_add(i,var,orders,listboxes,manual_add_window,order_numbers,om_order_numebrs)).pack()
@@ -1008,7 +1027,7 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
     else:        
         if indicator:
             for order1 in db.orders_all:
-                if order1.order_number == order.get():
+                if str(order1.order_number) == str(order.get()):
                     warning_window(master,"     订单号已存在，请重新输入     ")
                     return False  
     
@@ -1041,7 +1060,26 @@ def confirm_date(window,ttkcal,pickup_date):
     window.destroy()
     pickup_date = ttkcal.selection()
     print pickup_date
+    
+# when usr hit enter,go to next entry
+def next_entry(entry_list,window):
+    current_index = 0
+    for e in entry_list:
+        if window.focus_get() == e:
+            break
+        else:
+            current_index += 1
+    new = current_index + 1
+    
+    i = 0
+    for e in entry_list:
+        if i == new:
+            e.focus_set()
+            break
+        else:
+            i += 1
 
+   
 # arrange all entries including text lables for windows
 # main use is to avoid duplicate codes
 def pack_order_entry(window,cakes,item,indicator):
@@ -1067,6 +1105,8 @@ def pack_order_entry(window,cakes,item,indicator):
     pickup_date = Entry(window)
     pickup_time = Entry(window)
     ps_info = Entry(window)                # plus info about the order
+    entry_list = [order,agent,location,name,phone,candle,tableware,writing,price,upfront,
+                  pickup_date,pickup_time,ps_info]
     
     if item:
         # put placeholders for the convenience of user to edit details of an order
@@ -1093,6 +1133,7 @@ def pack_order_entry(window,cakes,item,indicator):
             pickup_time.insert(0,item.pickup_time)
     
     order.grid(row=0, column=1,sticky=W)
+    order.focus_set()
     agent.grid(row=1, column=1,sticky=W)
     location.grid(row=2, column=1,sticky=W)
     name.grid(row=3, column=1,sticky=W)
@@ -1109,6 +1150,7 @@ def pack_order_entry(window,cakes,item,indicator):
     ps_info.grid(row=14,column = 1,sticky=W)
     list_box_cakes,row_num = pack_order_label(window)
 
+    window.bind('<Return>',lambda event:next_entry(entry_list,window))                   
     Button(window, text='添加蛋糕', command= \
             lambda:window_add_cake(window,\
             list_box_cakes,cakes),width = 8).grid(row=15, column=1,sticky=W)
@@ -1165,6 +1207,11 @@ def window_add_order():
 
         Label(window, text = " （*）不得为空").\
             grid(row=row_num,columnspan = 2,pady = 4)
+            
+        # window.bind('<Return>',lambda event:add_order(order,agent,location,name,phone,\
+ #                                candle,tableware,writing,price,\
+ #                                var2,ps_info,window,None,cakes,\
+ #                                mode,pickup_date,pickup_time,upfront))
         Button(window, text="确认",width = 8,command= \
                lambda:add_order(order,agent,location,name,phone,\
                                 candle,tableware,writing,price,\
@@ -1204,6 +1251,11 @@ def edit_info(master,listbox):
         pickup_time,row_num,list_box_cakes,upfront = pack_order_entry(window,current_cakes,item,False)
 
         update_listbox(sorted(current_cakes),list_box_cakes)
+        window.bind('<Return>',lambda event:edit_order(order,agent,location,name,phone,\
+                                   candle,tableware,writing,price,
+                                   var2,ps_info,item,window,current_cakes,\
+                                   mode,pickup_date,pickup_time,item.dispatcher,\
+                                   upfront,listbox,list_box_cakes))
         Button(window, width = 8,text='确认', command= \
                lambda: edit_order(order,agent,location,name,phone,\
                                    candle,tableware,writing,price,
@@ -1307,7 +1359,9 @@ def delete_selected(listbox):
         Label(window, text="         删除订单号:" + \
               ",".join(list_order_nums)+"         \n"+\
               "     注意！删除订单会删除改列表内所有关于此订单的信息     ").pack()
-        Button(window,width = 8, text='确定', command= lambda:delete_order3(list_orders,window)).pack(pady=2)
+        button = Button(window,width = 8, text='确定', command= lambda:delete_order3(list_orders,window))
+        button.pack(pady=2)
+        window.bind('<Return>',lambda event:delete_order3(list_orders,window))
         Button(window,width = 8, text='取消', command= \
             window.destroy).pack(pady=2) 
         center(window)
@@ -1465,13 +1519,35 @@ def do_popup_his(event):
 
 # bind popup menu to today listbox
 def do_popup(event):
+    print "do_popup"
+    # from pynput.mouse import Button,Controller
+    # # stimulate the event of left click
+    # mouse = Controller
+    # mouse.click(Button.left,1)
     # display the popup menu
-    try:
-        popup.tk_popup(event.x_root, event.y_root)
-    finally:
-        # make sure to release the grab (Tk 8.0a1 only)
-        popup.grab_release()
+    #today_list_box_all.interior.event_generate("<Button-1>", when="tail")
+    popup.post(event.x_root, event.y_root)
+    
+    # try:
+#         # popup.tk_popup(event.x_root, event.y_root)
+#     finally:
+#         # make sure to release the grab (Tk 8.0a1 only)
+#         popup.grab_release()
         
+#select row that mouse is over it
+def select_row(event):
+    # import pyautogui, sys
+    iid = today_list_box_all.interior.identify_row(event.y)
+    if iid:
+        today_list_box_all.interior.selection_set(iid)
+    #today_list_box_all.interior.update_idletasks()
+    # do_popup(event)
+ #
+ #i
+ #    pyautogui.click(button='middle')
+ #    popup.post(event.x_root, event.y_root)
+        
+
 # bind popup menu to proc_left listbox
 def do_popup_left(event):
     # display the popup menu
@@ -1542,7 +1618,10 @@ def pack_dis_entry(window):
     home = Entry(window)                # location entry for dispatcher
     phone = Entry(window)               # phone entry for dispatcher
     ps_info = Entry(window)             # plus info about the dispatcher
-
+    
+    entry_list = [name,home,phone,ps_info]
+    window.bind('<Return>',lambda event:next_entry(entry_list,window))
+    
     pack_dis_label(window)
     name.grid(row=0, column=1,sticky=W,pady = 4)
     home.grid(row=1, column=1,sticky=W,pady = 4)
@@ -1560,6 +1639,8 @@ def add_dispatchers_window(master):
 
     name,home,phone,ps_info,row_num = pack_dis_entry(window)
 
+    window.bind('<Return>',lambda event:add_dispatcher(\
+        name,home,phone,ps_info,window))
     Button(window,text = "确认",width = 8,command = lambda:add_dispatcher(\
         name,home,phone,ps_info,window))\
         .grid(row=row_num,column = 0, sticky=W,pady = 4)
@@ -1595,6 +1676,8 @@ def edit_info_dis(master):
         phone.insert(0,dis[index_dis_phone])
         ps_info.insert(0,dis[index_dis_ps])
 
+        window.bind('<Return>',lambda event:edit_dispatcher(\
+            name,home,phone,ps_info,window,dis))
         Button(window,text = "确认",width = 8,command = lambda:edit_dispatcher(\
             name,home,phone,ps_info,window,dis))\
             .grid(row=row_num,column = 0, sticky=W,pady = 4)
@@ -1653,13 +1736,13 @@ def find_dis(list,disp):
     return None
 
 # build x scrollbar and y scrollbar for each tab
-def build_scrollbar(container):
+def build_scrollbar(container,x_wdith):
     canvas = Canvas(container, highlightthickness=0)
     xscroll = Scrollbar(container,orient="horizontal",command=canvas.xview)
     yscroll = Scrollbar(container,command=canvas.yview)
     canvas.config(xscrollcommand=xscroll.set,
                   yscrollcommand=yscroll.set,
-                  scrollregion=(0,0,1400,500),
+                  scrollregion=(0,0,x_wdith,500),
                   width=1200,height=490)
 
     xscroll.pack(side=BOTTOM, fill=X)
@@ -1735,6 +1818,7 @@ def cake_setting_window(root):
                         window,"内芯",shapes_listbox,tmp_shapes)).grid(row = 1,column =3,sticky=W)
     Button(window,text ="删除",width = 8,command = lambda: cake_setting_delete(\
                         shapes_listbox,tmp_shapes)).grid(row = 1,column =3,sticky=E)
+    window.bind('<Return>',lambda event:cake_setting_confirm(window,tmp_size,tmp_type,tmp_inner,tmp_shapes))
     Button(window,text ="确认",width = 8,command = \
                         lambda: cake_setting_confirm(window,tmp_size,tmp_type,tmp_inner,tmp_shapes)).grid(row = 2,columnspan =4,pady =4)
     
@@ -1775,6 +1859,7 @@ def cake_setting_add_window(window,indicator,listbox,list1):
                      grid(sticky =W,row=0,column =0,pady = 4)
     entry = Entry(cake_setting_add_window)
     entry.grid(sticky =W,row=0,column =1,pady = 4)
+    cake_setting_add_window.bind('<Return>',lambda event:cake_setting_add(indicator,listbox,entry,cake_setting_add_window,list1))
     Button(cake_setting_add_window,text = "确认",command = \
                      lambda :cake_setting_add(indicator,listbox,entry,cake_setting_add_window,list1)).\
                      grid(row=1,columnspan =2,pady = 4)
@@ -1850,15 +1935,16 @@ def build_table(window):
     listbox.configure_column(4,width = col_size1)
     listbox.configure_column(5,width = col_size1)
     listbox.configure_column(6,width = col_size3)
-    listbox.configure_column(7,width = col_size1)
+    listbox.configure_column(7,width = col_size3)
     listbox.configure_column(8,width = col_size1)
-    listbox.configure_column(9,width = col_size2)
-    listbox.configure_column(10,width = col_size1)
-    listbox.configure_column(11,width = col_size2)
+    listbox.configure_column(9,width = col_size1)
+    listbox.configure_column(10,width = col_size2)
+    listbox.configure_column(11,width = col_size1)
     listbox.configure_column(12,width = col_size2)
-    listbox.configure_column(13,width = (col_size2+250))
-    listbox.configure_column(14,width = col_size2)
-    listbox.configure_column(15,width = col_size3)
+    listbox.configure_column(13,width = col_size2)
+    listbox.configure_column(14,width = (col_size2+250))
+    listbox.configure_column(15,width = col_size2)
+    listbox.configure_column(16,width = col_size3)
     return listbox
     
 # buld table of history    
@@ -2014,7 +2100,7 @@ class AutocompleteEntry(Entry):
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
 ############## MAIN FUNCTION ##################################################
-if __name__ == "__main__":  
+if __name__ == "__main__":
     # url = shop_url + "/orders.json"
     # print url
     # r = requests.get(url)
@@ -2065,13 +2151,13 @@ if __name__ == "__main__":
     # build x scrollbar and y scrollbar for each tab
     # if statement to speed up the loading when switching tabs
     if not tab_today:
-        tab_today = build_scrollbar(tab_today_container)
+        tab_today = build_scrollbar(tab_today_container,1500)
     if not tab_history:
-        tab_history = build_scrollbar(tab_history_container)
+        tab_history = build_scrollbar(tab_history_container,1500)
     if not tab_dis:
-        tab_proc = build_scrollbar(tab_proc_container)
+        tab_proc = build_scrollbar(tab_proc_container,1200)
     if not tab_dis:
-        tab_dis = build_scrollbar(tab_dis_container)
+        tab_dis = build_scrollbar(tab_dis_container,1200)
 
     # background_image= PhotoImage("1.png")
     # background_label = Label(tab_today, image=background_image)
@@ -2151,8 +2237,11 @@ if __name__ == "__main__":
 
 
     # bind listbox to popup menu
-    today_list_box_all.interior.bind("<Button-2>", do_popup)
-    today_list_box_all.interior.bind("<Button-1>", do_deselect)
+    today_list_box_all.interior.bind("<ButtonPress-2>", select_row)
+    today_list_box_all.interior.bind("<ButtonRelease-2>", do_popup)
+    
+    
+    #today_list_box_all.interior.bind("<Button-1>", do_deselect)
 
 
     today_text_orders_all.grid(row=0,column=0,sticky = W,padx =4)
@@ -2266,6 +2355,42 @@ if __name__ == "__main__":
     tabControl.pack(fill=BOTH, expand=YES)
     mainloop( )
 
-
+    """read postcode"""
+    # list1 = [[],[]]
+    # f = open("1.csv",'rb')
+    # reader = csv.reader(f,delimiter = ',')
+    # for line in reader:
+    #     if list1[0] != " ":
+    #         list1[0].append(line[0])
+    #     if list1[1] != " ":
+    #         list1[1].append(line[1])
+    # f.close()
+    #
+    # f = open("postcode.csv",'wb')
+    # writer = csv.writer(f,delimiter = ',')
+    # for i in list1:
+    #     writer.writerow(i)
+    # f.close()
+    #
+    # list2 = [[],[]]
+    # i = 0
+    # f = open("postcode.csv",'rb')
+    # reader = csv.reader(f,delimiter = ',')
+    # for line in reader:
+    #     for post in line:
+    #         if post != " ":
+    #             strr = post + " VIC,Australia"
+    #             print strr
+    #             des = gmaps.places_autocomplete(input_text = strr)[0]['description']
+    #             list2[i].append(des)
+    #             print des
+    #     i += 1
+    # f.close()
+    # f = open("postcode_full.csv",'wb')
+    # writer = csv.writer(f,delimiter = ',')
+    # for i in list2:
+    #     writer.writerow(i)
+    # f.close()
+    
 
 

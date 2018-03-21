@@ -103,7 +103,7 @@ quantities = ['1','2','3','4','5','other(indicate \nin the ps block)']
 modes = [dis,pickup]
 
 # header for listboxes
-header_new = ['订单号','蛋糕No','客服号','尺寸','形状','内芯','款式','价格','定金','写字','蜡烛','餐具','电话','地址','备注','状态']
+header_new = ['订单号','蛋糕No','客服号','尺寸','形状','内芯','款式','蛋糕备注','价格','定金','写字','蜡烛','餐具','电话','地址','备注','状态']
 header_full = ['订单号','客服号','价格','定金','写字','蜡烛','餐具','电话','地址','备注']
 header_today = ['订单号', 'Address','Name','Mode','Cakes','State']
 header_proc = ['No', 'Address','Name','Phone','Dispatcher','State']
@@ -389,7 +389,7 @@ def order2list(item,cake):
     print item.phone
     print str(item.phone)
     new_list_item = [item.order_number,cake[index_cake_no],item.agent,cake[index_cake_size],cake[index_cake_shape],\
-                     cake[index_cake_inner],cake[index_cake_type],item.price,item.upfront,\
+                     cake[index_cake_inner],cake[index_cake_type],cake[index_cake_ps],item.price,item.upfront,\
                      item.writing,item.candle,item.tableware,item.phone,item.address,\
                      item.ps_info,item.state]
     return new_list_item
@@ -587,7 +587,7 @@ def write_2_log(message):
 # check ps info doesnt contain special characters other than comma
 def isvalid(stringg):
     for i in stringg:
-        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ') or (i == '，') ):
+        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ') or (i == '，') or (i == '+')):
             return False
     return True
 
@@ -677,6 +677,15 @@ def center(toplevel):
     x = w/2 - size[0]/2
     y = h/2 - size[1]/2
     toplevel.geometry("%dx%d+%d+%d" % (size + (x, y)))
+
+
+def center2(toplevel):
+    toplevel.update_idletasks()
+    w = toplevel.winfo_screenwidth()
+    h = toplevel.winfo_screenheight()
+    size = tuple(int(_) for _ in toplevel.geometry().split('+')[0].split('x'))
+    x = w/2 - size[0]/2
+    toplevel.geometry("%dx%d+%d+%d" % (size + (x, 0)))
 
 # http://tkinter.unpythonic.net/wiki/VerticalScrolledFrame
 class VerticalScrolledFrame(Frame):
