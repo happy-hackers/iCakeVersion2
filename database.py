@@ -587,7 +587,7 @@ def write_2_log(message):
 # check ps info doesnt contain special characters other than comma
 def isvalid(stringg):
     for i in stringg:
-        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ') or (i == '，') or (i == '+')):
+        if not (i.isdigit() or i.isalpha() or (i == ',') or (i == ' ') or (i == '，') or (i == '+') or(i =="'") or (i =="‘")):
             return False
     return True
 
@@ -650,12 +650,23 @@ def isvalid_id(idd):
         if not i.isdigit():
             return True
     return False
+    
 # get rid of char which is not number
 def strip(strr):
     new = []
     for i in strr:
         if i.isdigit():
             new.append(i)
+    return "".join(new)
+
+# get rid of char which is not number
+def strip2(strr):
+    new = []
+    for i in strr:
+        if i.isdigit():
+            new.append(i)
+        elif i.isalpha():
+            new.append(i.lower())
     return "".join(new)
     
 # get rid of duplicate numbers in the list  

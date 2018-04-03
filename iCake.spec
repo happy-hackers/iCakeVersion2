@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['iCake.py'],
-             pathex=['/Users/rondo/Desktop/icakeApplication'],
+             pathex=['/Users/rondo/Desktop/iCakeVersion2'],
              binaries=[],
              datas=[],
              hiddenimports=[],

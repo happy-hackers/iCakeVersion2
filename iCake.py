@@ -62,85 +62,64 @@ popup_cake = None                    # right click menu for cakes windows
 # calculate distance between two points using google map
 def cal_dis(orders,end_loc):
     if orders:
-            locations = to_loc(orders)
-            locations.insert(0,proc_start_loc.get())
-
-            # if there is specified end location append it to the end of locations
-            write_2_log("cal_dis, working...")
-            write_2_log("end location: {}".format(end_loc))
-            write_2_log(','.join(get_address(end_loc)))
+        # check if order is the end address 
+        indicator = True
+        locations = to_loc(orders)
+        locations.insert(0,proc_start_loc.get()) 
             
+        # if there is specified end location append it to the end of locations
+        print "end location: {}".format(end_loc)            
+        print ','.join(get_address(end_loc))
+        if end_loc != hint1 and ','.join(get_address(end_loc)):
+            indicator = False
+            print "$"                
+            locations.append(','.join(get_address(end_loc)))
+            print "locations"
+            print locations
+        
+        # no more than 23 waypoints
+        print len(locations[1:-1])
+        if len(locations[1:-1]) > 23:
+            warning_window(master,"     注意！计算路线一次的订单数量不得超过23个！   ")
+            return
             
-            print "end location: {}".format(end_loc)            
-            print ','.join(get_address(end_loc))
-            if end_loc != hint1 and ','.join(get_address(end_loc)):
-                print "$"                
-                locations.append(','.join(get_address(end_loc)))
-                print "locations"
-                print locations
-                write_2_log("locations")
-                write_2_log(locations)
-                
-                
-                
-            directions_result = gmaps.directions(locations[0],locations[-1],
-                                                waypoints=locations[1:-1],
-                                                mode="driving", avoid="tolls",
-                                                departure_time=datetime.now(),
-                                                optimize_waypoints = True)
-            totalDistance = 0
-            totalDuration = 0
-            newLocationIds = []
-            newLocations = {}
+        # calculate results
+        directions_result = gmaps.directions(locations[0],locations[-1],
+                                          waypoints=locations[1:-1],
+                                          mode="driving", avoid="tolls",
+                                          departure_time=datetime.now(),
+                                          optimize_waypoints = True)
+        # check whether there is a faulty address
+        if not directions_result:
+            write_2_log("     请检查地址，一些地址的内容有错!     ")
+            warning_window(master,"     请检查地址，一些地址的内容有错!     ")
+            return
             
-            if not directions_result:
-                write_2_log("     请检查地址，一些地址的内容有错!     ")
-                warning_window(master,"     请检查地址，一些地址的内容有错!     ")
-                return
-            lists = directions_result[0]['legs']
-            # loop through the details of direction results
-            write_2_log("range(len(lists) = " + str(len(lists)))
-            write_2_log(lists[0]['start_address'])
-            write_2_log(lists[0]['end_address'])
-            # write_2_log(lists[1]['end_address'])
-#             write_2_log(lists[2]['end_address'])
-                
-            for index in range(len(lists)):
-                write_2_log("index = {}".format(index))
-                
-                try:
-                    #print lists[index]
-                    if lists[index]['distance']['text'][:-3]:
-                        totalDistance += float(lists[index]['distance']['text'][:-3])
-                    if lists[index]['duration']['text'][:-4]:
-                        totalDuration += float(lists[index]['duration']['text'][:-4])
-                except IndexError as e:
-                    write_2_log(e)
-                    print e
-                    return
-                
-                if index == 0:
-                    locationId = gmaps.geocode(lists[index]['start_address'])[0]['place_id']
-                    newLocations[locationId] = lists[index]['start_address']
-                    newLocationIds.append(locationId)
-                     
-                write_2_log("line = {}".format(133))   
-                locationId = gmaps.geocode(lists[index]['end_address'])[0]['place_id']
-                write_2_log("line = {}".format(134))
-                newLocations[locationId] = lists[index]['end_address']
-                write_2_log("line = {}".format(135))    
-                write_2_log("\n######location: {}\nid:{}".format(lists[index]['end_address'],locationId))
-                write_2_log(lists[index]['end_address'])
-                newLocationIds.append(locationId)
-                
-            write_2_log(newLocationIds)
-            print newLocationIds
-            finalLocations = outputFile(newLocationIds, totalDistance, \
-                                     totalDuration, (len(locations)-1), orders,end_loc,newLocations)
-            openWebsite(finalLocations)    
-
+        index_order = directions_result[0]['waypoint_order']
+        print "waypoint_order"
+        print index_order
+        
+        new_orders = re_order(orders,index_order,indicator)
+        newLocations = outputFile(new_orders,end_loc,indicator)
+        newLocations.insert(0,proc_start_loc.get()) 
+        openWebsite(newLocations)
     else:
         return
+        
+# reorder the order of orders 
+def re_order(orders,index_order,indicator):
+    # if order is the end address
+    new_orders = []
+    if indicator:
+        last_order = orders[len(orders)-1]
+        for index in index_order:
+            new_orders.append(orders[index])
+        new_orders.append(last_order)
+    # another case
+    else:
+        for index in index_order:
+            new_orders.append(orders[index])
+    return new_orders        
         
 # find order by id helper
 def find_order_by_id2(orders,id):
@@ -155,8 +134,6 @@ def setup_doc(document,order,order_num):
         strr2 = strr2 + " ${}".format(order.price)
     if order.upfront:
         strr2 = strr2 + "(${} paid)".format(order.upfront)
-    if order.ps_info:
-        strr2 = strr2 + " {}".format(order.ps_info)
     document.add_paragraph(strr2)
                
     for cake in order.cake_type:
@@ -177,6 +154,8 @@ def setup_doc(document,order,order_num):
             strr = strr + " 蜡烛：{}".format(order.candle)
         if order.tableware:
             strr = strr + " 餐具：{}".format(order.tableware)
+        if order.ps_info:
+            strr = strr + " {}".format(order.ps_info)
 
         paragraph.add_run(strr)
         
@@ -220,8 +199,7 @@ def setup_table(document,order):
         cake_num += 1
                
 ###############################################################################
-def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
-        orders,end_loc,newLocations):
+def outputFile(new_orders,end_loc,indicator):
     from docx import Document
     from docx.shared import Inches
     from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -230,8 +208,6 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
     import os
 
     document = Document()
-
-    dic_id = {}
     # input order info
     if end_loc != hint1:
         # driver has address
@@ -241,64 +217,39 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
             print end_loc
             end_loc_without_name = (','.join(get_address(end_loc)))
             print end_loc_without_name
-            document.add_paragraph("Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
-            end_loc_id = gmaps.geocode(gmaps.places_autocomplete(\
-                    input_text = end_loc_without_name, \
-                        location = end_loc_without_name)[0]['description'])[0]['place_id']
-
-            dic_id[end_loc_id] = "end location"
+            document.add_paragraph(u"Dispatcher:{}".format(end_loc,font=("Calibri",title_size)))
         else:
-            document.add_paragraph("Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))  
+            document.add_paragraph(u"Dispatcher:{}".format(end_loc.split(',')[0],font=("Calibri",title_size)))  
     else:
         document.add_paragraph("Driver Not Determined".format(font=("Calibri",title_size)))
 
-    finalLocations = []
-
-    dic_id[finalLocationIds[0]] = "start location"
-    for order in orders:
-        id = gmaps.geocode(order.address)[0]['place_id']
-        try:
-            dic_id[id] = str(dic_id[id]) + "," + str(order.order_number)
-        except KeyError:
-            dic_id[id] = str(order.order_number)      
-        print "dic_id[{}] = {}".format(id,dic_id[id])
+    order_num = 1
+    prev_order = None
+    final_locs = []
+    for index in range(len(new_orders)):
+        if index == 0:
+            final_locs.append(new_orders[index].address)
+            run = document.add_paragraph()
+            runner = run.add_run("{} : {}".format(order_num,new_orders[index].address, level = 1))
+            runner.bold = True
+            setup_doc(document,new_orders[index],order_num)
+            prev_order = new_orders[index]  
+        elif strip2(prev_order.address) == strip2(new_orders[index].address):
+            setup_doc(document,new_orders[index],order_num)
+        else:
+            order_num += 1
+            final_locs.append(new_orders[index].address)
+            run = document.add_paragraph()
+            runner = run.add_run("{} : {}".format(order_num,new_orders[index].address, level = 1))
+            runner.bold = True
+            setup_doc(document,new_orders[index],order_num)
+            prev_order = new_orders[index]  
+        index +=1
         
-    print dic_id
-    print "ouput:"
-    print finalLocationIds
-    print unique(finalLocationIds)
-    order_num = 0
-    order_num2 = 0
-    for item in unique(finalLocationIds):
-        finalLocations.append(newLocations[item])
-        print item
-        try:
-            if order_num != 0:
-                order_numberr = dic_id[item]
-                print order_numberr
-                run = document.add_paragraph()
-                runner = run.add_run("{} : {}".format(order_num,newLocations[item], level = 1))
-                runner.bold = True
-                order_num += 1
-                for num in order_numberr.split(","):
-                    order = find_order_by_id2(orders,num)
-                    print "num = {},order:".format(num)
-                    print order
-                    if order:
-                        order_num2 += 1
-                        setup_doc(document,order,order_num)
-            else:
-               order_num += 1 
-                
-             
-        except KeyError:
-            warning_window(master,"{}\n地址存在问题.".format(newLocations[item]))
-            return 
-    #document.add_paragraph("\nTotal distance is %.1f kms." % totalDistance)
-    #document.add_paragraph("Total duration is %.1f mins." % totalDuration)      #document.add_paragraph(u"\n总共{}个订单，{}个需要送货的地址.\n".format(order_num2,(order_num-1)))
-    
-    write_2_log("outputfile, working...")
-    
+    # check if order is the end address   
+    if not indicator:
+        final_locs.append(','.join(get_address(end_loc)))
+        
     now = datetime.now()
     path = easygui.diropenbox()
 
@@ -309,8 +260,7 @@ def outputFile(finalLocationIds, totalDistance, totalDuration, totalOrder, \
 
     filepath = os.path.join(path, filename)
     document.save(filepath)
-
-    return finalLocations
+    return final_locs
 
 ###############################################################################
 def openWebsite(finalLocations):
@@ -421,21 +371,29 @@ def in_city(orders,postcode_city,postcode_full_city):
         print "#############"
         print order.address
         #print get_pos2(order.address)
-        postcode = order.address.split(',')[-1]
-        if postcode:
-            if in_pos(postcode,postcode_city,postcode_full_city):
-                print "city:"
-                print order
-                return_list[index_city].append(order)
-            else:
-                print "other:"
-                print order
-                return_list[index_other].append(order)
-        else:
-            warning_window(master,"{} raises time out".format(order.address))
+        # postcode = order.address.split(',')[-1]
+#         if postcode:
+#             if in_pos(postcode,postcode_city,postcode_full_city):
+#                 print "city:"
+#                 print order
+#                 return_list[index_city].append(order)
+#             else:
+#                 print "other:"
+#                 print order
+#                 return_list[index_other].append(order)
+#         else:
+#             warning_window(master,"{} raises time out".format(order.address))
+#             return
+#
+        postcode = get_pos(order.address)
+        print ("in_city " + str(postcode))
+        if not postcode:
             return
-       
-
+        if postcode in postcode_city:
+            return_list[index_city].append(order)
+        else:
+           return_list[index_other].append(order)
+            
     return return_list
 
 # check postcode of various forms in list or not    
@@ -469,20 +427,24 @@ def in_pos(postcode,list1,list_full):
 # get postcode from an address
 def get_pos(address):
     try:
-        print "gmaps.places_autocomplete(input_text = address, \
-                                                 location = address)"
-        print gmaps.places_autocomplete(input_text = address, \
+        tmp = gmaps.places_autocomplete(input_text = address, \
                                                  location = address)
-        print "gmaps.places_autocomplete(input_text = address, \
-                                                 location = address)[0]"
-        print gmaps.places_autocomplete(input_text = address, \
-                                                 location = address)[0]
-        new_location = gmaps.places_autocomplete(input_text = address, \
-                                                 location = address)[0]['description']
-        locationId = gmaps.geocode(new_location)[0]['place_id']
-        fomattedAddress = gmaps.reverse_geocode(locationId)[0]['formatted_address']
-        print fomattedAddress
-
+        # print "gmaps.places_autocomplete(input_text = address, \
+#                                                  location = address)"
+#         print tmp
+#         print "gmaps.places_autocomplete(input_text = address, \
+#                                                  location = address)[0]"
+        print tmp[0]
+        new_location = tmp[0]['description']
+        print new_location
+        tmp_id = gmaps.geocode(new_location)
+        locationId = tmp_id[0]['place_id']
+        fomattedAddress = tmp_id[0]['formatted_address']
+        # fomattedAddress = gmaps.reverse_geocode(locationId)
+        # print fomattedAddress
+        # print fomattedAddress[0]
+        # print fomattedAddress[0]['formatted_address']
+        # fomattedAddress = fomattedAddress[0]['formatted_address']
         postcode = []
         for i in fomattedAddress.split(',')[-2]:
             if i.isdigit():
@@ -492,7 +454,7 @@ def get_pos(address):
         
         return "".join(postcode)
     except:
-        print "Error Time Out"
+        warning_window(master,address + "区号可能存在问题     ")
         return
 
 # get postcode from an address
@@ -579,7 +541,7 @@ def add_cake(size,shape,inner,typee,cake_ps,window,list_box_cakes,cakes):
         window.destroy()
         return True
     else:
-        warning_window(master,"备注一栏不能含有除字母、汉字、数字、空格及逗号以外的字符！")
+        warning_window(master,"备注一栏不能含有除字母、汉字、数字、空格及(+,')以外的字符！")
         return False
         
     
@@ -753,7 +715,9 @@ def build_list_box_cake(window,row_num):
     list_box_cakes.configure_column(5,width = 90)
     
     list_box_cakes.interior.grid(row=row_num, column=0,columnspan =2,rowspan = 3)
-    list_box_cakes.interior.bind("<Button-2>", do_popup_cake)
+    list_box_cakes.interior.bind("<ButtonPress-2>", lambda event:select_row(event,list_box_cakes))
+    list_box_cakes.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup_cake))
+    
     return list_box_cakes,(row_num+3)
 
 #########################################################################################
@@ -787,7 +751,7 @@ def run_order():
             random_order("Melbourne City",int(proc_entry_num_city.get()),orders_areas[index_city],order_numbers)
             random_order("South-east area",int(proc_entry_num.get()),orders_areas[index_other],order_numbers)
         else:
-            warning_window(master,"Usage is up to today's limit")
+            warning_window(master,"     今日服务器访问可能已达上限或有地址出现错误     ")
             
     elif proc_entry_num_city.get() and (not proc_entry_num.get() or int(proc_entry_num.get()) == 0):
         random_order("Melbourne City",int(proc_entry_num_city.get()),tmp,order_numbers)
@@ -1015,12 +979,14 @@ def add_order(order,agent,location,name,phone,candle,tableware,writing,price,
         or new_location == '' or current_cakes == []):
         warning_window(window,warning_message1)
         return False
-    elif isvalid_ad(new_location) == 1:
-        warning_window(window,warning_message8)
-        return False
-    elif isvalid_ad(new_location) < 0:
-        warning_window(window,warning_message9)
-        return False
+    # elif isvalid_ad(new_location) == 1:
+#         warning_window(window,warning_message8)
+#         return False
+#     elif isvalid_ad(new_location) < 0:
+#         warning_window(window,warning_message9)
+#         return False
+    # elif not check_single_loc(new_location):
+#         return False       
     elif isvalid_id(order.get()):
         warning_window(window,"    订单号仅允许数字！    ")
         return False
@@ -1085,8 +1051,8 @@ def next_entry(entry_list,window):
 def pack_order_entry(window,cakes,item,indicator):
     order = Entry(window)                  # text entry for order
     agent = Entry(window)                  # agent entry for order
-    location = Entry(window)
-    #location = AutocompleteEntry(window,indicator)    
+    #location = Entry(window)
+    location = AutocompleteEntry(window,indicator)    
     name = Entry(window)                   # name entry for order
     phone = Entry(window)                  # phone number
     candle = Entry(window)                 # candle info
@@ -1105,8 +1071,8 @@ def pack_order_entry(window,cakes,item,indicator):
     pickup_date = Entry(window)
     pickup_time = Entry(window)
     ps_info = Entry(window)                # plus info about the order
-    entry_list = [order,agent,location,name,phone,candle,tableware,writing,price,upfront,
-                  pickup_date,pickup_time,ps_info]
+    entry_list = [order,agent,location,name,phone,price,upfront,candle,tableware,writing,ps_info,
+                  pickup_date,pickup_time]
     
     if item:
         # put placeholders for the convenience of user to edit details of an order
@@ -1138,16 +1104,16 @@ def pack_order_entry(window,cakes,item,indicator):
     location.grid(row=2, column=1,sticky=W)
     name.grid(row=3, column=1,sticky=W)
     phone.grid(row=4, column=1,sticky=W)
-    candle.grid(row=5, column=1,sticky=W)
-    tableware.grid(row=6, column=1,sticky=W)
-    writing.grid(row=7, column=1,sticky=W)
-    price.grid(row=8, column=1,sticky=W)
-    upfront.grid(row=9, column=1,sticky=W)
-    state.grid(row=10, column=1,sticky=W)
-    mode.grid(row=11,column = 1,sticky=W)
-    pickup_date.grid(row=12,column = 1,sticky=W)
-    pickup_time.grid(row=13,sticky=W,column = 1)
-    ps_info.grid(row=14,column = 1,sticky=W)
+    price.grid(row=5, column=1,sticky=W)
+    upfront.grid(row=6, column=1,sticky=W)
+    candle.grid(row=7, column=1,sticky=W)
+    tableware.grid(row=8, column=1,sticky=W)
+    writing.grid(row=9, column=1,sticky=W)
+    ps_info.grid(row=10,column = 1,sticky=W)
+    state.grid(row=11, column=1,sticky=W)
+    mode.grid(row=12,column = 1,sticky=W)
+    pickup_date.grid(row=13,column = 1,sticky=W)
+    pickup_time.grid(row=14,sticky=W,column = 1)
     list_box_cakes,row_num = pack_order_label(window)
 
     window.bind('<Return>',lambda event:next_entry(entry_list,window))                   
@@ -1169,16 +1135,16 @@ def pack_order_label(window):
     Label(window, text="地址(格式:St,postcode)*:").grid(row=2,sticky=W)
     Label(window, text="姓名:").grid(row=3,sticky=W)
     Label(window, text="电话*:").grid(row=4,sticky=W)
-    Label(window, text="蜡烛:").grid(row=5,sticky=W)
-    Label(window, text="餐具:").grid(row=6,sticky=W)
-    Label(window, text="写字:").grid(row=7,sticky=W)    
-    Label(window, text="价格:").grid(row=8,sticky=W)
-    Label(window, text="定金:").grid(row=9,sticky=W)
-    Label(window, text="订单状态*:").grid(row=10,sticky=W)
-    Label(window, text="订单派送方式:").grid(row=11,sticky=W)
-    Label(window, text="（如自取）自取日期:").grid(row=12,sticky=W)
-    Label(window, text="（如自取）自取时间:").grid(row=13,sticky=W)
-    Label(window, text="备注:").grid(row=14,sticky=W)
+    Label(window, text="价格:").grid(row=5,sticky=W)
+    Label(window, text="定金:").grid(row=6,sticky=W)
+    Label(window, text="蜡烛:").grid(row=7,sticky=W)
+    Label(window, text="餐具:").grid(row=8,sticky=W)
+    Label(window, text="写字:").grid(row=9,sticky=W) 
+    Label(window, text="备注:").grid(row=10,sticky=W)   
+    Label(window, text="订单状态*:").grid(row=11,sticky=W)
+    Label(window, text="订单派送方式:").grid(row=12,sticky=W)
+    Label(window, text="（如自取）自取日期:").grid(row=13,sticky=W)
+    Label(window, text="（如自取）自取时间:").grid(row=14,sticky=W)
     Label(window, text="蛋糕信息*:").grid(row=15,sticky=W)
     list_box_cakes,row_num = build_list_box_cake(window,16)
     return list_box_cakes,(row_num+2)
@@ -1251,11 +1217,6 @@ def edit_info(master,listbox):
         pickup_time,row_num,list_box_cakes,upfront = pack_order_entry(window,current_cakes,item,False)
 
         update_listbox(sorted(current_cakes),list_box_cakes)
-        window.bind('<Return>',lambda event:edit_order(order,agent,location,name,phone,\
-                                   candle,tableware,writing,price,
-                                   var2,ps_info,item,window,current_cakes,\
-                                   mode,pickup_date,pickup_time,item.dispatcher,\
-                                   upfront,listbox,list_box_cakes))
         Button(window, width = 8,text='确认', command= \
                lambda: edit_order(order,agent,location,name,phone,\
                                    candle,tableware,writing,price,
@@ -1288,12 +1249,14 @@ def edit_order(order,agent,location,name,phone,
         or new_location == '' or current_cakes == []):
         warning_window(window,warning_message1)
         return False
-    elif isvalid_ad(new_location) == 1:
-        warning_window(window,warning_message8)
-        return False
-    elif isvalid_ad(new_location) < 0:
-        warning_window(window,warning_message9)
-        return False
+    # elif isvalid_ad(new_location) == 1:
+#         warning_window(window,warning_message8)
+#         return False
+#     elif isvalid_ad(new_location) < 0:
+#         warning_window(window,warning_message9)
+#         return False
+    # elif not check_single_loc(new_location):
+#         return False
     elif isvalid_id(order.get()):
         warning_window(window,"    订单号仅允许数字！    ")
         return False
@@ -1518,7 +1481,7 @@ def do_popup_his(event):
         popup_his.grab_release()
 
 # bind popup menu to today listbox
-def do_popup(event):
+def do_popup(event,popup_menu):
     print "do_popup"
     # from pynput.mouse import Button,Controller
     # # stimulate the event of left click
@@ -1526,7 +1489,7 @@ def do_popup(event):
     # mouse.click(Button.left,1)
     # display the popup menu
     #today_list_box_all.interior.event_generate("<Button-1>", when="tail")
-    popup.post(event.x_root, event.y_root)
+    popup_menu.post(event.x_root, event.y_root)
     
     # try:
 #         # popup.tk_popup(event.x_root, event.y_root)
@@ -1535,11 +1498,11 @@ def do_popup(event):
 #         popup.grab_release()
         
 #select row that mouse is over it
-def select_row(event):
+def select_row(event,listbox):
     # import pyautogui, sys
-    iid = today_list_box_all.interior.identify_row(event.y)
+    iid = listbox.interior.identify_row(event.y)
     if iid:
-        today_list_box_all.interior.selection_set(iid)
+        listbox.interior.selection_set(iid)
     #today_list_box_all.interior.update_idletasks()
     # do_popup(event)
  #
@@ -1615,6 +1578,7 @@ def pack_dis_label(window):
 # main use is to avoid duplicate codes
 def pack_dis_entry(window):
     name = Entry(window)                # anem entry for dispatcher
+    name.focus_set()
     home = Entry(window)                # location entry for dispatcher
     phone = Entry(window)               # phone entry for dispatcher
     ps_info = Entry(window)             # plus info about the dispatcher
@@ -1639,8 +1603,8 @@ def add_dispatchers_window(master):
 
     name,home,phone,ps_info,row_num = pack_dis_entry(window)
 
-    window.bind('<Return>',lambda event:add_dispatcher(\
-        name,home,phone,ps_info,window))
+    # window.bind('<Return>',lambda event:add_dispatcher(\
+#         name,home,phone,ps_info,window))
     Button(window,text = "确认",width = 8,command = lambda:add_dispatcher(\
         name,home,phone,ps_info,window))\
         .grid(row=row_num,column = 0, sticky=W,pady = 4)
@@ -1676,8 +1640,6 @@ def edit_info_dis(master):
         phone.insert(0,dis[index_dis_phone])
         ps_info.insert(0,dis[index_dis_ps])
 
-        window.bind('<Return>',lambda event:edit_dispatcher(\
-            name,home,phone,ps_info,window,dis))
         Button(window,text = "确认",width = 8,command = lambda:edit_dispatcher(\
             name,home,phone,ps_info,window,dis))\
             .grid(row=row_num,column = 0, sticky=W,pady = 4)
@@ -1713,15 +1675,18 @@ def to_na_ad(old_list):
     for dis in old_list:
         print "rip(dis[index_dis_name]"
         print rip(dis[index_dis_name])
-        dispatchers.append("".join([rip(dis[index_dis_name]) + "," +dis[index_dis_home]]))
+        dispatchers.append(u"".join([rip(dis[index_dis_name]) + "," +dis[index_dis_home]]))
         # if dis[index_dis_home]:
         #dispatchers.append("".join([dis[index_dis_name] + "," +dis[index_dis_home]]))
     return dispatchers
 #rip off comma
 def rip(name):
     new_name = []
+    print "name"
+    print name
     for i in name:
-        if not i.isalpha() and  not i.isdigit():
+        # if not i.isalpha() and  not i.isdigit():
+        if i == "," or i == "，":
             new_name.append(' ')
         else:
             new_name.append(i)
@@ -1858,6 +1823,7 @@ def cake_setting_add_window(window,indicator,listbox,list1):
     Label(cake_setting_add_window,text = "新{}:".format(indicator)).\
                      grid(sticky =W,row=0,column =0,pady = 4)
     entry = Entry(cake_setting_add_window)
+    entry.focus_set()
     entry.grid(sticky =W,row=0,column =1,pady = 4)
     cake_setting_add_window.bind('<Return>',lambda event:cake_setting_add(indicator,listbox,entry,cake_setting_add_window,list1))
     Button(cake_setting_add_window,text = "确认",command = \
@@ -1964,42 +1930,51 @@ def build_table_his():
     listbox.configure_column(8,width = (size+50))
     listbox.configure_column(9,width = (size+50))
     return listbox
+    
 # check location validity
 def check_location():
-    locations = [x.address for x in db.orders_leftbox]
-    # locs = [x.address for x in db.orders_rightbox]
-#     locations.append(locs)
     isgood = 0
-    
+    locations = [x.address for x in db.orders_leftbox]
     if proc_start_loc.get():
-        des = gmaps.places_autocomplete(input_text = proc_start_loc.get())
-        if not des:
-            warning_window(master," 初始地址可能存在问题 " +"\n请手动检查地址信息的正确性")
+        if not check_single_loc(proc_start_loc.get()):
             isgood = -1
-        
     for loc in locations:
+       if not check_single_loc(loc):
+            isgood = -1
+    if isgood == 0:
+        warning_window(master,"     暂未发现地址信息内存在任何问题     ")
+
+def check_single_loc(loc):
+    isgood = 0
+    try:
         print loc
         des = gmaps.places_autocomplete(input_text = loc)
         if not des:
             warning_window(master," 这个地址可能存在问题 " + loc+"\n请手动检查地址信息的正确性")
             isgood = -1
         else:
-          new_loc = gmaps.places_autocomplete(input_text = loc)[0]['description']
-          if not new_loc:
-              warning_window(master," 这个地址可能存在问题 " + loc+"\n请手动检查地址信息的正确性")
-              isgood = -1
-          else:
-              new_loc_id = gmaps.geocode(new_loc)[0]['place_id']
-              formatted_address = gmaps.reverse_geocode(new_loc_id)[0]['formatted_address']
-              loc_id = gmaps.geocode(formatted_address)[0]['place_id']
-              #print formatted_address + " " + loc_id
-              #print new_loc + " " + new_loc_id
-              if loc_id != new_loc_id:
-                  warning_window(master," 这个地址可能存在问题 " + loc +"\n请手动检查地址信息的正确性")
-                  isgood = -1
-    if isgood == 0:            
-        warning_window(master,"     暂未发现地址信息内存在任何问题     ")
-    
+            new_loc = des[0]['description']
+            if not new_loc:
+                warning_window(master," 这个地址可能存在问题 " + loc+"\n请手动检查地址信息的正确性")
+                isgood = -1
+            else:
+                locations = ["800 swanston street,3053",loc]
+                directions_result = gmaps.directions(locations[0],locations[-1],
+                                                  waypoints=locations[1:-1],
+                                                  mode="driving", avoid="tolls",
+                                                  departure_time=datetime.now(),
+                                                  optimize_waypoints = True)
+                if not directions_result:
+                    warning_window(master," 这个地址可能存在问题 " + loc +"\n请手动检查地址信息的正确性")
+                    isgood = -1
+
+    except:
+        isgood = -1
+        warning_window(master," 这个地址可能存在问题 " + loc +"\n请手动检查地址信息的正确性")
+    if isgood < 0:
+        return False
+    else:
+        return True
 # autocomplete entry 
 # @source: http://code.activestate.com/recipes/578253-an-entry-with-autocompletion-for-the-tkinter-gui/
 # modified by Rondo
@@ -2026,7 +2001,7 @@ class AutocompleteEntry(Entry):
             self.indicator = True
             return  
             
-        if self.var.get() == '' or len(self.var.get()) < 8:
+        if self.var.get() == '' or len(self.var.get()) < 10:
             try:
                 self.lb.destroy()
             except:
@@ -2088,11 +2063,34 @@ class AutocompleteEntry(Entry):
     def get_loc(self,txt):
         new_loc = []
         for loc in gmaps.places_autocomplete(input_text = txt):
+            # print loc
+#             locations = ["800 swanston st,3053",loc['description']]
+#             loc_id = loc['place_id']
+#             directions_loc = gmaps.directions(locations[0],locations[-1],
+#                                                 waypoints=locations[1:-1],
+#                                                 mode="driving", avoid="tolls",
+#                                                 departure_time=datetime.now(),
+#                                                 optimize_waypoints = True)
+#             print directions_loc[0]['legs']
+#             print directions_loc[0]['legs'][0]['end_address']
+#             directions_loc_id = directions_loc[0]['legs'][0]['end_address'][0]['place_id']
+#             print directions_loc[0]['legs'][0]['end_address'][0]['place_id']
+#             if loc_id == directions_loc_id:
+#                 print loc['description']
+#                 tmp = loc['description'].split(",")
+#                 leng = len(tmp)
+#                 if leng == 3:
+#                     new_loc.append(tmp[0] + "," + tmp[1])
+#                 elif leng == 4:
+#                     new_loc.append(tmp[0] + "," + tmp[1]+"," + tmp[2])
             print loc['description']
             tmp = loc['description'].split(",")
-            print tmp
-            new_loc.append(tmp[0] + "," + tmp[1])
-
+            leng = len(tmp)
+            if leng == 3:
+                new_loc.append(tmp[0] + "," + tmp[1])
+            elif leng == 4:
+                new_loc.append(tmp[0] + "," + tmp[1]+"," + tmp[2])
+     
         #new_loc = loc.remove(loc.split(',')[-1])
         return new_loc
         
@@ -2237,12 +2235,8 @@ if __name__ == "__main__":
 
 
     # bind listbox to popup menu
-    today_list_box_all.interior.bind("<ButtonPress-2>", select_row)
-    today_list_box_all.interior.bind("<ButtonRelease-2>", do_popup)
-    
-    
-    #today_list_box_all.interior.bind("<Button-1>", do_deselect)
-
+    today_list_box_all.interior.bind("<ButtonPress-2>", lambda event:select_row(event,today_list_box_all))
+    today_list_box_all.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup))
 
     today_text_orders_all.grid(row=0,column=0,sticky = W,padx =4)
     #today_search.grid(row=0,column=4, sticky = E)
@@ -2262,7 +2256,10 @@ if __name__ == "__main__":
     #                              lambda:search_listbox_history(history_search.get()))
     # history_listbox = Listbox(tab_history, width = 70,height = 20)
     history_listbox = build_table(tab_history)
-    history_listbox.interior.bind("<Button-2>", do_popup_his)
+    # history_listbox.interior.bind("<Button-2>", do_popup_his)
+    
+    history_listbox.interior.bind("<ButtonPress-2>", lambda event:select_row(event,history_listbox))
+    history_listbox.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup_his))
     #history_date.grid(row = 0,column = 0,sticky = W)
     Label(tab_history,text = '历史订单',font=("Calibri",title_size)).\
                       grid(row=0,column = 0,sticky = W,padx=4)
@@ -2299,8 +2296,14 @@ if __name__ == "__main__":
     #proc_start_loc.insert(0,start_location)
 
     #orders ui elements setup
-    proc_left_box.interior.bind("<Button-2>", do_popup_left)
-    proc_right_box.interior.bind("<Button-2>", do_popup_right)
+    proc_left_box.interior.bind("<ButtonPress-2>", lambda event:select_row(event,proc_left_box))
+    proc_left_box.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup_left))
+    
+    
+    proc_right_box.interior.bind("<ButtonPress-2>", lambda event:select_row(event,proc_right_box))
+    proc_right_box.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup_right))
+    #proc_left_box.interior.bind("<Button-2>", do_popup_left)
+    #proc_right_box.interior.bind("<Button-2>", do_popup_right)
     tab_proc.bind("<Button-2>", do_popup_right)
     
     proc_text_name.grid(row = 0, column = 0,sticky=W)
@@ -2330,7 +2333,8 @@ if __name__ == "__main__":
     proc_left_box_dis = Multicolumn_Listbox(tab_dis, header_dispatcher_full, \
                         stripped_rows = ("white","#f2f2f2"), cell_anchor="center",\
                                         height=22)
-    proc_left_box_dis.interior.bind("<Button-2>", do_popup_dis)
+    proc_left_box_dis.interior.bind("<ButtonPress-2>", lambda event:select_row(event,proc_left_box_dis))
+    proc_left_box_dis.interior.bind("<ButtonRelease-2>", lambda event:do_popup(event,popup_dis))
     proc_add_dispatcher_button = Button(tab_dis, text = "添加新派送员",\
                         command = lambda: add_dispatchers_window(tab_proc),width = 15)
 
